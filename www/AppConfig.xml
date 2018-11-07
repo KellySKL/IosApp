@@ -1,0 +1,8 @@
+<properties>
+ <property
+   name="android test"
+   server_url = "http://192.168.1.123:8089/"
+   apk_url="http://192.168.1.123:8089/android-192-apk/android-debug.apk"
+   update_url="http://192.168.1.123:8018/svn/AppSQ/www"/>
+ <!--<property name="正式" server_url = "http://121.43.103.228:8089/" update_url="http://121.43.103.228/android-debug.apk" /> -->
+</properties>

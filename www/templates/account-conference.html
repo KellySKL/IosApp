@@ -1,0 +1,64 @@
+<ion-view title="申请报备">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="list" style="width:100%">
+      <div class="item item-divider">
+        客户拜访单
+      </div>
+      <div class="item item-input">
+        客户名称：<input type="text" ng-model="$parent.searchName" readonly="readonly">
+        <i class="icon ion-plus" style="float: right;font-size: 26px;margin: auto 5px ;" ng-click="choseBill()"></i>
+      </div>
+      <div class="item item-input">
+        对方姓名： <input type="text" ng-model="$parent.hisname"  readonly="readonly">
+      </div>
+      <div class="item item-input">
+        对方职位： <input type="text" ng-model="$parent.hisposition" readonly="readonly">
+      </div>
+      <div class="item item-input">
+        对方手机： <input type="text" ng-model="$parent.hisphone" readonly="readonly">
+      </div>
+      <div class="item item-input">
+        拜访内容： <textarea style="height: 150px" ng-model="$parent.content" readonly="readonly"></textarea>
+      </div>
+
+      <div class="item item-divider">
+        招待费用
+      </div>
+      <div class="item item-input" style="color: #f80003">
+        餐费(元)： <input id="txt1" type="text" ng-model="$parent.eating" >
+      </div>
+      <div class="item item-input" style="color: #f80003">
+        其他(元)： <input type="text"  id="txt2" ng-model="$parent.other">
+      </div>
+      <div class="item item-input" style="color: #f80003">
+        预计招待人员： <input type="text" id="txt3" style="height: 50px" ng-model="$parent.person">
+      </div>
+      <div class="item item-divider">
+        过路费申请
+      </div>
+      <div class="item item-input" style="color: #f80003">
+        过路费： <input type="text" id="txt4" style="height: 50px" ng-model="$parent.traffic">
+      </div>
+      <div class="item item-divider">
+        佣金申请报备
+      </div>
+      <div class="item item-input" style="color: #f80003">
+        佣金申请： <input type="text" id="txt5" style="height: 50px" ng-model="$parent.commission">
+      </div>
+      <div class="item item-divider">
+        备注说明
+      </div>
+      <div class="item item-input">
+         <textarea id="txt6" style="height: 80px" ng-model="$parent.remark"></textarea>
+      </div>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" id ="submit" ng-click="submit()">提交</button>
+    </div>
+  </ion-content>
+</ion-view>
+

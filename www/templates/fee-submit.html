@@ -1,0 +1,45 @@
+<ion-view view-title="报备查询">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content ng-controller="FeeCtrl">
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="item in data" type="item-text-wrap" style="margin:8px;border:1px solid #317ff2;border-radius: 10px;" ng-click="getDet(item)">
+        <div style="height: 30px;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+          【{{item.vbcode}}】
+        </div>
+        <div style="height: 30px;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+          <div style="float: left;height:100%;width:auto;text-align:center;color:#0f0f0f">
+            <p style="word-wrap: break-word;font-size: 16px">{{item.client}}</p>
+          </div>
+          <div style="float: right;height:100%;width:auto;text-align:center">
+            <p style="color: #8e979a">{{item.state_desc}}</p>
+          </div>
+        </div>
+        <div style="min-height: 25px;width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#8e979a;word-wrap: break-word;">
+          {{item.createtime}}
+        </div>
+      </ion-item>
+    </ion-list>
+    <center>
+      <p style="color:#8e979a;" ng-if="moreDataCanBeLoaded()"> 上拉加载更多...</p>
+    </center>
+    <!--上拉更多 ng-if="moreDataCanBeLoaded()"-->
+    <ion-infinite-scroll
+      icon="ion-loading-c"
+      ng-if="moreDataCanBeLoaded()"
+      on-infinite="loadMore()"
+      distance="10%"
+      loadingSpinner="bubbles"
+      loadingText="加载更多...">
+    </ion-infinite-scroll>
+    <!--&lt;!&ndash; ion-infinite-scroll 上拉加载数据指令 distance默认1% nf-if的值为false时，就禁止执行on-infinite  &ndash;&gt;-->
+    <!--<ion-infinite-scroll ng-if="vm.moredata" on-infinite="vm.loadMore()" distance="1%" ></ion-infinite-scroll>-->
+  </ion-content>
+</ion-view>

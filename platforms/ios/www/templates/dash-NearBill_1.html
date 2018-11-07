@@ -1,0 +1,52 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">我的待办事项</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content ng-controller="NearBill_1_Ctrl">
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="list">
+      <ion-item ng-repeat="item in dataA" type="item-text-wrap" style="margin:5px;border:1px solid #317ff2;border-radius: 10px;" ng-click="BillDet(item)">
+        <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+        <div style="float:left;width: 90%">
+          <div style="margin-bottom:8px;height:auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+            {{item.code}} | {{item.depar}}
+          </div>
+          <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+            <div style="float: left;height:100%;width:auto;text-align:center">
+              {{item.client}}
+            </div>
+            <div style="float: right;height:100%;width:auto;text-align:center">
+              <p style="color: #8e979a">{{item.distance}}</p>
+            </div>
+          </div>
+          <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                   font-size: 14px;color:#8e979a;word-wrap: break-word;
+                   overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+            要求完成时间：{{item.finshdate}}
+          </div>
+        </div>
+        <div style="font-size:20px;float:right;width:10%;height:100%; line-height:80px;">
+          <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;" ></a>
+        </div>
+      </ion-item>
+    </div>
+    <center>
+      <p style="color:#8e979a;" ng-if="moreDataCanBeLoaded()"> 上拉加载更多...</p>
+    </center>
+    <ion-infinite-scroll
+      icon="ion-loading-c"
+      ng-if="moreDataCanBeLoaded()"
+      on-infinite="loadMore()"
+      distance="10%"
+      loadingSpinner="bubbles"
+      loadingText="加载更多...">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

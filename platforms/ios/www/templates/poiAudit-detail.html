@@ -1,0 +1,66 @@
+<style type="text/css">
+  body{
+    margin:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+  #container{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+  }
+  #tip{
+    min-height:65px;
+    background-color:transparent;
+    padding-left:10px;
+    padding-right:10px;
+    position:absolute;
+    font-size:12px;
+    right:5px;
+    bottom:5px;
+    border-radius:5px;
+    line-height:18px;
+    /*border:1px solid #ccc;*/
+    margin-bottom: auto;
+  }
+  #tip input[type='button']{
+    margin-left: 10px;
+    margin-right:10px;
+    margin-top:10px;
+    background-color: #0D9BF2;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    color:#fff;
+    font-size:12px;
+    border-radius:3px;
+    outline: none;
+    border:0;
+    float:right;
+  }
+</style>
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">显示定位标记点</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content>
+    <div class="AMapArea" id="amap">
+      <div id="{{AMapId}}"></div>
+      <!--{{initAMap()}}-->
+    </div>
+    <div id="tip">
+      <div>
+        <a class="button"  style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="AuditPoi('YES')">同意定位</a>
+      </div>
+      <div>
+        <a class="button"  style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="AuditPoi('NO')">否决定位</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

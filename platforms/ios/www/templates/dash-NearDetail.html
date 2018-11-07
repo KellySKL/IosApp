@@ -1,0 +1,80 @@
+<ion-view view-title="{{item.code}}">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="list">
+      <div class="item item-input">
+        提出人：<input type="text" ng-model="item.inserter">
+      </div>
+      <div class="item item-input">
+        客户名称：<input type="text" ng-model="item.client">
+      </div>
+      <div class="item item-input">
+        联系人：<input type="text" ng-model="item.contactor">
+      </div>
+      <div class="item item-input">
+        联系方式：<input type="text" ng-model="item.phone">
+      </div>
+      <div class="item item-input">
+        协助部门：<input type="text" ng-model="item.depar">
+      </div>
+      <div class="item item-input">
+        要求完成时间：<input type="text" ng-model="item.finshdate">
+      </div>
+      <div class="item item-input">
+        机床编号：<input type="text" ng-model="item.machinecn">
+      </div>
+      <div class="item item-divider">
+        待办内容
+      </div>
+      <div class="item item-input">
+        <textarea id="txt6" style="height: 80px" ng-model="item.mtitle"></textarea>
+      </div>
+
+    <div style="margin-top: 5px;margin-bottom: 5px;">
+    <div class="item item-divider">
+      所有回复
+    </div>
+    <div class="item" ng-repeat="item in Replies" style="min-height:60px;border:1px solid #9faaac;" >
+          <div>
+            {{item.createtime}}
+          </div>
+          <div class="item-input item-text-wrap " style="border:none;padding: 0px;">
+            <div style="width: 20%;">{{item.inserter}}</div>
+            <div style="width: 80%;">
+              <p>{{item.content}}</p>
+            </div>
+          </div>
+    </div>
+    </div>
+    <div ng-hide="myVar">
+        <div class="item item-divider">
+          我的回复
+        </div>
+        <div class="item item-input">
+          <textarea id="txt7" style="height: 80px" ng-model="item.reply"></textarea>
+        </div>
+        <div class="padding">
+          <button class="button button-block button-positive" id ="submit" ng-click="submitR()">提交回复</button>
+        </div>
+    </div>
+    </div>
+
+    <!--<div style="height: 50px;width: 100%;" ng-click="More()">-->
+      <!--<center>-->
+        <!--<p> << 点击查看所有回复 >> </p>-->
+      <!--</center>-->
+    <!--</div>-->
+
+  </ion-content>
+</ion-view>
+

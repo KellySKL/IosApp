@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capture Photo</title>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    //上传图片
+    function uploadImage(){
+      window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, function (fs) {
+        alert(LocalFileSystem.PERSISTENT);
+        console.log('打开的文件系统: ' + fs.name);
+        fs.root.getFile('hangge.png', { create: true, exclusive: false },
+          function (fileEntry) {
+            upload(fileEntry);
+          }, onErrorCreateFile);
+
+      }, onErrorLoadFs);
+    }
+
+    //上传文件
+    function upload(fileEntry) {
+      //获取文件的url路径地址
+      var fileURL = fileEntry.toURL();
+
+      //上传成功
+      var success = function (r) {
+        console.log("上传成功! Code = " + r.responseCode);
+      }
+
+      //上传失败
+      var fail = function (error) {
+        alert("上传失败! Code = " + error.code);
+      }
+
+      var options = new FileUploadOptions();
+      options.fileKey = "file1";
+      options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+      options.mimeType = "text/plain";
+
+      //上传参数
+      var params = {};
+      params.value1 = "test";
+      params.value2 = "param";
+      options.params = params;
+
+      var ft = new FileTransfer();
+      //上传地址
+      var SERVER = "http://www.hangge.com/upload.php"
+      ft.upload(fileURL, encodeURI(SERVER), success, fail, options);
+    };
+
+    //文件创建失败回调
+    function  onErrorCreateFile(error){
+      console.log("文件创建失败！")
+    }
+
+    //FileSystem加载失败回调
+    function  onErrorLoadFs(error){
+      console.log("文件系统加载失败！")
+    }
+  </script>
+</head>
+<body style="padding-top:50px">
+<button style="font-size:23px;" onclick="uploadImage();">上传图片</button>
+</body>
+</html>

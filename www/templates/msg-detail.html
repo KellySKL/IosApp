@@ -1,0 +1,83 @@
+<ion-view view-title="{{item.code}}">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="item item-divider">
+      任务单
+    </div>
+    <div class="item item-input" style="font-size: 16px" ng-hide="myBill">
+      接受时间： {{item.rq1}}
+    </div>
+    <div class="item item-input" style="font-size: 16px" ng-hide="myComplete">
+      完成时间： {{item.rq2}}
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      拜访时间： {{item.date}}
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      拜访方式： {{item.visittype}}
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      客户：  {{item.client}}
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      联系人：{{item.hisname}}
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      联系方式：{{item.hisphone}}
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      上次回访内容： <textarea style="min-height:50px;">{{item.content}}</textarea>
+    </div>
+    <div class="item item-input" style="font-size: 16px">
+      本次注意事项：<textarea style="min-height:50px;">{{item.notice}}</textarea>
+    </div>
+    <div class="item item-input" style="font-size: 16px" ng-hide="myComplete">
+      本次回访内容：<textarea style="min-height:50px;">{{item.zf5}}</textarea>
+    </div>
+
+    <div class="item item-divider" style="margin-top:5px;">
+      待办事项
+    </div>
+    <div class="list">
+      <div class="item" ng-repeat="item in ItemList"
+           style="min-height:45px;border:1px solid #9faaac;" ng-click="BillDetView(item)">
+        <div>
+          {{item.finshdate}}
+        </div>
+        <div class="item-input item-text-wrap " style="border:none;padding:0px;">
+          <div style="width: 95%;">
+            <p>{{item.mtitle}}</p>
+          </div>
+          <div style="float:right;width:auto;top: 10px;">
+            <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;" ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--<div class="list">-->
+      <!--<div class="item" ng-repeat="item in ItemList"-->
+           <!--style="min-height:45px;border:1px solid #9faaac;" >-->
+        <!--<div>-->
+          <!--{{item.finshdate}}-->
+        <!--</div>-->
+        <!--<div class="item-input item-text-wrap " style="border:none">-->
+          <!--<p>{{item.mtitle}}</p>-->
+          <!--&lt;!&ndash;<div style="width: 20%;">{{item.inserter}}</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div style="width: 80%;">&ndash;&gt;-->
+            <!--&lt;!&ndash;<p>{{item.content}}</p>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <div class="padding" ng-hide="myVar">
+      <button class="button button-block button-positive" ng-click="accpect()">接受</button>
+    </div>
+    <div class="padding" ng-hide="myBill">
+      <button class="button button-block button-positive" ng-click="write(item)">填写拜访单</button>
+    </div>
+  </ion-content>
+</ion-view>

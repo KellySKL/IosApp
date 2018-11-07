@@ -1,0 +1,143 @@
+ /*Empty. Add your own CSS if you like */
+ .mycol{
+   height:150px;
+   background-color: #F9FAFB;
+   padding: 5px;
+   border: 1px solid #ddd;
+   border-radius: 2px;
+   text-align: center;
+ }
+ .imc-scroll {
+   width: 100%;
+   white-space: nowrap;
+   overflow-x: scroll;
+   overflow-y: hidden;
+   overflow-scrolling: touch;
+   -webkit-overflow-scrolling: touch /*iOS 滚动弹簧效果 */ }
+
+ .scroll {
+   -webkit-user-select: text;
+   -moz-user-select: text;
+   -ms-user-select: text;
+   user-select: text;
+ }
+ .Sheader{
+   width: 100%;
+   height: 38px;
+   display: -webkit-box;
+   -webkit-box-pack: center;
+   -webkit-box-align: center;
+   position: fixed;
+   left: 0;
+   top: 0;
+   z-index: 99;
+ }
+
+ .Sfooter{
+   width: 100%;
+   height: 50px;
+   display: -webkit-box;
+   -webkit-box-pack: center;
+   -webkit-box-align: center;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   background-color: #fff;
+   font-size: 12px;
+   border-top: 1px solid #e7e7e7;
+ }
+  .Scontent{
+    position: absolute;
+    top: 38px;
+    width: 100%;
+    left: 0;
+    bottom: 0px;
+    overflow: auto;
+  }
+ .sbutton{
+   margin:5px;
+   background-color: #0D9BF2;
+   height:30px;
+   text-align:center;
+   line-height:30px;
+   color:#fff;
+   font-size:14px;
+   border-radius:3px;
+   outline: none;
+   border:0;
+   float:left;
+ }
+
+ .nbutton{
+   margin:5px;
+   background-color: #c0c0c0;
+   height:50px;
+   text-align:center;
+   line-height:30px;
+   color: #4d4d4d;
+   font-size:14px;
+   border-radius:3px;
+   outline: none;
+   border:1px #4d4d4d;
+   float:right;
+ }
+
+.tab_default{
+  border-bottom:solid 1px #F2F2F2;
+  padding:6px 0;
+}
+.tab_select{
+  border-bottom:solid 1px #3E89F5;
+  /*box-shadow:0 -3px 8px #C1D3F0 inset;*/
+}
+.arrow-top {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top:25px;
+  border: 6px solid #3E89F5;
+  border-right-color:transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+.arrow-top:after {
+  content:'';
+  position:absolute;
+  width: 0;
+  height: 0;
+  border: 12px solid #fff;
+  right: -12px;
+  bottom: -13px;
+  border-right-color:transparent;
+  border-left-color: transparent;
+  border-top-color: transparent;
+}
+
+.f{
+  background-color: #eae9e9;
+  height:30px;
+  font-size:12px;
+  border-radius:5px;
+  text-align: center;
+  width: 100%;
+}
+.tl {
+  width: 240px;
+  height: 193px;
+  position: absolute;/*这里一定要设置*/
+  z-index: 999999;/*这里是该元素与显示屏的距离，据说越大越好，但是我也没有看到效果，因为没有它也是可以的*/
+  margin-top: 20%;
+  margin-left: -209px;
+  -webkit-transition: .5s ease-in-out;/* css的transition允许css的属性值在一定的时间内从一个状态平滑的过渡到另一个状态 */
+  -moz-transition: .5s ease-in-out;/*这里为了兼容其他浏览器*/
+  -o-transition: .5s ease-in-out;
+}
+.tl:HOVER {
+  margin-left: 0px;
+}
+
+.item-small {
+  min-height:1rem;
+  border-bottom: 0.55px solid #c8c7cc; /*<<-添加一个和 ionic 下划线一致的下划线*/
+}
+

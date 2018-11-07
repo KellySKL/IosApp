@@ -1,0 +1,798 @@
+[
+  {
+    "file": "AppConfig.xml",
+    "hash": "975bc7c8660638c354eb504fcc68af2d"
+  },
+  {
+    "file": "css/style.css",
+    "hash": "8cc9843e7036f2ecec24be9a47f922d7"
+  },
+  {
+    "file": "img/adam.jpg",
+    "hash": "b445da3cc203f97bce534fdad93b3931"
+  },
+  {
+    "file": "img/ben.png",
+    "hash": "2d983b2362f6db11855af918c7f95aee"
+  },
+  {
+    "file": "img/icon.ico",
+    "hash": "9a3c119d699ffb500387ab9e0e129c0b"
+  },
+  {
+    "file": "img/ionic.png",
+    "hash": "251ebf03b1c7889cf36cbcbcce8f689e"
+  },
+  {
+    "file": "img/loginmain.png",
+    "hash": "03583ab252ac5855efa286de251c5132"
+  },
+  {
+    "file": "img/marker_blue.png",
+    "hash": "abe786f06f8ddd7b8a45ce29bb8571cd"
+  },
+  {
+    "file": "img/marker_red.png",
+    "hash": "afa1e493ca2fac3d6ada6f221ada1364"
+  },
+  {
+    "file": "img/max.png",
+    "hash": "66572ace014ac9119866c3190c8a0a03"
+  },
+  {
+    "file": "img/mike.png",
+    "hash": "14650dc9e2aa1661facc830ab5fb7d6a"
+  },
+  {
+    "file": "img/perry.png",
+    "hash": "2f6e587dfaf552ec19045b4719bc534c"
+  },
+  {
+    "file": "index.html",
+    "hash": "4b2cc66743503eaba9f0e2ae1636346a"
+  },
+  {
+    "file": "js/AMapService.js",
+    "hash": "4cb036c213f7507860a97f208e40151f"
+  },
+  {
+    "file": "js/angucomplete-alt.js",
+    "hash": "3230a9cf39457fb5d72e55ba87d90d47"
+  },
+  {
+    "file": "js/angular-cookies.js",
+    "hash": "bcd9c36ffbf6fc1e2a781516849f2103"
+  },
+  {
+    "file": "js/app.js",
+    "hash": "872a0e1fbf2961dcc78147447514dc12"
+  },
+  {
+    "file": "js/AuditBills.js",
+    "hash": "326a094fbb995477f858367009e432bd"
+  },
+  {
+    "file": "js/BFBills.js",
+    "hash": "51ca0dd2d63b9f2ad97ef7ed53d86af1"
+  },
+  {
+    "file": "js/comlocation.js",
+    "hash": "669514a591e58008a1f3d7ab3eebbb6e"
+  },
+  {
+    "file": "js/Common.js",
+    "hash": "0e80d84372eb23d9083cf0c63be34496"
+  },
+  {
+    "file": "js/controllers.js",
+    "hash": "2fb2899ca5ad6fe30839bd4b330761f0"
+  },
+  {
+    "file": "js/controllers.rar",
+    "hash": "1ed65da435864d6b026c18775e6f0bdd"
+  },
+  {
+    "file": "js/coordtransform.js",
+    "hash": "913b6e393d4c88c3317c3344842172d8"
+  },
+  {
+    "file": "js/CssService.js",
+    "hash": "3c4f2a7febe41bf5f7338e311291ae4a"
+  },
+  {
+    "file": "js/demo.js",
+    "hash": "c807d16eb52fd34abe5f349e4a20eee2"
+  },
+  {
+    "file": "js/factorys.js",
+    "hash": "5b9ab266d84fc4db187fa4ddca112509"
+  },
+  {
+    "file": "js/FeeBills.js",
+    "hash": "56c5599f635eefdb8aebb27c696db4d8"
+  },
+  {
+    "file": "js/gotomap.js",
+    "hash": "262a3ca6880618ec9afee7a5d43df225"
+  },
+  {
+    "file": "js/GTMapService.js",
+    "hash": "c87bb0329e312b61229e390721851a58"
+  },
+  {
+    "file": "js/ImgTurn.js",
+    "hash": "9b2bd585c4d618afe48a216e13eecc18"
+  },
+  {
+    "file": "js/jquery-3.1.1.js",
+    "hash": "d8b4eb6555a5bf0c6148520709545d77"
+  },
+  {
+    "file": "js/loadFile.js",
+    "hash": "e89c7c73a1582560cfd2260aaa9276d7"
+  },
+  {
+    "file": "js/mapmarkers.js",
+    "hash": "00deb1468be1ea688f73c30a75e4ac71"
+  },
+  {
+    "file": "js/nearBills.js",
+    "hash": "18cd0e218cc289b97e8c408bcf5e4598"
+  },
+  {
+    "file": "js/ng-cordova.min.js",
+    "hash": "5c2332c0d6da30e9eaab7f1ab32d46d8"
+  },
+  {
+    "file": "js/PlatformService.js",
+    "hash": "a9ae974df1244200b0d3cde5f9310a31"
+  },
+  {
+    "file": "js/PoiBills.js",
+    "hash": "03eb1fecd93efcee18885191b5f70915"
+  },
+  {
+    "file": "js/RoleService.js",
+    "hash": "0701b5ed302655db31f5e2b37c582989"
+  },
+  {
+    "file": "js/services.js",
+    "hash": "a9461964df4d00cb16437d6e5e90164f"
+  },
+  {
+    "file": "js/WeixiuMsg.js",
+    "hash": "4fa883e7df7bba240a879e7c607fb4ae"
+  },
+  {
+    "file": "js/ywMsg.js",
+    "hash": "45b6158ddac11a33f9524f0692e9b466"
+  },
+  {
+    "file": "lib/angular-animate/.bower.json",
+    "hash": "90e49756595a323d1459ba9e726f10d2"
+  },
+  {
+    "file": "lib/angular-animate/angular-animate.js",
+    "hash": "b1a0315d4738ba305aca3b00146e232c"
+  },
+  {
+    "file": "lib/angular-animate/angular-animate.min.js",
+    "hash": "fb61c6d539943f24f85f49cad4c187b5"
+  },
+  {
+    "file": "lib/angular-animate/angular-animate.min.js.map",
+    "hash": "fa891ad974a5cdafeae752a318b2038e"
+  },
+  {
+    "file": "lib/angular-animate/bower.json",
+    "hash": "698651ebcc4fb4c37195b8474a6c00db"
+  },
+  {
+    "file": "lib/angular-animate/index.js",
+    "hash": "eca59ea32960ae595dd18ad9480185b1"
+  },
+  {
+    "file": "lib/angular-animate/README.md",
+    "hash": "106f5afef87648c0e9218354fe62b01d"
+  },
+  {
+    "file": "lib/angular-sanitize/.bower.json",
+    "hash": "93a37270dacf5c1d65542f8102a6e716"
+  },
+  {
+    "file": "lib/angular-sanitize/angular-sanitize.js",
+    "hash": "7b57f04a2b23847203394400eeb2c97d"
+  },
+  {
+    "file": "lib/angular-sanitize/angular-sanitize.min.js",
+    "hash": "04a7b73d1dc5d573a5b17d70122e8781"
+  },
+  {
+    "file": "lib/angular-sanitize/angular-sanitize.min.js.map",
+    "hash": "6d5b43c4456c4e2fb4c99397a50d64e2"
+  },
+  {
+    "file": "lib/angular-sanitize/bower.json",
+    "hash": "0b0cdb1d969f9d533d98804fbcdd779c"
+  },
+  {
+    "file": "lib/angular-sanitize/index.js",
+    "hash": "796078246b8e97f002ea5c97c4c7de54"
+  },
+  {
+    "file": "lib/angular-sanitize/README.md",
+    "hash": "25dd9babfe0759995e6cc64e4b7c6195"
+  },
+  {
+    "file": "lib/angular-ui-router/.bower.json",
+    "hash": "1944660830eb287a439e9b64493680b8"
+  },
+  {
+    "file": "lib/angular-ui-router/api/angular-ui-router.d.ts",
+    "hash": "10d2cd545af44ed2dd8daa9a197a51df"
+  },
+  {
+    "file": "lib/angular-ui-router/bower.json",
+    "hash": "84f262f8f179cea182a9a7ba794c264e"
+  },
+  {
+    "file": "lib/angular-ui-router/CHANGELOG.md",
+    "hash": "07f6ecab898b72b41aae94feb1c28f10"
+  },
+  {
+    "file": "lib/angular-ui-router/CONTRIBUTING.md",
+    "hash": "7b49e14b08df38515fa0346dcfbb008c"
+  },
+  {
+    "file": "lib/angular-ui-router/LICENSE",
+    "hash": "9f6fc0232f44b9d5845673839be52afd"
+  },
+  {
+    "file": "lib/angular-ui-router/README.md",
+    "hash": "1fb5bbee72ee388037c30f4f35686b24"
+  },
+  {
+    "file": "lib/angular-ui-router/release/angular-ui-router.js",
+    "hash": "1f7fe3573d463743394e98d8b00eb228"
+  },
+  {
+    "file": "lib/angular-ui-router/release/angular-ui-router.min.js",
+    "hash": "83f32131b638a8686a43510fbd645b1b"
+  },
+  {
+    "file": "lib/angular-ui-router/src/common.js",
+    "hash": "c824ec7f4391961df99fc4cb7198df24"
+  },
+  {
+    "file": "lib/angular-ui-router/src/resolve.js",
+    "hash": "077126ce15ae3e2681d668953303387c"
+  },
+  {
+    "file": "lib/angular-ui-router/src/state.js",
+    "hash": "31462aad1e8812fa7470554573e1b805"
+  },
+  {
+    "file": "lib/angular-ui-router/src/stateDirectives.js",
+    "hash": "5ff57d1d79ca019e1cb17d986314475d"
+  },
+  {
+    "file": "lib/angular-ui-router/src/stateFilters.js",
+    "hash": "f420615f60f6e5beea6554a53ecb0907"
+  },
+  {
+    "file": "lib/angular-ui-router/src/templateFactory.js",
+    "hash": "ae0763a83d877c17e33b577514d4ff51"
+  },
+  {
+    "file": "lib/angular-ui-router/src/urlMatcherFactory.js",
+    "hash": "1e375515047b9f0a58892c1110cfe532"
+  },
+  {
+    "file": "lib/angular-ui-router/src/urlRouter.js",
+    "hash": "629ff7f337783b059a3e6ecd557d2ef7"
+  },
+  {
+    "file": "lib/angular-ui-router/src/view.js",
+    "hash": "dba807ef5d28214710a8eadc39272d44"
+  },
+  {
+    "file": "lib/angular-ui-router/src/viewDirective.js",
+    "hash": "e5eaf92380ba56faa2ce59056f029e32"
+  },
+  {
+    "file": "lib/angular-ui-router/src/viewScroll.js",
+    "hash": "db1aa02d40f4e08e90d1fe79e69ade19"
+  },
+  {
+    "file": "lib/angular/.bower.json",
+    "hash": "a451d32f4ea771c66ff374cbeba48ff3"
+  },
+  {
+    "file": "lib/angular/angular-csp.css",
+    "hash": "5d7bf1728c2447221cad6c6263557306"
+  },
+  {
+    "file": "lib/angular/angular.js",
+    "hash": "1b3d5bfbeb67c93df0f8ee9de569a206"
+  },
+  {
+    "file": "lib/angular/angular.min.js",
+    "hash": "0744b6e5cd7b7cdad98cefb3d9c141c6"
+  },
+  {
+    "file": "lib/angular/angular.min.js.gzip",
+    "hash": "b9344747f8bf75e269b54f9894432872"
+  },
+  {
+    "file": "lib/angular/angular.min.js.map",
+    "hash": "878493e009801bc60853d0966414fa8e"
+  },
+  {
+    "file": "lib/angular/bower.json",
+    "hash": "c991227c3e95225f2d5d9bc05013515e"
+  },
+  {
+    "file": "lib/angular/index.js",
+    "hash": "0d848853205d22ab8be985876aec948a"
+  },
+  {
+    "file": "lib/angular/README.md",
+    "hash": "0d57148eaf38d58d1519a0e71c3f9a16"
+  },
+  {
+    "file": "lib/ionic-datepicker/.bower.json",
+    "hash": "18ff096ebf1ae4977c2db657f88a9692"
+  },
+  {
+    "file": "lib/ionic-datepicker/bower.json",
+    "hash": "63a3a944ad5784cda2a63b76c7239dd7"
+  },
+  {
+    "file": "lib/ionic-datepicker/dist/ionic-datepicker.bundle.min.js",
+    "hash": "2f76643fcc5fb37064606e2cffa9e490"
+  },
+  {
+    "file": "lib/ionic-datepicker/gulpfile.js",
+    "hash": "1460e050fe540132f8dcf926e5dc21f5"
+  },
+  {
+    "file": "lib/ionic-datepicker/LICENSE.MD",
+    "hash": "c79df005552d9896499ce78c522da395"
+  },
+  {
+    "file": "lib/ionic-datepicker/README.md",
+    "hash": "36ae97d66bc3975d98d18c3575365982"
+  },
+  {
+    "file": "lib/ionic-datepicker/src/ionic-datepicker-modal.html",
+    "hash": "25e3cc9e3579f7a43b456b6e41ba4b15"
+  },
+  {
+    "file": "lib/ionic-datepicker/src/ionic-datepicker-popup.html",
+    "hash": "5f09f03773780fce87478359d03a440d"
+  },
+  {
+    "file": "lib/ionic-datepicker/src/ionic-datepicker.module.js",
+    "hash": "e6572adcbce25bd8ba6f75d81319f887"
+  },
+  {
+    "file": "lib/ionic-datepicker/src/ionic-datepicker.provider.js",
+    "hash": "66c64433ba6cea6d6397da92cb831353"
+  },
+  {
+    "file": "lib/ionic-datepicker/src/ionic-datepicker.service.js",
+    "hash": "de8eb06206f6d081d57f15a1a4025544"
+  },
+  {
+    "file": "lib/ionic-datepicker/src/ionic-datepicker.styles.css",
+    "hash": "9bc8cb4f28747413c13f8964d34130d4"
+  },
+  {
+    "file": "lib/ionic/.bower.json",
+    "hash": "d37d9887674caec4ad8be3b4b6c37dc8"
+  },
+  {
+    "file": "lib/ionic/bower.json",
+    "hash": "89155c477d8c16c4e3bdfa4fa727a1f5"
+  },
+  {
+    "file": "lib/ionic/css/ionic.css",
+    "hash": "95de04bc800111165ad83531efd4232e"
+  },
+  {
+    "file": "lib/ionic/css/ionic.min.css",
+    "hash": "ffa90f96b7cbdf2e2fc3ec1a51ff10f2"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.eot",
+    "hash": "2c2ae068be3b089e0a5b59abb1831550"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.svg",
+    "hash": "621bd386841f74e0053cb8e67f8a0604"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.ttf",
+    "hash": "24712f6c47821394fba7942fbb52c3b2"
+  },
+  {
+    "file": "lib/ionic/fonts/ionicons.woff",
+    "hash": "05acfdb568b3df49ad31355b19495d4a"
+  },
+  {
+    "file": "lib/ionic/js/ionic-angular.js",
+    "hash": "b266a623fc6e791aaf55046732e4ca8f"
+  },
+  {
+    "file": "lib/ionic/js/ionic-angular.min.js",
+    "hash": "e63ee83f3262768139a0ce6a25e05ac4"
+  },
+  {
+    "file": "lib/ionic/js/ionic.bundle.js",
+    "hash": "3df8debf678e131393d470c1ceec5fd7"
+  },
+  {
+    "file": "lib/ionic/js/ionic.bundle.min.js",
+    "hash": "a71d94d192b8ce85174c21bc84315521"
+  },
+  {
+    "file": "lib/ionic/js/ionic.js",
+    "hash": "0e56729687e6ed27e37c7a85276ba6b4"
+  },
+  {
+    "file": "lib/ionic/js/ionic.min.js",
+    "hash": "4a95759a6ca441d04b50737ab97c1cd3"
+  },
+  {
+    "file": "lib/ionic/README.md",
+    "hash": "8c3d9609038246e765bc74b004e57e4e"
+  },
+  {
+    "file": "lib/ionic/scss/_action-sheet.scss",
+    "hash": "d0c6449f31db02323aa6e7f56ef55e67"
+  },
+  {
+    "file": "lib/ionic/scss/_animations.scss",
+    "hash": "5596f74cb1ee03f9faf453ad4ee11807"
+  },
+  {
+    "file": "lib/ionic/scss/_backdrop.scss",
+    "hash": "7ff048e091b39f6615db62ee136ef040"
+  },
+  {
+    "file": "lib/ionic/scss/_badge.scss",
+    "hash": "c7b1b0e3049754fc22b45730e6c560fa"
+  },
+  {
+    "file": "lib/ionic/scss/_bar.scss",
+    "hash": "3a3e2b39cb46db25fafff9d68c3f062e"
+  },
+  {
+    "file": "lib/ionic/scss/_button-bar.scss",
+    "hash": "bf90c5d85e628b451f90b65f9c807f5a"
+  },
+  {
+    "file": "lib/ionic/scss/_button.scss",
+    "hash": "e365f13abd3c547f442fc1ac5385111f"
+  },
+  {
+    "file": "lib/ionic/scss/_checkbox.scss",
+    "hash": "89a0987dd24210f16863d7ba2c7312bd"
+  },
+  {
+    "file": "lib/ionic/scss/_form.scss",
+    "hash": "169f7a6e449aa9e1bed20a1f30887c97"
+  },
+  {
+    "file": "lib/ionic/scss/_grid.scss",
+    "hash": "9a87c565e397bb73b7f467726a63e01c"
+  },
+  {
+    "file": "lib/ionic/scss/_items.scss",
+    "hash": "98a8ace659cb87fd41d63faef52a45d7"
+  },
+  {
+    "file": "lib/ionic/scss/_list.scss",
+    "hash": "0ab8daf57764aac25bf68aa0b0e6c776"
+  },
+  {
+    "file": "lib/ionic/scss/_loading.scss",
+    "hash": "9f23e266d43a432bbf07a8677d1d1592"
+  },
+  {
+    "file": "lib/ionic/scss/_menu.scss",
+    "hash": "c12d33c8bea78495b2571665e35cb192"
+  },
+  {
+    "file": "lib/ionic/scss/_mixins.scss",
+    "hash": "dfa91bbaa3f54a417ce1567c5b34dc13"
+  },
+  {
+    "file": "lib/ionic/scss/_modal.scss",
+    "hash": "38e8624ef28a495e7a01341915516bd1"
+  },
+  {
+    "file": "lib/ionic/scss/_platform.scss",
+    "hash": "95f651d1a15f76ac1f74dd5ab8e5f88f"
+  },
+  {
+    "file": "lib/ionic/scss/_popover.scss",
+    "hash": "924a0474d4e58b3280e7d1ebf1938a55"
+  },
+  {
+    "file": "lib/ionic/scss/_popup.scss",
+    "hash": "988126e645408f1e5a270934520c20ac"
+  },
+  {
+    "file": "lib/ionic/scss/_progress.scss",
+    "hash": "19a19537d8e9483db7bde8a7febd43f6"
+  },
+  {
+    "file": "lib/ionic/scss/_radio.scss",
+    "hash": "9e5544332590f92c25ea065140610b03"
+  },
+  {
+    "file": "lib/ionic/scss/_range.scss",
+    "hash": "ae2eb0fc86bdcef56346885dcb76370f"
+  },
+  {
+    "file": "lib/ionic/scss/_refresher.scss",
+    "hash": "23c7b98a85caf376b414f4ed5a713831"
+  },
+  {
+    "file": "lib/ionic/scss/_reset.scss",
+    "hash": "319f0fb2d58da7fc89222752c5e527a4"
+  },
+  {
+    "file": "lib/ionic/scss/_scaffolding.scss",
+    "hash": "83d10a4997b12f655e847c886ae54dac"
+  },
+  {
+    "file": "lib/ionic/scss/_select.scss",
+    "hash": "7b40e394e01f33ebc89fcfc89f826410"
+  },
+  {
+    "file": "lib/ionic/scss/_slide-box.scss",
+    "hash": "ae10f39144dc0f6b5b24fb6e811e992a"
+  },
+  {
+    "file": "lib/ionic/scss/_slides.scss",
+    "hash": "504700ae567875f003c7fd1571a482e1"
+  },
+  {
+    "file": "lib/ionic/scss/_spinner.scss",
+    "hash": "472ae7eb35a68c22078b1d56b10f35be"
+  },
+  {
+    "file": "lib/ionic/scss/_tabs.scss",
+    "hash": "a8e939c50fd869edf42979129898a84e"
+  },
+  {
+    "file": "lib/ionic/scss/_toggle.scss",
+    "hash": "05e76b843e03e5df07342f8f4b352ba3"
+  },
+  {
+    "file": "lib/ionic/scss/_transitions.scss",
+    "hash": "c060678db2049bbca8833bf769d65dd1"
+  },
+  {
+    "file": "lib/ionic/scss/_type.scss",
+    "hash": "db602af625137bdc4d95b262d77a15c1"
+  },
+  {
+    "file": "lib/ionic/scss/_util.scss",
+    "hash": "c7af3ffdcc728e1c6f44061ed6120c15"
+  },
+  {
+    "file": "lib/ionic/scss/_variables.scss",
+    "hash": "aa0fd7fb8581ecd75a9efaa647b1dc50"
+  },
+  {
+    "file": "lib/ionic/scss/ionic.scss",
+    "hash": "a102a720475b3304d099fc3c94e7f619"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/_ionicons-font.scss",
+    "hash": "9a1734051fa60f52fdbdd74001b0f0e0"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/_ionicons-icons.scss",
+    "hash": "fcdab55027fe7da71f277ee58fad686a"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/_ionicons-variables.scss",
+    "hash": "0af49648c5756e4a96eb1eb70f016ee3"
+  },
+  {
+    "file": "lib/ionic/scss/ionicons/ionicons.scss",
+    "hash": "f051c68381e5de07f53f445a99deb4c0"
+  },
+  {
+    "file": "lib/ionic/scss/tsconfig.json",
+    "hash": "eb3bd36ec35e05eb37dae41e3617420f"
+  },
+  {
+    "file": "manifest.json",
+    "hash": "a3e888fb8cb528ebdbf38073f29d148c"
+  },
+  {
+    "file": "service-worker.js",
+    "hash": "7de431000cd0f19fc38619fdd7314f81"
+  },
+  {
+    "file": "templates/account-conference.html",
+    "hash": "10dc032ccb3ffbde2daaed6f3e275627"
+  },
+  {
+    "file": "templates/account-signBill.html",
+    "hash": "b0c9d890823c84b337bf4dbe0840c975"
+  },
+  {
+    "file": "templates/chat-detail.html",
+    "hash": "2d7611935a285c43bb38285711ea6711"
+  },
+  {
+    "file": "templates/Contact.html",
+    "hash": "419dbf31142982fdbcd5be471bf670b3"
+  },
+  {
+    "file": "templates/dash-kf.html",
+    "hash": "0c965d115343f39ea49bfa1e5d3ff61e"
+  },
+  {
+    "file": "templates/dash-location.html",
+    "hash": "a26bf727c691469f114f243e19bb49af"
+  },
+  {
+    "file": "templates/dash-Near.html",
+    "hash": "a6a43790df1eab66bf50ddad0765ab29"
+  },
+  {
+    "file": "templates/dash-NearBill_0.html",
+    "hash": "1796e2955c586431ef86b2c179276f81"
+  },
+  {
+    "file": "templates/dash-NearBill_1.html",
+    "hash": "4344bbd41ff78c029403bcae99785438"
+  },
+  {
+    "file": "templates/dash-NearDetail.html",
+    "hash": "0389b028ea5680cc252626df118cda30"
+  },
+  {
+    "file": "templates/dash-Reply.html",
+    "hash": "b68e76e599c574ed170e050d0582c2e3"
+  },
+  {
+    "file": "templates/dash-route.html",
+    "hash": "018980285233ae43928fc22ca8ba98b7"
+  },
+  {
+    "file": "templates/dash-sign.html",
+    "hash": "2e4a8e46e78e03ba8f3e2589c5924191"
+  },
+  {
+    "file": "templates/dash-weixiu1.html",
+    "hash": "459936188c66b571169eca3b18f6f211"
+  },
+  {
+    "file": "templates/dash-weixiu2.html",
+    "hash": "7c1bd354d4eef91b7500ef048dd09f6b"
+  },
+  {
+    "file": "templates/dash-yewu1.html",
+    "hash": "a8119893f015a0d9f8ac7a7786d81c8c"
+  },
+  {
+    "file": "templates/dash-yewu2.html",
+    "hash": "4d37e601866d35ecff32f5e9faf8c868"
+  },
+  {
+    "file": "templates/DQ.html",
+    "hash": "70323b17eeb9ca491c50028cb418ecee"
+  },
+  {
+    "file": "templates/enclosure.html",
+    "hash": "aad47db1ea10761cc8eb811ee1b6a5ab"
+  },
+  {
+    "file": "templates/fee-audit.html",
+    "hash": "227146cafa6fe42557d09821be5171f7"
+  },
+  {
+    "file": "templates/fee-detail.html",
+    "hash": "9754dcbfb4c5c0f3327d30fb14bd5e2d"
+  },
+  {
+    "file": "templates/fee-submit.html",
+    "hash": "b5c8b4fdc8c38b2c31dbe2ddb9179ad1"
+  },
+  {
+    "file": "templates/lcus-line.html",
+    "hash": "f078288d3d970920352c39444800e5cf"
+  },
+  {
+    "file": "templates/login.html",
+    "hash": "e22343d4756a71481ad995572e8ed48b"
+  },
+  {
+    "file": "templates/msg-detail-0.html",
+    "hash": "9eecf2dee8909beea2bc0b75f19f3bae"
+  },
+  {
+    "file": "templates/msg-detail.html",
+    "hash": "a340ea48eeb36425639617161407e8b1"
+  },
+  {
+    "file": "templates/poi-audit.html",
+    "hash": "8bd535b6c40558db0e4f385846c9555d"
+  },
+  {
+    "file": "templates/poiAudit-detail.html",
+    "hash": "1c21442206df6636832fd7fee3c3032c"
+  },
+  {
+    "file": "templates/radio.html",
+    "hash": "adbf112c40a18f8f8dfb5c09e0912d6b"
+  },
+  {
+    "file": "templates/slidetabs/insideTabA.html",
+    "hash": "1360b91cec4b2921f2dc5667f595cd40"
+  },
+  {
+    "file": "templates/slidetabs/insideTabB.html",
+    "hash": "7b8c97bbf0cc4c1386a949e83be282aa"
+  },
+  {
+    "file": "templates/slidetabs/insideTabC.html",
+    "hash": "f3e2543e9fc888ab03518e9b0c7bcfc7"
+  },
+  {
+    "file": "templates/sssss.html",
+    "hash": "6eb1f2dcdd77559c39725b9895ec68e1"
+  },
+  {
+    "file": "templates/submit-ok.html",
+    "hash": "4cf078b8a5405bc5f36c5a4db14e71a7"
+  },
+  {
+    "file": "templates/tab-account.html",
+    "hash": "0ccb22078a786450a935f5b1e199eadf"
+  },
+  {
+    "file": "templates/tab-chats.html",
+    "hash": "8392aa5fd4ab834f666a197993f02214"
+  },
+  {
+    "file": "templates/tab-dash.html",
+    "hash": "4d8248a76374de08f9062d1e03ec8848"
+  },
+  {
+    "file": "templates/tab-msg.html",
+    "hash": "59eaa730000a6e4e35f9ac6e89775c1f"
+  },
+  {
+    "file": "templates/tabs.html",
+    "hash": "83b0551c85796d6d2043ec648e0b5873"
+  },
+  {
+    "file": "templates/test-file.html",
+    "hash": "79941568505b277f01c3a948fd7b2380"
+  },
+  {
+    "file": "templates/test.html",
+    "hash": "46186575a072c8cbea3bcbd7de49a044"
+  },
+  {
+    "file": "templates/testmmmm.html",
+    "hash": "818ee7752b47345d8d36375361ddd446"
+  },
+  {
+    "file": "templates/wwww.html",
+    "hash": "63443ef4487f94828745c1e9d5b3e97e"
+  },
+  {
+    "file": "templates/wx-detail.html",
+    "hash": "f51ba7efedb97d25bd695d8c6efa7ea7"
+  }
+]

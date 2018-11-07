@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ion-view view-title="登录页面">
+
+  <div id="Layer1" style="position:absolute; width:100%; height:100%; z-index:-1">
+    <img src="./img/loginmain.png" height="100%" width="100%"/>
+  </div>
+  <ion-content class="padding">
+    <div style="width:100%;margin:0px auto;position:absolute;top:200px; z-index:2">
+      <p style="text-align:center;font-family:'黑体';width:100%;font-size: 40px;color:white;margin: 35px auto;">三奇ERP</p>
+      <input id="userId" type="text" placeholder="帐 号" style="line-height:normal;height:45px;;width: 100%; border-radius: 10px; margin: 30px auto;text-align:center; font-family:'黑体';font-size:20px;"/>
+      <input id="password" type="password" placeholder="密 码" style="line-height:normal;height:45px;width: 100%; border-radius: 10px; margin: 30px auto;text-align:center; font-family:'黑体';font-size:20px;"/>
+      <!--<button class="button button-block button-positive" style="height:50px;width: 100%;color:white;border-radius: 10px;border:none;margin:0px auto;font-family:'雅黑';font-size:25px;" id ="submit" ng-click="onClickLogin()">登录</button>-->
+      <input type="button" value="登 录" ng-click="onClickLogin()" style="height:50px;width: 100%;background:#06369c;color:white;border-radius: 10px;border:none;margin:0px auto;font-family:'雅黑';font-size:25px;"/>
+    </div>
+  </ion-content>
+</ion-view>
+</body>
+</html>
