@@ -1,0 +1,119 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-side-menus  >
+  <ion-side-menu-content ng-controller="ContentController" drag-content="false">
+    <!--//不允许侧滑出现菜单-->
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive">
+      <!-- Dashboard Tab -->
+      <ion-tab title="主页" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/dash">
+        <ion-nav-view name="tab-dash"></ion-nav-view>
+      </ion-tab>
+      <!--维修消息-->
+      <ion-tab title="维修消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats" ng-if="data.myWX" >
+        <ion-nav-view name="tab-chats"></ion-nav-view>
+      </ion-tab>
+      <!-- 业务消息-->
+      <ion-tab title="业务消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/msg" ng-if="data.myBF" >
+        <ion-nav-view name="tab-msg"></ion-nav-view>
+      </ion-tab>
+      <!--Account Tab-->
+      <ion-tab title="事务" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
+        <ion-nav-view name="tab-account"></ion-nav-view>
+      </ion-tab>
+    </ion-tabs>
+
+  </ion-side-menu-content>
+  <!--侧滑菜单-->
+  <ion-side-menu side="left">
+    <header class="bar bar-header bar-stable">
+      <h1 class="title" id="username">{{data.nowUser}}</h1>
+    </header>
+    <ion-content class="has-header">
+      <div class="list" style="width:100%;height:100%;">
+        <!--<a class="item" href="#/dash/weixiu1" has-permission="后台" hidden>-->
+          <!--维修申请-->
+          <!--<i class="ion-chevron-right" style="float:right;"></i>-->
+        <!--</a>-->
+
+        <!--<a class="item" href="#/dash/weixiu2">-->
+         <!--维修总结-->
+        <!--<i class="ion-chevron-right" style="float:right;"></i>-->
+        <!--</a>-->
+
+        <a class="item" href="#/dash/yewu1">
+          客户拜访
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+        <a class="item" href="#/dash/yewu2">
+          拜访历史
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+
+        <a class="item" href="#/dash/NearBill_1">
+          我的事项
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+        <a class="item" href="#/dash/NearBill_0">
+          附近事项
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+        <!--<a class="item" href="#/dash/Near">-->
+          <!--待办事项-->
+          <!--<i class="ion-chevron-right" style="float:right;"></i>-->
+        <!--</a>-->
+        <a class="item" href="#/dash/sign">
+          我的签到
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+
+        <a class="item" href="#/dash/feeaudit" has-permission="AD0001" hidden>
+          审核报备
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+
+        <a class="item" href="#/dash/Route" has-permission="AD0002" hidden>
+          考勤轨迹
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+        <a class="item" href="#/dash/PoiAudit" has-permission="AD0003" hidden>
+          审核定位
+          <i class="ion-chevron-right" style="float:right;"></i>
+        </a>
+      </div>
+      <div style="position:absolute; bottom:0;right:10px;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="Sign_P('in')">
+         <i class="icon ion-log-in"></i>签到
+      </div>
+      <!--<div style="position:absolute; bottom:0;right:0px;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="Sign_P('out')">-->
+         <!--<i class="icon ion-log-out"></i>签退-->
+      <!--</div>-->
+    <!--<ion-list>-->
+      <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/dash/weixiu2">-->
+        <!--维修总结-->
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+      <!--</ion-item>-->
+      <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/dash/yewu1">-->
+        <!--客户拜访-->
+      <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+      <!--</ion-item>-->
+      <!--<ion-item class="item-remove-animate item-avatar item-icon-right" type="item-text-wrap" href="#/dash/yewu2">-->
+        <!--拜访历史-->
+        <!--<i class="icon ion-chevron-right icon-accessory"></i>-->
+      <!--</ion-item>-->
+   <!--</ion-list>-->
+    </ion-content>
+    <ion-footer-bar align-title="left">
+        <div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">
+          <i class="icon ion-power"></i>注销
+        </div>
+        <!--<div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">-->
+          <!--<i class="icon ion-log-in"></i>签到-->
+        <!--</div>-->
+        <!--<div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">-->
+          <!--<i class="icon ion-log-out"></i>签退-->
+        <!--</div>-->
+    </ion-footer-bar>
+  </ion-side-menu>
+</ion-side-menus>

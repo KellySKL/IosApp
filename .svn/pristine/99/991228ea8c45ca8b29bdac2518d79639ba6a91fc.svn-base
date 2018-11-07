@@ -1,0 +1,26 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">待办事项</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <div class="list" style="width:100%;height:100%;" >
+      <a class="item" href="#/dash/NearBill_0">
+        我的事项
+        <i class="ion-chevron-right" style="float:right;"></i>
+      </a>
+      <a class="item" href="#/dash/NearBill_0">
+        附近事项
+        <i class="ion-chevron-right" style="float:right;"></i>
+      </a>
+
+      <!--<a class="item" href="#/dash/NearBill_1">-->
+        <!--我处理的-->
+        <!--<i class="ion-chevron-right" style="float:right;"></i>-->
+      <!--</a>-->
+    </div>
+  </ion-content>
+</ion-view>
+

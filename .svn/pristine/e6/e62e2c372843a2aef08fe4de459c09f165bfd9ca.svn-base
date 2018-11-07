@@ -1,0 +1,115 @@
+
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">客户拜访单</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <div class="list" id="box" style="width: 98%; height: auto">
+      <div class="item item-divider">
+        本次回访事项
+      </div>
+      <div class="item item-input">
+        拜访时间： <input type="text" ng-model="$parent.visitTime" readonly="readonly">
+      </div>
+      <div class="item item-input item-select">
+        <div class="input-label">
+          拜访方式：
+        </div>
+        <select ng-model="$parent.visitMethod">
+          <!--<option>电话拜访</option>-->
+          <option selected="selected">上门拜访</option>
+        </select>
+      </div>
+      <div class="item item-input item-select">
+        <div class="input-label">
+          拜访类型：
+        </div>
+        <select ng-model="$parent.visitType">
+          <option>售后回访</option>
+          <option selected="selected">正常回访</option>
+        </select>
+      </div>
+      <div class="item item-input">
+      客户名称： <input type="text" id="kfname" ng-model="$parent.searchName" ng-change="searchCN()">
+     </div>
+      <div style="border:1px solid #317ff2;overflow-y:auto;width:100%;max-height:180px;margin:0px auto;overflow-x:hidden;position:absolute;z-index:9999;" id="listkf">
+        <ion-list>
+          <ion-item class="item-small" ng-repeat="item in data" rel="external nofollow" ng-click="it_click(item)">
+            <h2>{{item.NAME}}</h2>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="item item-divider">
+        <i class="icon ion-plus" style="float: right;font-size: 26px;margin: auto 5px ;" ng-click="choose()"></i>
+        选择联系人
+      </div>
+      <div class="item item-input">
+        对方姓名： <input type="text" ng-model="$parent.hisName" readonly="readonly">
+      </div>
+      <div class="item item-input">
+        对方职位： <input type="text" ng-model="$parent.hisPosition" readonly="readonly">
+      </div>
+      <div class="item item-input">
+        对方手机： <input type="text" ng-model="$parent.hisPhone" readonly="readonly">
+      </div>
+      <div class="item item-input">
+        拜访内容： <textarea style="height: 150px" ng-model="$parent.content"></textarea>
+      </div>
+      <div class="item item-input item-select">
+        <div class="input-label">
+          是否有其他需求：
+        </div>
+        <select ng-model="$parent.IfWX">
+          <option>无需求</option>
+          <option>有售后需求</option>
+          <option>有业务需求</option>
+        </select>
+      </div>
+      <div class="item item-input">
+        问题描述： <textarea id="salecontent" style="height: 100px" placeholder="无需求可不填写"></textarea>
+      </div>
+      <div id="db"  style="margin-bottom: 5px;">
+        <div class="item item-divider">
+          待办事项
+        </div>
+        <div class="list">
+          <div class="item" ng-repeat="item in db_list" style="min-height:60px;border:1px solid #9faaac;padding:0px;" >
+            <div class="item-input item-text-wrap">
+                {{item.mtitle}}
+            </div>
+            <div class="item item-input">
+              回复： <textarea style="height: 100px" placeholder="必填" id="{{item.id}}"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item item-divider">
+        下次回访事项
+      </div>
+      <div class="item item-input">
+        <!--style="background-color:cadetblue"-->
+        下次拜访时间：<div ng-bind="validedTime | date:'yyyy-MM-dd'" ng-click="openDatePicker()" style="width: 100%"></div>
+        <!--下次拜访时间： <input type="text" ng-model="$parent.next_visitTime">-->
+      </div>
+      <div class="item item-input item-select">
+        <div class="input-label">
+          下次拜访方式：
+        </div>
+        <select ng-model="$parent.next_visitMethod">
+          <option>电话拜访</option>
+          <option selected="selected">上门拜访</option>
+        </select>
+      </div>
+      <div class="item item-input">
+        下次注意事项： <textarea style="height: 150px" ng-model="$parent.next_notice"></textarea>
+      </div>
+  </div>
+    <div class="padding">
+      <button class="button button-block button-positive" id ="submit" ng-click="submit()">提交</button>
+    </div>
+  </ion-content>
+</ion-view>
+

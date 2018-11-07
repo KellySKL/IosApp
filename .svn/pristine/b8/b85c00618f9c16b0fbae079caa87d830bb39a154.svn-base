@@ -1,0 +1,98 @@
+<style type="text/css">
+  body{
+    margin:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+  #container{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+  }
+  #tip{
+    min-height:65px;
+    background-color:transparent;
+    padding-left:10px;
+    padding-right:10px;
+    position:absolute;
+    font-size:12px;
+    right:5px;
+    bottom:5px;
+    border-radius:5px;
+    line-height:18px;
+    /*border:1px solid #ccc;*/
+    margin-bottom: auto;
+  }
+  #tip input[type='button']{
+    margin-left: 10px;
+    margin-right:10px;
+    margin-top:10px;
+    background-color: #0D9BF2;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    color:#fff;
+    font-size:12px;
+    border-radius:3px;
+    outline: none;
+    border:0;
+    float:right;
+  }
+</style>
+<ion-header-bar class="bar-positive" align-title="center">
+  <button menu-toggle="left" class="button button-icon icon ion-navicon" style="width: auto"></button>
+  <h1 class="title">主页</h1>
+</ion-header-bar>
+<ion-view view-title="主页" cache-view="false">
+  <!--<ion-nav-bar class="bar-positive" title="主页">-->
+    <!--<ion-nav-buttons side="left">-->
+      <!--<button menu-toggle="left" class="button button-icon icon ion-navicon" style="width: auto"></button>-->
+    <!--</ion-nav-buttons>-->
+  <!--</ion-nav-bar>-->
+  <ion-content>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon  ion-ios-search-strong placeholder-icon"></i>
+        <input id="gothereN" type="search" placeholder="搜索" ng-model="$parent.searchName" ng-change="searchCN()">
+      </label>
+      <i class="icon ion-arrow-up-a" style="font-size: 20px;padding-left: 8px" ng-click="GoThere(searchName)"></i>
+
+    </div>
+    <div style="border:1px solid #317ff2;overflow-y:auto;width:100%;max-height:180px;margin:0px auto;overflow-x:hidden;position:absolute;z-index:9999;" id="kflist">
+      <ion-list>
+        <ion-item class="item-small" ng-repeat="item in dataKF" rel="external nofollow" ng-click="it_click(item)">
+          <h2>{{item.NAME}}</h2>
+        </ion-item>
+      </ion-list>
+    </div>
+
+    <div class="AMapArea" id="amap">
+      <!--// hidden="true"-->
+      <div id="{{AMapId}}"></div>
+      <!--{{initAMap()}}-->
+    </div>
+    <div id="tip">
+      <div has-permission="FJ0001" hidden>
+        <a class="button"  style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="getMap('in')">公司客户</a>
+      </div>
+      <div>
+        <a class="button"  style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="scheduleSingleNotification()">测试通知</a>
+      </div>
+      <div has-permission="FJ0002" hidden>
+        <a class="button"  style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="getMap('out')">潜在客户</a>
+      </div>
+      <div has-permission="FJ0003" hidden>
+        <a class="button"  style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="getMap('all')">所有客户</a>
+      </div>
+      <div has-permission="FJ0004" hidden>
+        <a class="button" style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" href="#/tab/dash/kf">新建客户</a>
+      </div>
+      <div>
+        <a class="button" style="border: 1px solid #ccc;border-radius: 8px;margin-bottom: 5px" ng-click="KFLocation()">客户定位</a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

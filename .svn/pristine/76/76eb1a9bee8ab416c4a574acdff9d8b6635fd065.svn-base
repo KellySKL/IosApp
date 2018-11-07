@@ -1,0 +1,32 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">维修</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+      <div class="list">
+        <label class="item item-input">
+          日期 <input type="text" placeholder="First Name">
+        </label>
+        <label class="item item-input">
+          First <input type="text" placeholder="Last Name">
+        </label>
+        <label class="item item-input">
+          First <textarea placeholder="Comments" ></textarea>
+        </label>
+      </div>
+      <div class="padding">
+        <button class="button button-block button-positive">Submit</button>
+      </div>
+    <!--<div id="ts_css">-->
+      <!--<form>-->
+        <!--First Name:<input type="text" name="name" style="height: 30px;width: 60%;	border:1px solid;border-color:#58ACFA;">-->
+        <!--&lt;!&ndash;First Name:<input type="text" name="name" style="height: 30px;width: 60%;border:2px solid;border-color:#317ff2;border-radius: 5px;">&ndash;&gt;-->
+
+      <!--</form>-->
+    <!--</div>-->
+  </ion-content>
+</ion-view>
+

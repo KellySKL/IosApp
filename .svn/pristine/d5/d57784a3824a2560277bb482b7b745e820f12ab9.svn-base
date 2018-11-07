@@ -1,0 +1,52 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">拜访历史</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content ng-controller="YW_2_Ctrl">
+    <!--<div style="width:100%;height: 100%;margin:0px auto;">-->
+      <ion-refresher
+        pulling-text="下拉刷新..."
+        pulling-icon='ion-arrow-down-c'
+        on-refresh="doRefresh()">
+      </ion-refresher>
+      <ion-list>
+        <ion-item ng-repeat="item in data" type="item-text-wrap" style="margin:8px;border:1px solid #317ff2;border-radius: 10px;">
+          <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+            <div style="height: 30px;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+              <div style="float: left;height:100%;width:auto;text-align:center">
+                {{item.client}}
+              </div>
+              <div style="float: right;height:100%;width:auto;text-align:center">
+                <p style="color: #8e979a">{{item.date}}</p>
+              </div>
+            </div>
+            <div style="min-height: 25px;width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#8e979a;word-wrap: break-word;">
+             <p style="word-wrap: break-word;">{{item.content}}</p>
+            </div>
+          <!--</div>-->
+          <ion-option-button class="button-assertive" style="background-color: transparent;color: #a4afb2" ng-click="edit(item)">
+            <div style="height: auto;width:auto;font-size: 16px">
+              <i class="icon ion-edit" ng-click="edit(item)"></i>
+            </div>
+          </ion-option-button>
+        </ion-item>
+
+
+      </ion-list>
+      <center>
+        <p style="color:#8e979a;" ng-if="moreDataCanBeLoaded()"> 上拉加载更多...</p>
+      </center>
+      <ion-infinite-scroll
+        icon="ion-loading-c"
+        ng-if="moreDataCanBeLoaded()"
+        on-infinite="loadMore()"
+        distance="10%"
+        loadingSpinner="bubbles"
+        loadingText="加载更多...">
+      </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+

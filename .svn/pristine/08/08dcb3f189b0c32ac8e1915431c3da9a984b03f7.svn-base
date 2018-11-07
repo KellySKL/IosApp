@@ -1,0 +1,57 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">维修总结</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input">
+        维修单号： <input type="text" ng-model="item.CODE" readonly="readonly">
+      </label>
+      <label class="item item-input">
+        客户名称： <input type="text" ng-model="item.CLIENT" readonly="readonly">
+      </label>
+      <label class="item item-input">
+        机床编号： <input type="text" ng-model="item.ZF1" readonly="readonly">
+      </label>
+      <label class="item item-input">
+        维修类别： <input type="text" ng-model="item.BILLTYPE" readonly="readonly">
+      </label>
+      <label class="item item-input">
+        客户描述： <textarea style="height:50px" ng-model="item.NOTEPRE" readonly="readonly"></textarea>
+      </label>
+      <label class="item item-input">
+        原因分析： <textarea style="height:50px" ng-model="item.ZF3" readonly="readonly"></textarea>
+      </label>
+      <label class="item item-input">
+        维修员： <input type="text" readonly="readonly" ng-model="$parent.userName">
+      </label>
+      <label class="item item-input">
+        维修总结： <textarea style="height: 150px" ng-model="$parent.result"></textarea>
+      </label>
+      <div class="item item-divider" ng-click="Enclosure()" >
+      <i class="icon ion-paperclip" style="float: right;font-size: 26px;margin: auto 5px ;"></i>
+      上传照片
+      </div>
+      <!--<label class="item item-input">-->
+        <!--备注：<textarea style="height: 150px" id="remark"></textarea>-->
+      <!--</label>-->
+      <!--<div class="item item-input item-select" >-->
+        <!--<div class="input-label">-->
+          <!--是否需要协助：-->
+        <!--</div>-->
+        <!--<select ng-model="$parent.ifneed">-->
+          <!--<option>是</option>-->
+          <!--<option>否</option>-->
+        <!--</select>-->
+      <!--</div>-->
+
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="submit()">提交</button>
+    </div>
+  </ion-content>
+</ion-view>
+

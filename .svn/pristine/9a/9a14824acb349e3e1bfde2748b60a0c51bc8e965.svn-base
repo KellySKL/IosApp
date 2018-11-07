@@ -1,0 +1,50 @@
+<ion-view view-title="新建客户">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input">
+        客户名称： <input type="text" ng-model="$parent.kf_name">
+      </label>
+      <div class="item item-input item-select">
+        <div class="input-label">
+          回访等级：
+        </div>
+        <select ng-model="$parent.kf_lev">
+          <option>1级  150天</option>
+          <option>2级  100天</option>
+          <option>3级  60天</option>
+          <option>4级  30天</option>
+          <option>5级  7天</option>
+        </select>
+      </div>
+      <div class="item item-input item-select">
+        <div class="input-label">
+          客户类型：
+        </div>
+        <select ng-model="$parent.kf_type">
+          <!--<option>潜在客户</option>-->
+          <option selected="selected">新建客户</option>
+        </select>
+      </div>
+      <!--<label class="item item-input">-->
+        <!--维修时间： <input type="text">-->
+      <!--</label>-->
+      <!--<label class="item item-input">-->
+        <!--维修总结： <textarea style="height: 150px"></textarea>-->
+      <!--</label>-->
+    </div>
+    <div class="padding">
+      为了方便下次拜访，请确认您所在位置是该客户的公司地址后，再按提交！
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="setKFLocation()">提交</button>
+    </div>
+    <!--<p>-->
+      <!--<a class="button icon ion-home" href="#/tab/dash"> Home</a>-->
+      <!--&lt;!&ndash;<a class="button icon icon-right ion-chevron-right" href="#/tab/facts2">More Facts</a>&ndash;&gt;-->
+    <!--</p>-->
+  </ion-content>
+</ion-view>
