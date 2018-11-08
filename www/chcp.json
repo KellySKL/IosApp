@@ -3,6 +3,6 @@
   "ios_identifier": "",
   "android_identifier": "",
   "update": "now",
-  "content_url": "http://192.168.1.123:8018/svn/AppSQ/www",
-  "release": "2018.11.06-22.20.26"
+  "content_url": "http://192.168.1.123:8018/svn/ios/www",
+  "release": "2018.11.07-16.58.00"
 }
