@@ -29,11 +29,11 @@
   },
   {
     "file": "img/marker_blue.png",
-    "hash": "abe786f06f8ddd7b8a45ce29bb8571cd"
+    "hash": "d7dd84ca1c2cfb8a160cf16995895144"
   },
   {
     "file": "img/marker_red.png",
-    "hash": "afa1e493ca2fac3d6ada6f221ada1364"
+    "hash": "53c867b786106fc9ed50dd5b3ecb4e30"
   },
   {
     "file": "img/max.png",
@@ -65,7 +65,7 @@
   },
   {
     "file": "js/app.js",
-    "hash": "872a0e1fbf2961dcc78147447514dc12"
+    "hash": "205d2599f2ee1106c36861bdc17ca36c"
   },
   {
     "file": "js/AuditBills.js",
@@ -86,10 +86,6 @@
   {
     "file": "js/controllers.js",
     "hash": "2fb2899ca5ad6fe30839bd4b330761f0"
-  },
-  {
-    "file": "js/controllers.rar",
-    "hash": "1ed65da435864d6b026c18775e6f0bdd"
   },
   {
     "file": "js/coordtransform.js",
@@ -168,10 +164,6 @@
     "hash": "45b6158ddac11a33f9524f0692e9b466"
   },
   {
-    "file": "lib/angular-animate/.bower.json",
-    "hash": "90e49756595a323d1459ba9e726f10d2"
-  },
-  {
     "file": "lib/angular-animate/angular-animate.js",
     "hash": "b1a0315d4738ba305aca3b00146e232c"
   },
@@ -196,10 +188,6 @@
     "hash": "106f5afef87648c0e9218354fe62b01d"
   },
   {
-    "file": "lib/angular-sanitize/.bower.json",
-    "hash": "93a37270dacf5c1d65542f8102a6e716"
-  },
-  {
     "file": "lib/angular-sanitize/angular-sanitize.js",
     "hash": "7b57f04a2b23847203394400eeb2c97d"
   },
@@ -222,10 +210,6 @@
   {
     "file": "lib/angular-sanitize/README.md",
     "hash": "25dd9babfe0759995e6cc64e4b7c6195"
-  },
-  {
-    "file": "lib/angular-ui-router/.bower.json",
-    "hash": "1944660830eb287a439e9b64493680b8"
   },
   {
     "file": "lib/angular-ui-router/api/angular-ui-router.d.ts",
@@ -304,10 +288,6 @@
     "hash": "db1aa02d40f4e08e90d1fe79e69ade19"
   },
   {
-    "file": "lib/angular/.bower.json",
-    "hash": "a451d32f4ea771c66ff374cbeba48ff3"
-  },
-  {
     "file": "lib/angular/angular-csp.css",
     "hash": "5d7bf1728c2447221cad6c6263557306"
   },
@@ -338,10 +318,6 @@
   {
     "file": "lib/angular/README.md",
     "hash": "0d57148eaf38d58d1519a0e71c3f9a16"
-  },
-  {
-    "file": "lib/ionic-datepicker/.bower.json",
-    "hash": "18ff096ebf1ae4977c2db657f88a9692"
   },
   {
     "file": "lib/ionic-datepicker/bower.json",
@@ -386,10 +362,6 @@
   {
     "file": "lib/ionic-datepicker/src/ionic-datepicker.styles.css",
     "hash": "9bc8cb4f28747413c13f8964d34130d4"
-  },
-  {
-    "file": "lib/ionic/.bower.json",
-    "hash": "d37d9887674caec4ad8be3b4b6c37dc8"
   },
   {
     "file": "lib/ionic/bower.json",
@@ -773,7 +745,7 @@
   },
   {
     "file": "templates/tabs.html",
-    "hash": "83b0551c85796d6d2043ec648e0b5873"
+    "hash": "3a9af147dbcc1639f77557b0e698a6f3"
   },
   {
     "file": "templates/test-file.html",

@@ -429,18 +429,24 @@ angular.module('starter', ['ionic',
         $http.post(userService(0).address+"MessageService.asmx/MsgGet", p).success(function (response, status, headers, config) {
           if (response.d != null) {
             cordova.plugins.notification.local.schedule({
-              id: 1,
+              id:1,
               title: '应用提醒',
               text: response.d,
-              at: new Date(),
-              badge: 1,//默认值为0  不显示
-              autoClear: true,//默认值是false
-              data: {url: ''}
-              // sound:,
-              // every:,
-              // data:,
-              // first,
+              foreground: true
             });
+//            cordova.plugins.notification.local.schedule({
+//              id: 1,
+//              title: '应用提醒',
+//              text: response.d,
+//              at: new Date(),
+//              badge: 1,//默认值为0  不显示
+//              autoClear: true,//默认值是false
+//              data: {url: ''}
+//              // sound:,
+//              // every:,
+//              // data:,
+//              // first,
+//            });
             //shedule事件在每次调用时触发
             cordova.plugins.notification.local.on('schedule', function (notification) {
               // alert('scheduled:' + notification.id);
@@ -463,19 +469,25 @@ angular.module('starter', ['ionic',
       if($rootScope.dept=='维修员'||$rootScope.dept=='服务部经理') {
         $http.post(userService(0).address+"MessageService.asmx/WxGet", p).success(function (response, status, headers, config) {
           if (response.d != null) {
-            cordova.plugins.notification.local.schedule({
-              id: 2,
-              title: '应用提醒',
-              text: response.d,
-              at: new Date(),
-              badge: 1,//默认值为0  不显示
-              autoClear: true,//默认值是false
-              data: {url: ''}
-              // sound:,
-              // every:,
-              // data:,
-              // first,
-            });
+             cordova.plugins.notification.local.schedule({
+                  id:2,
+                  title: '应用提醒',
+                  text: response.d,
+                  foreground: true
+             });
+//            cordova.plugins.notification.local.schedule({
+//              id: 2,
+//              title: '应用提醒',
+//              text: response.d,
+//              at: new Date(),
+//              badge: 1,//默认值为0  不显示
+//              autoClear: true,//默认值是false
+//              data: {url: ''}
+//              // sound:,
+//              // every:,
+//              // data:,
+//              // first,
+//            });
             //shedule事件在每次调用时触发
             cordova.plugins.notification.local.on('schedule', function (notification) {
               // alert('scheduled:' + notification.id);

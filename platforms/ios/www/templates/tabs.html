@@ -83,9 +83,6 @@ navigation history that also transitions its views in and out.
           <i class="ion-chevron-right" style="float:right;"></i>
         </a>
       </div>
-      <div style="position:absolute; bottom:0;right:10px;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="Sign_P('in')">
-         <i class="icon ion-log-in"></i>签到
-      </div>
       <!--<div style="position:absolute; bottom:0;right:0px;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="Sign_P('out')">-->
          <!--<i class="icon ion-log-out"></i>签退-->
       <!--</div>-->
@@ -105,9 +102,17 @@ navigation history that also transitions its views in and out.
    <!--</ion-list>-->
     </ion-content>
     <ion-footer-bar align-title="left">
-        <div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">
-          <i class="icon ion-power"></i>注销
+        <div class="buttons">
+            <button class="button" ng-click="log_out()">注销</button>
         </div>
+        <h1 class="title"></h1>
+        <div class="buttons" ng-click="Sign_P('in')">
+            <button class="button" >签到</button>
+        </div>
+        
+<!--        <div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">-->
+<!--          <i class="icon ion-power"></i>注销-->
+<!--        </div>-->
         <!--<div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">-->
           <!--<i class="icon ion-log-in"></i>签到-->
         <!--</div>-->

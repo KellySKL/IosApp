@@ -1038,13 +1038,19 @@ angular.module('starter.controllers', [])
     }
 
     $scope.scheduleSingleNotification = function () {
-      cordova.plugins.notification.local.schedule({
-        id: 1,
-        title: '应用提醒',
-        text : '应用有新消息,快来查看吧',
-        at: new Date(),
-        // every: 'minute'
-      });
+              cordova.plugins.notification.local.schedule({
+                                                          id:1,
+                                                          title: 'My first notification',
+                                                          text: 'Thats pretty easy...',
+                                                          foreground: true
+                                                          });
+//      cordova.plugins.notification.local.schedule({
+//        id: 1,
+//        title: '应用提醒',
+//        text : '应用有新消息,快来查看吧',
+//        at: new Date(),
+//        // every: 'minute'
+//      });
     };
 
     //==============================客户搜索 start=======================================
