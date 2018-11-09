@@ -1,0 +1,147 @@
+<ion-view view-title=="{{TYPE}}">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <!--<ion-nav-bar class="bar-positive">-->
+  <!--<ion-nav-back-button>-->
+  <!--</ion-nav-back-button>-->
+  <!--</ion-nav-bar>-->
+  <ion-content ng-controller="I_WX_List_Ctrl">
+    <!--未处理-->
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-repeat="item in dataA" type="item-text-wrap" style="margin:7px;border:1px solid #317ff2;border-radius: 10px;" on-hold="onHold(item)"  >
+        <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+        <div style="float:left;width: 90%">
+          <div style="margin-bottom:8px;height:auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+            单号：{{item.CODE}}
+          </div>
+          <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+            <div style="float: left;height:100%;width:auto;text-align:center">
+              {{item.CLIENT}}
+            </div>
+            <div style="float: right;height:100%;width:auto;text-align:center">
+              <p style="color: #8e979a">{{item.BILLTYPE}}</p>
+            </div>
+          </div>
+          <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                       font-size: 14px;color:#8e979a;word-wrap: break-word;
+                       overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+            机床码：{{item.ZF1}}
+          </div>
+        </div>
+        <div style="font-size:20px;float:right;width:10%;height:100%; line-height:80px;">
+          <i class="icon ion-android-checkbox-outline" style="float:right;color: #262626;" ng-click="acceptWX(item)"></i>
+        </div>
+      </ion-item>
+    </ion-list>
+    <center>
+      <p style="color:#8e979a;" ng-if="moreDataCanBeLoadedA()"> 上拉加载更多...</p>
+    </center>
+    <ion-infinite-scroll
+      icon="ion-loading-c"
+      ng-if="moreDataCanBeLoadedA()"
+      on-infinite="loadMoreA()"
+      distance="10%"
+      loadingSpinner="bubbles"
+      loadingText="加载更多...">
+    </ion-infinite-scroll>
+
+    <!--处理中-->
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <ion-item ng-click="GetDel(item,1)" ng-repeat="item in dataB" type="item-text-wrap" style="margin:7px;border:1px solid #317ff2;border-radius: 10px;">
+        <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+        <div style="float:left;width: 90%">
+          <div style="margin-bottom:8px;height:auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+            单号：{{item.CODE}}
+          </div>
+          <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+            <div style="float: left;height:100%;width:auto;text-align:center">
+              {{item.CLIENT}}
+            </div>
+            <div style="float: right;height:100%;width:auto;text-align:center">
+              <p style="color: #8e979a">{{item.BILLTYPE}}</p>
+            </div>
+          </div>
+          <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                   font-size: 14px;color:#8e979a;word-wrap: break-word;
+                   overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+            机床码：{{item.ZF1}}
+          </div>
+        </div>
+        <div style="font-size:20px;float:right;width:10%;height:100%; line-height:80px;">
+          <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;" ></a>
+        </div>
+      </ion-item>
+    </ion-list>
+    <center>
+      <p style="color:#8e979a;" ng-if="moreDataCanBeLoadedB()"> 上拉加载更多...</p>
+    </center>
+    <ion-infinite-scroll
+      icon="ion-loading-c"
+      ng-if="moreDataCanBeLoadedB()"
+      on-infinite="loadMoreB()"
+      distance="10%"
+      loadingSpinner="bubbles"
+      loadingText="加载更多...">
+    </ion-infinite-scroll>
+
+    <!--处理完成-->
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <ion-list>
+      <!--ng-click="goto(item,'A')"-->
+      <ion-item  ng-click="GetDel(item,2)" ng-repeat="item in dataC" type="item-text-wrap" style="margin:7px;border:1px solid #317ff2;border-radius: 10px;"  >
+        <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+        <div style="float:left;width: 90%">
+          <div style="margin-bottom:8px;height:auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+            单号：{{item.CODE}}
+          </div>
+          <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+            <div style="float: left;height:100%;width:auto;text-align:center">
+              {{item.CLIENT}}
+            </div>
+            <div style="float: right;height:100%;width:auto;text-align:center">
+              <p style="color: #8e979a">{{item.BILLTYPE}}</p>
+            </div>
+          </div>
+          <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                   font-size: 14px;color:#8e979a;word-wrap: break-word;
+                   overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+            机床码：{{item.ZF1}}
+          </div>
+        </div>
+
+        <div style="font-size:20px;float:right;width:10%;height:100%; line-height:80px;">
+          <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;" ></a>
+        </div>
+
+      </ion-item>
+    </ion-list>
+    <center>
+      <p style="color:#8e979a;" ng-if="moreDataCanBeLoadedC()"> 上拉加载更多...</p>
+    </center>
+    <ion-infinite-scroll
+      icon="ion-loading-c"
+      ng-if="moreDataCanBeLoadedC()"
+      on-infinite="loadMoreC()"
+      distance="10%"
+      loadingSpinner="bubbles"
+      loadingText="加载更多...">
+    </ion-infinite-scroll>
+
+  </ion-content>
+</ion-view>
