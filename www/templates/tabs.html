@@ -12,7 +12,7 @@ navigation history that also transitions its views in and out.
         <ion-nav-view name="tab-dash"></ion-nav-view>
       </ion-tab>
       <!--维修消息-->
-      <ion-tab title="维修消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/chats" ng-if="data.myWX" >
+      <ion-tab title="维修消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/IWxMsg" ng-if="data.myWX" >
         <ion-nav-view name="tab-chats"></ion-nav-view>
       </ion-tab>
       <!-- 业务消息-->
@@ -109,7 +109,7 @@ navigation history that also transitions its views in and out.
         <div class="buttons" ng-click="Sign_P('in')">
             <button class="button" >签到</button>
         </div>
-        
+
 <!--        <div style="position:absolute; bottom:0;height: auto;width:auto;margin: 15px 10px;font-size: 20px" ng-click="log_out()">-->
 <!--          <i class="icon ion-power"></i>注销-->
 <!--        </div>-->
