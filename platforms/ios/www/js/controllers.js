@@ -3293,9 +3293,341 @@ angular.module('starter.controllers', [])
     }
   })
 
-.controller('ChatDetailCtrl', function($rootScope,$scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
+  .controller('ChatDetailCtrl', function($rootScope,$scope, $stateParams, Chats) {
+    $scope.chat = Chats.get($stateParams.chatId);
+  })
+  //维修消息 for ios
+  .controller('I_WX_Ctrl', function(wxBills,$ionicListDelegate,$ionicLoading,$timeout,$rootScope,$ionicPopup,$ionicSlideBoxDelegate,$state,userService,$stateParams,$http,$scope) {
+    $scope.names = ["未处理", "处理中", "处理完成"];
+    $scope.flag;
+    $scope.Change=function(type){
+      if(type=="未处理")
+      {
+        $scope.flag='A';
+        $scope.dataA = [];
+        wxBills.paramA.hasmore=true;
+        wxBills.paramB.hasmore=false;
+        wxBills.paramC.hasmore=false;
+      }else if(type=="处理中")
+      {
+        $scope.flag='B';
+        $scope.dataB = [];
+        wxBills.paramB.hasmore=true;
+        wxBills.paramA.hasmore=false;
+        wxBills.paramC.hasmore=false;
+      }
+      else
+      {
+        $scope.flag='C';
+        $scope.dataC = [];
+        wxBills.paramC.hasmore=true;
+        wxBills.paramB.hasmore=false;
+        wxBills.paramA.hasmore=false;
+      }
+      $scope.doRefresh();
+    };
+    //上拉刷新
+    $ionicLoading.show({
+      template: '正在加载数据...',duration: 30000
+    });
+    $scope.flag='A';
+    $scope.dataA = [];
+    wxBills.paramA.hasmore=true;
+
+    $scope.doRefresh = function() {
+      wxBills.paramA.curPage=0;
+      wxBills.paramB.curPage=0;
+      wxBills.paramC.curPage=0;
+      $scope.dataA = [];
+      $scope.dataB = [];
+      $scope.dataC = [];//每次重新清空
+      if($scope.flag=='A') {
+        wxBills.getState0(0).then(function (response) {
+          $scope.dataA = response.d;
+          wxBills.paramA.hasmore = response.d.length == wxBills.paramA.pageSize;
+          wxBills.paramA.curPage++;
+        }).finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });;
+      }
+      if($scope.flag=='B') {
+        wxBills.getState0(1).then(function (response) {
+          $scope.dataB = response.d;
+          wxBills.paramB.hasmore = response.d.length == wxBills.paramB.pageSize;
+          wxBills.paramB.curPage++;
+        }).finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });;
+      }
+      if($scope.flag=='C') {
+        wxBills.getState0(2).then(function (response) {
+          $scope.dataC = response.d;
+          wxBills.paramC.hasmore = response.d.length == wxBills.paramC.pageSize;
+          wxBills.paramC.curPage++;
+        }).finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });;
+      }
+    };
+    //更多
+    $scope.loadMoreA = function() {
+      //这里使用定时器是为了缓存一下加载过程，防止加载过快
+      $timeout(function() {
+        if(!wxBills.paramA.hasmore){
+          var timer= $timeout(function () {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, 1000);
+          $timeout.cancel(timer);
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //$scope.$broadcast('scroll.infiniteScrollComplete');
+          return;
+        }
+        // alert('前a'+angular.toJson(wxBills.paramA));
+        wxBills.getState0(0).then(function(response){
+          wxBills.paramA.hasmore = response.d.length==wxBills.paramA.pageSize;
+          for(var i=0;i<response.d.length;i++){
+            $scope.dataA.push(response.d[i]);
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          wxBills.paramA.curPage++;
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          // alert('后a'+angular.toJson(wxBills.paramA));
+        });
+      },2000);
+    };
+
+    $scope.moreDataCanBeLoadedA = function(){
+      if($scope.flag=='A') {
+        return wxBills.paramA.hasmore;
+      }else
+      {
+        return false;
+      }
+    }
+    //更多
+    $scope.loadMoreB = function() {
+      //这里使用定时器是为了缓存一下加载过程，防止加载过快
+      $timeout(function() {
+        if(!wxBills.paramB.hasmore){
+          var timer= $timeout(function () {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, 1000);
+          $timeout.cancel(timer);
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //$scope.$broadcast('scroll.infiniteScrollComplete');
+          return;
+        }
+        //alert('前b'+angular.toJson(wxBills.paramB));
+        wxBills.getState0(1).then(function(response){
+          wxBills.paramB.hasmore = response.d.length==wxBills.paramB.pageSize;
+          for(var i=0;i<response.d.length;i++){
+            $scope.dataB.push(response.d[i]);
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          wxBills.paramB.curPage++;
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //alert('后b'+angular.toJson(wxBills.paramB));
+        });
+      },2000);
+    };
+
+    $scope.moreDataCanBeLoadedB = function(){
+      if($scope.flag=='B') {
+        return wxBills.paramB.hasmore;
+      }else
+      {
+        return false;
+      }
+    }
+
+    //更多
+    $scope.loadMoreC = function() {
+      //这里使用定时器是为了缓存一下加载过程，防止加载过快
+      $timeout(function() {
+        if(!wxBills.paramC.hasmore){
+          var timer= $timeout(function () {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, 1000);
+          $timeout.cancel(timer);
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //$scope.$broadcast('scroll.infiniteScrollComplete');
+          return;
+        }
+        // alert('前c'+angular.toJson(wxBills.paramC));
+        wxBills.getState0(2).then(function(response){
+          wxBills.paramC.hasmore = response.d.length==wxBills.paramC.pageSize;
+          for(var i=0;i<response.d.length;i++){
+            $scope.dataC.push(response.d[i]);
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          wxBills.paramC.curPage++;
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          // alert('后c'+angular.toJson(wxBills.paramC));
+        });
+      },2000);
+    };
+
+    $scope.moreDataCanBeLoadedC = function(){
+      if($scope.flag=='C') {
+        return wxBills.paramC.hasmore;
+      }else
+      {
+        return false;
+      }
+    }
+
+    $scope.$on("$destroy", function () {
+      //清除配置,不然scroll会重复请求,每次进来都是新页面
+      wxBills.paramA.hasmore=false;
+      wxBills.paramA.curPage=0;
+      wxBills.paramB.hasmore=false;
+      wxBills.paramB.curPage=0;
+      wxBills.paramC.hasmore=false;
+      wxBills.paramC.curPage=0;
+    });
+
+    $ionicListDelegate.showReorder(true);
+
+    $scope.onHold=function (item) {
+      var myPopup = $ionicPopup.show({
+        template: '确认拒绝【'+item.CLIENT+'】的派单？',
+        title: '提示',
+        subTitle: '单号：'+item.CODE,
+        scope: $scope,
+        buttons: [
+          { text: '否' },
+          {
+            text: '<b>是</b>',
+            type: 'button-positive',
+            onTap: function(e) {
+              var p ={
+                userName : $rootScope.userName,
+                type:'拒绝',
+                id:item.ID,
+                refercode:item.CODE,
+              }
+              $http.post(userService(0).address+"WeixiuService.asmx/RepairDeal",p).success(function (response, status, headers, config) {
+                if(response.d==-10)
+                {
+                  $ionicLoading.show({
+                    template: '身份验证失败，请重新登录！'
+                  });
+                  $timeout(function () {
+                    $ionicLoading.hide(); // 2秒后关闭弹窗
+                  }, 1500);
+                }
+                else if(response.d==-1)
+                {
+                  $ionicLoading.show({
+                    template: '接受失败，请联系管理员！'
+                  });
+                  $timeout(function () {
+                    $ionicLoading.hide(); // 2秒后关闭弹窗
+                  }, 1500);
+                }
+                else if(response.d==0)
+                {
+                  $ionicLoading.show({
+                    template: '拒绝成功！'
+                  });
+                  $scope.dataA.splice($scope.dataA.indexOf(item), 1);
+                  //wxBills.getState0(1).then(function (res) {$scope.dataB=res.d;});
+                  $timeout(function () {
+                    $ionicLoading.hide(); // 2秒后关闭弹窗
+                  }, 1500);
+                }
+                else { }
+              }).error(function (response, status, headers, config) {
+                $ionicLoading.show({
+                  template: '网络连接失败！'
+                });
+                $timeout(function () {
+                  $ionicLoading.hide(); // 2秒后关闭弹窗
+                }, 1500);
+              });
+            }
+          },
+        ]
+      });
+      myPopup.then(function(res) {
+        console.log('Tapped!', res);
+      });
+    }
+
+    $scope.acceptWX=function (item) {
+      var p ={
+        userName : $rootScope.userName,
+        type:'接受',
+        id:item.ID,
+        refercode:item.CODE,
+      }
+      $http.post(userService(0).address+"WeixiuService.asmx/RepairDeal",p).success(function (response, status, headers, config) {
+        if(response.d==-10)
+        {
+          $ionicLoading.show({
+            template: '身份验证失败，请重新登录！'
+          });
+          $timeout(function () {
+            $ionicLoading.hide(); // 2秒后关闭弹窗
+          }, 1500);
+        }
+        else if(response.d==-1)
+        {
+          $ionicLoading.show({
+            template: '接受失败，请联系管理员！'
+          });
+          $timeout(function () {
+            $ionicLoading.hide(); // 2秒后关闭弹窗
+          }, 1500);
+        }
+        else if(response.d==0)
+        {
+          $ionicLoading.show({
+            template: '接受成功！'
+          });
+          $scope.dataA.splice($scope.dataA.indexOf(item), 1);
+          // $scope.dataB = [];
+          // wxBills.paramB.curPage=0;
+          // wxBills.paramB.hasmore=true;
+          // wxBills.getState0(1).then(function(response){
+          //   $scope.dataB = response.d;
+          //   wxBills.paramB.hasmore = response.d.length==wxBills.paramB.pageSize;
+          //   wxBills.paramB.curPage++;
+          // });
+          $timeout(function () {
+            $ionicLoading.hide(); // 2秒后关闭弹窗
+          }, 1500);
+        }
+        else { }
+      }).error(function (response, status, headers, config) {
+        $ionicLoading.show({
+          template: '网络连接失败！'
+        });
+        $timeout(function () {
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+        }, 1500);
+      });
+    }
+
+    $scope.GetDel=function (item,type) {
+      var myVar=true;
+      var myComplete=true;
+
+      if(type==1)
+      {
+        myVar=false;
+      }
+      else  if(type==2)
+      {
+        myComplete=false;
+      }
+      $state.go('tab.Iwx-detail',{myVar:myVar,item:item,myComplete:myComplete});
+    }
+
+  })
 // 业务消息详情
   .controller('MsgDetailCtrl', function($ionicHistory,$timeout,$http,userService,$ionicLoading,$state,$rootScope,$scope, $stateParams,YWMesseges) {
     $scope.item=$stateParams.item;

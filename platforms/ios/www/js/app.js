@@ -873,7 +873,7 @@ angular.module('starter', ['ionic',
       },
       params: {from:null,item:null,myVar:false}
     })
-
+  //维修消息  for Android
   .state('tab.chats', {
       url: '/chats',
       views: {
@@ -883,7 +883,7 @@ angular.module('starter', ['ionic',
         }
       }
     })
-
+  //维修消息详情 for Android
     .state('tab.wx-detail', {
       url: '/chats/detail',
       views: {
@@ -894,7 +894,29 @@ angular.module('starter', ['ionic',
       },
       params: {item:null,myVar:null,myBill:null,myComplete:null}
     })
+    //维修消息 for ios
+    .state('tab.IWxMsg', {
+      url: '/IWxMsg',
+      views: {
+        'tab-IWxMsg': {
+          templateUrl: 'templates/tab-IWxMsg.html',
+          controller: 'I_WX_Ctrl'
+        }
+      }
+    })
+    //维修消息详情 for ios
+    .state('tab.Iwx-detail', {
+      url: '/IWxMsg/detail',
+      views: {
+        'tab-IWxMsg': {
+          templateUrl: 'templates/wx-detail.html',
+          controller: 'WxDetailCtrl'
+        }
+      },
+      params: {item:null,myVar:null,myBill:null,myComplete:null}
+    })
 
+//无需用
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -904,6 +926,7 @@ angular.module('starter', ['ionic',
         }
       }
     })
+
 
   .state('tab.account', {
     url: '/account',
@@ -1005,7 +1028,7 @@ angular.module('starter', ['ionic',
   $ionicConfigProvider.platform.android.tabs.position('standard');
   $ionicConfigProvider.platform.ios.navBar.alignTitle('center');
   $ionicConfigProvider.platform.android.navBar.alignTitle('left');
-  $ionicConfigProvider.platform.ios.backButton.previousTitleText('').icon('ion-ios-arrow-thin-left');
+  $ionicConfigProvider.platform.ios.backButton.previousTitleText('').icon('icon ion-chevron-left');// ion-ios-arrow-thin-left
   $ionicConfigProvider.platform.android.backButton.previousTitleText('').icon('icon ion-chevron-left');
   $ionicConfigProvider.platform.ios.views.transition('ios');
   $ionicConfigProvider.platform.android.views.transition('android');
