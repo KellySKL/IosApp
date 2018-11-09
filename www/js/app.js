@@ -894,27 +894,26 @@ angular.module('starter', ['ionic',
       },
       params: {item:null,myVar:null,myBill:null,myComplete:null}
     })
-
-    //维修消息  for Ios
+    //维修消息 for ios
     .state('tab.IWxMsg', {
       url: '/IWxMsg',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/wx-msg.html',
+        'tab-IWxMsg': {
+          templateUrl: 'templates/tab-IWxMsg.html',
           controller: 'I_WX_Ctrl'
         }
       }
     })
-    //维修消息详情 for Ios
-    .state('tab.IWxMsg-list', {
-      url: '/IWxMsg/list',
+    //维修消息详情 for ios
+    .state('tab.Iwx-detail', {
+      url: '/IWxMsg/detail',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/wx-list.html',
-          controller: 'I_WX_List_Ctrl'
+        'tab-IWxMsg': {
+          templateUrl: 'templates/wx-detail.html',
+          controller: 'WxDetailCtrl'
         }
       },
-      params: {type:null}
+      params: {item:null,myVar:null,myBill:null,myComplete:null}
     })
 
 //无需用

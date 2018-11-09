@@ -3296,37 +3296,43 @@ angular.module('starter.controllers', [])
   .controller('ChatDetailCtrl', function($rootScope,$scope, $stateParams, Chats) {
     $scope.chat = Chats.get($stateParams.chatId);
   })
-//维修消息 for ios
-  .controller('I_WX_Ctrl', function($state,$rootScope,$scope, $stateParams, Chats) {
-    $scope.goto=function (type) {
-      $state.go('tab.IWxMsg-list',{type:type});
-    }
-  })
-  // 维修消息列表 for ios
-  .controller('I_WX_List_Ctrl', function(wxBills,$ionicListDelegate,$ionicLoading,$timeout,$rootScope,$ionicPopup,$ionicSlideBoxDelegate,$state,userService,$stateParams,$http,$scope) {
-    $scope.TYPE = $stateParams.type;
+  //维修消息 for ios
+  .controller('I_WX_Ctrl', function(wxBills,$ionicListDelegate,$ionicLoading,$timeout,$rootScope,$ionicPopup,$ionicSlideBoxDelegate,$state,userService,$stateParams,$http,$scope) {
+    $scope.names = ["未处理", "处理中", "处理完成"];
     $scope.flag;
-    if($scope.TYPE=="未处理")
-    {
-      $scope.flag='A';
-      $scope.dataA = [];
-      wxBills.paramA.hasmore=true;
-    }else if($scope.TYPE=="处理中")
-    {
-      $scope.flag='B';
-      $scope.dataB = [];
-      wxBills.paramB.hasmore=true;
-    }
-    else
-    {
-      $scope.flag='C';
-      $scope.dataC = [];
-      wxBills.paramC.hasmore=true;
-    }
+    $scope.Change=function(type){
+      if(type=="未处理")
+      {
+        $scope.flag='A';
+        $scope.dataA = [];
+        wxBills.paramA.hasmore=true;
+        wxBills.paramB.hasmore=false;
+        wxBills.paramC.hasmore=false;
+      }else if(type=="处理中")
+      {
+        $scope.flag='B';
+        $scope.dataB = [];
+        wxBills.paramB.hasmore=true;
+        wxBills.paramA.hasmore=false;
+        wxBills.paramC.hasmore=false;
+      }
+      else
+      {
+        $scope.flag='C';
+        $scope.dataC = [];
+        wxBills.paramC.hasmore=true;
+        wxBills.paramB.hasmore=false;
+        wxBills.paramA.hasmore=false;
+      }
+      $scope.doRefresh();
+    };
     //上拉刷新
     $ionicLoading.show({
       template: '正在加载数据...',duration: 30000
     });
+    $scope.flag='A';
+    $scope.dataA = [];
+    wxBills.paramA.hasmore=true;
 
     $scope.doRefresh = function() {
       wxBills.paramA.curPage=0;
@@ -3394,7 +3400,12 @@ angular.module('starter.controllers', [])
     };
 
     $scope.moreDataCanBeLoadedA = function(){
-      return wxBills.paramA.hasmore;
+      if($scope.flag=='A') {
+        return wxBills.paramA.hasmore;
+      }else
+      {
+        return false;
+      }
     }
     //更多
     $scope.loadMoreB = function() {
@@ -3424,7 +3435,12 @@ angular.module('starter.controllers', [])
     };
 
     $scope.moreDataCanBeLoadedB = function(){
-      return wxBills.paramB.hasmore;
+      if($scope.flag=='B') {
+        return wxBills.paramB.hasmore;
+      }else
+      {
+        return false;
+      }
     }
 
     //更多
@@ -3455,16 +3471,21 @@ angular.module('starter.controllers', [])
     };
 
     $scope.moreDataCanBeLoadedC = function(){
-      return wxBills.paramC.hasmore;
+      if($scope.flag=='C') {
+        return wxBills.paramC.hasmore;
+      }else
+      {
+        return false;
+      }
     }
 
     $scope.$on("$destroy", function () {
       //清除配置,不然scroll会重复请求,每次进来都是新页面
-      wxBills.paramA.hasmore=true;
+      wxBills.paramA.hasmore=false;
       wxBills.paramA.curPage=0;
-      wxBills.paramB.hasmore=true;
+      wxBills.paramB.hasmore=false;
       wxBills.paramB.curPage=0;
-      wxBills.paramC.hasmore=true;
+      wxBills.paramC.hasmore=false;
       wxBills.paramC.curPage=0;
     });
 
@@ -3568,15 +3589,14 @@ angular.module('starter.controllers', [])
             template: '接受成功！'
           });
           $scope.dataA.splice($scope.dataA.indexOf(item), 1);
-          $scope.dataB = [];
-          wxBills.paramB.curPage=0;
-          wxBills.paramB.hasmore=true;
-          wxBills.getState0(1).then(function(response){
-            $scope.dataB = response.d;
-            wxBills.paramB.hasmore = response.d.length==wxBills.paramB.pageSize;
-            wxBills.paramB.curPage++;
-          });
-          //wxBills.getState0(1).then(function (res) {$scope.dataB=res.d;});
+          // $scope.dataB = [];
+          // wxBills.paramB.curPage=0;
+          // wxBills.paramB.hasmore=true;
+          // wxBills.getState0(1).then(function(response){
+          //   $scope.dataB = response.d;
+          //   wxBills.paramB.hasmore = response.d.length==wxBills.paramB.pageSize;
+          //   wxBills.paramB.curPage++;
+          // });
           $timeout(function () {
             $ionicLoading.hide(); // 2秒后关闭弹窗
           }, 1500);
@@ -3604,11 +3624,10 @@ angular.module('starter.controllers', [])
       {
         myComplete=false;
       }
-      $state.go('tab.wx-detail',{myVar:myVar,item:item,myComplete:myComplete});
+      $state.go('tab.Iwx-detail',{myVar:myVar,item:item,myComplete:myComplete});
     }
 
   })
-
 // 业务消息详情
   .controller('MsgDetailCtrl', function($ionicHistory,$timeout,$http,userService,$ionicLoading,$state,$rootScope,$scope, $stateParams,YWMesseges) {
     $scope.item=$stateParams.item;

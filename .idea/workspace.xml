@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="13bf8686-7597-4f7b-a6b8-90501d71b99e" name="Default" comment="ceshi update">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/wx_list.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/wx_msg.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/templates/tab-IWxMsg.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/cordova-hcp.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/img/marker_blue.png" afterPath="$PROJECT_DIR$/platforms/ios/www/img/marker_blue.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/platforms/ios/www/img/marker_red.png" afterPath="$PROJECT_DIR$/platforms/ios/www/img/marker_red.png" />
@@ -46,49 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="wx_list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/wx_list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-              <folding>
-                <element signature="n#ion-refresher#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#center#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#p#0;n#center#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#ion-infinite-scroll#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-refresher#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#center#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-infinite-scroll#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-refresher#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-                <element signature="n#center#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-                <element signature="n#ion-infinite-scroll#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="wx_msg.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/templates/wx_msg.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="12" column="42" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
-              <caret line="3303" column="4" selection-start-line="3303" selection-start-column="4" selection-end-line="3303" selection-end-column="4" />
+            <state relative-caret-position="268">
+              <caret line="3298" column="16" selection-start-line="3298" selection-start-column="16" selection-end-line="3298" selection-end-column="16" />
               <folding>
                 <element signature="e#175#2217#0" expanded="false" />
                 <element signature="e#2372#5577#0" expanded="false" />
@@ -118,33 +79,32 @@
                 <element signature="e#82597#94886#0" expanded="false" />
                 <element signature="e#95072#105199#0" expanded="false" />
                 <element signature="e#105297#105794#0" expanded="false" />
-                <element signature="e#106331#115888#0" expanded="false" />
-                <element signature="e#107066#107416#0" expanded="false" />
-                <element signature="e#107444#107794#0" expanded="false" />
-                <element signature="e#107822#108172#0" expanded="false" />
-                <element signature="e#108223#109145#0" expanded="false" />
-                <element signature="e#109192#109236#0" expanded="false" />
-                <element signature="e#109280#110200#0" expanded="false" />
-                <element signature="e#110247#110291#0" expanded="false" />
-                <element signature="e#110336#111258#0" expanded="false" />
-                <element signature="e#111305#111349#0" expanded="false" />
-                <element signature="e#111390#111635#0" expanded="false" />
-                <element signature="e#111716#113870#0" expanded="false" />
-                <element signature="e#113908#115584#0" expanded="false" />
-                <element signature="e#115625#115883#0" expanded="false" />
-                <element signature="e#116047#118662#0" expanded="false" />
-                <element signature="e#118723#126900#0" expanded="false" />
-                <element signature="e#127116#130720#0" expanded="false" />
-                <element signature="e#130844#133358#0" expanded="false" />
-                <element signature="e#133568#139691#0" expanded="false" />
-                <element signature="e#139852#156431#0" expanded="false" />
-                <element signature="e#156531#157272#0" expanded="false" />
-                <element signature="e#157431#162081#0" expanded="false" />
-                <element signature="e#162242#165384#0" expanded="false" />
-                <element signature="e#165540#168641#0" expanded="false" />
-                <element signature="e#168743#168815#0" expanded="false" />
-                <element signature="e#168961#171868#0" expanded="false" />
-                <marker date="1541728638876" expanded="true" signature="13929:13942" ph="..." />
+                <element signature="e#106130#116279#0" expanded="false" />
+                <element signature="e#106224#106853#0" expanded="false" />
+                <element signature="e#107055#108375#0" expanded="false" />
+                <element signature="e#108420#109342#0" expanded="false" />
+                <element signature="e#109389#109514#0" expanded="false" />
+                <element signature="e#109558#110478#0" expanded="false" />
+                <element signature="e#110525#110650#0" expanded="false" />
+                <element signature="e#110695#111617#0" expanded="false" />
+                <element signature="e#111664#111789#0" expanded="false" />
+                <element signature="e#111830#112078#0" expanded="false" />
+                <element signature="e#112159#114313#0" expanded="false" />
+                <element signature="e#114351#115974#0" expanded="false" />
+                <element signature="e#116015#116274#0" expanded="false" />
+                <element signature="e#116437#119052#0" expanded="false" />
+                <element signature="e#119113#127290#0" expanded="false" />
+                <element signature="e#127506#131110#0" expanded="false" />
+                <element signature="e#131234#133748#0" expanded="false" />
+                <element signature="e#133958#140081#0" expanded="false" />
+                <element signature="e#140242#156821#0" expanded="false" />
+                <element signature="e#156921#157662#0" expanded="false" />
+                <element signature="e#157821#162471#0" expanded="false" />
+                <element signature="e#162632#165774#0" expanded="false" />
+                <element signature="e#165930#169031#0" expanded="false" />
+                <element signature="e#169133#169205#0" expanded="false" />
+                <element signature="e#169351#172258#0" expanded="false" />
+                <marker date="1541747015269" expanded="true" signature="13929:13942" ph="..." />
               </folding>
             </state>
           </provider>
@@ -153,13 +113,13 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="903" column="27" selection-start-line="903" selection-start-column="27" selection-end-line="903" selection-end-column="27" />
+            <state relative-caret-position="743">
+              <caret line="916" column="6" selection-start-line="916" selection-start-column="6" selection-end-line="916" selection-end-column="6" />
               <folding>
                 <element signature="e#919#1937#0" expanded="false" />
                 <element signature="e#2187#3047#0" expanded="false" />
                 <element signature="e#2345#2989#0" expanded="false" />
-                <element signature="e#29526#29710#0" expanded="false" />
+                <element signature="e#29570#29754#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -168,8 +128,81 @@
       <file leaf-file-name="tabs.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/tabs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="14" column="111" selection-start-line="14" selection-start-column="105" selection-end-line="14" selection-end-column="111" />
+            <state relative-caret-position="305">
+              <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tab-IWxMsg.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/tab-IWxMsg.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="770">
+              <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#div#1;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#center#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#center#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#0;n#center#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tab-chats.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/tab-chats.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2508">
+              <caret line="153" column="33" selection-start-line="153" selection-start-column="33" selection-end-line="153" selection-end-column="33" />
+              <folding>
+                <element signature="n#ion-list#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+                <element signature="n#center#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+                <element signature="n#ion-infinite-scroll#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dash-route.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/templates/dash-route.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -188,7 +221,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/www/templates/fee-detail.html" />
         <option value="$PROJECT_DIR$/www/templates/fee-audit.html" />
         <option value="$PROJECT_DIR$/www/templates/account-signBill.html" />
         <option value="$PROJECT_DIR$/www/templates/submit-ok.html" />
@@ -234,10 +266,11 @@
         <option value="$PROJECT_DIR$/config.xml" />
         <option value="$PROJECT_DIR$/www/templates/tab-chats.html" />
         <option value="$PROJECT_DIR$/www/templates/fee-submit.html" />
-        <option value="$PROJECT_DIR$/www/templates/wx_msg.html" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/controllers.js" />
         <option value="$PROJECT_DIR$/www/templates/wx_list.html" />
+        <option value="$PROJECT_DIR$/www/templates/wx_msg.html" />
+        <option value="$PROJECT_DIR$/www/js/controllers.js" />
+        <option value="$PROJECT_DIR$/www/templates/tab-IWxMsg.html" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/templates/tabs.html" />
       </list>
     </option>
@@ -279,7 +312,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -360,6 +392,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,12 +433,12 @@
     <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder5" value="5" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\skkkkkk\www\templates" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\skkkkkk\www\templates" />
       <recent name="E:\skkkkkk\www\js" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\skkkkkk\www\templates" />
     </key>
   </component>
   <component name="RunManager" selected="PhoneGap/Cordova.Unnamed">
@@ -732,7 +765,8 @@
       <workItem from="1540620980320" duration="4027000" />
       <workItem from="1540771516446" duration="4446000" />
       <workItem from="1541660833045" duration="1234000" />
-      <workItem from="1541725038176" duration="4025000" />
+      <workItem from="1541725038176" duration="10298000" />
+      <workItem from="1541746984895" duration="325000" />
     </task>
     <task id="LOCAL-00001" summary="ceshi">
       <created>1533188286919</created>
@@ -836,30 +870,30 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1123426000" />
+    <option name="totallyTimeSpent" value="1130024000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="1" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20989583" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3118162" sideWeight="0.31210855" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.121484816" sideWeight="0.4968321" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25054705" sideWeight="0.6878914" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973601" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295838" sideWeight="0.49577615" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27352297" sideWeight="0.4875" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25054705" sideWeight="0.6878914" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28993437" sideWeight="0.48125" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934355" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -914,20 +948,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/templates/lcus-line.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/chcp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/www/chcp.json" />
     <entry file="file://$USER_HOME$/Desktop/app-1307.js" />
     <entry file="file://$PROJECT_DIR$/www/js/GTMapService.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1096,7 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1104,7 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="76" selection-start-line="5" selection-start-column="76" selection-end-line="5" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1126,7 +1145,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="325">
           <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1134,18 +1152,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="14" column="83" selection-start-line="14" selection-start-column="83" selection-end-line="14" selection-end-column="83" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cordova-hcp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cordova-hcp.json" />
     <entry file="file://$PROJECT_DIR$/config.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
@@ -1166,7 +1176,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="801">
           <caret line="84" column="97" selection-start-line="84" selection-start-column="97" selection-end-line="84" selection-end-column="97" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1174,7 +1183,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,9 +1190,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
-          <folding>
-            <element signature="n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1192,22 +1197,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/tab-chats.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="158" column="32" selection-start-line="114" selection-start-column="9" selection-end-line="158" selection-end-column="32" />
-          <folding>
-            <element signature="n#ion-list#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#center#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#ion-infinite-scroll#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-scroll#0;n#ion-slide#1;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-scroll#0;n#ion-slide#2;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1215,7 +1204,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="24" selection-start-line="0" selection-start-column="24" selection-end-line="0" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1223,7 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1231,7 +1218,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="26" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1239,69 +1225,109 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="475">
           <caret line="28" column="34" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/wx_msg.html">
+    <entry file="file://$PROJECT_DIR$/www/templates/dash-route.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="42" />
+        <state relative-caret-position="154">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/wx_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
+        <state relative-caret-position="242">
+          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/tab-chats.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2508">
+          <caret line="153" column="33" selection-start-line="153" selection-start-column="33" selection-end-line="153" selection-end-column="33" />
           <folding>
-            <element signature="n#ion-refresher#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#ion-list#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#center#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#ion-infinite-scroll#0;n#ion-scroll#0;n#ion-slide#0;n#ion-slide-box#0;n#div#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/tab-IWxMsg.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="85" column="0" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#center#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#div#1;n#ion-item#0;n#ion-list#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#0;n#center#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#ion-infinite-scroll#0;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#ion-refresher#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#center#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#ion-infinite-scroll#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#ion-refresher#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#ion-item#0;n#ion-list#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#center#1;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
-            <element signature="n#center#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
-            <element signature="n#ion-infinite-scroll#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#ion-item#0;n#ion-list#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#center#2;n#ion-content#0;n#ion-view#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/tabs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="14" column="111" selection-start-line="14" selection-start-column="105" selection-end-line="14" selection-end-column="111" />
+        <state relative-caret-position="305">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="903" column="27" selection-start-line="903" selection-start-column="27" selection-end-line="903" selection-end-column="27" />
+        <state relative-caret-position="743">
+          <caret line="916" column="6" selection-start-line="916" selection-start-column="6" selection-end-line="916" selection-end-column="6" />
           <folding>
             <element signature="e#919#1937#0" expanded="false" />
             <element signature="e#2187#3047#0" expanded="false" />
             <element signature="e#2345#2989#0" expanded="false" />
-            <element signature="e#29526#29710#0" expanded="false" />
+            <element signature="e#29570#29754#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="3303" column="4" selection-start-line="3303" selection-start-column="4" selection-end-line="3303" selection-end-column="4" />
+        <state relative-caret-position="268">
+          <caret line="3298" column="16" selection-start-line="3298" selection-start-column="16" selection-end-line="3298" selection-end-column="16" />
           <folding>
             <element signature="e#175#2217#0" expanded="false" />
             <element signature="e#2372#5577#0" expanded="false" />
@@ -1331,33 +1357,32 @@
             <element signature="e#82597#94886#0" expanded="false" />
             <element signature="e#95072#105199#0" expanded="false" />
             <element signature="e#105297#105794#0" expanded="false" />
-            <element signature="e#106331#115888#0" expanded="false" />
-            <element signature="e#107066#107416#0" expanded="false" />
-            <element signature="e#107444#107794#0" expanded="false" />
-            <element signature="e#107822#108172#0" expanded="false" />
-            <element signature="e#108223#109145#0" expanded="false" />
-            <element signature="e#109192#109236#0" expanded="false" />
-            <element signature="e#109280#110200#0" expanded="false" />
-            <element signature="e#110247#110291#0" expanded="false" />
-            <element signature="e#110336#111258#0" expanded="false" />
-            <element signature="e#111305#111349#0" expanded="false" />
-            <element signature="e#111390#111635#0" expanded="false" />
-            <element signature="e#111716#113870#0" expanded="false" />
-            <element signature="e#113908#115584#0" expanded="false" />
-            <element signature="e#115625#115883#0" expanded="false" />
-            <element signature="e#116047#118662#0" expanded="false" />
-            <element signature="e#118723#126900#0" expanded="false" />
-            <element signature="e#127116#130720#0" expanded="false" />
-            <element signature="e#130844#133358#0" expanded="false" />
-            <element signature="e#133568#139691#0" expanded="false" />
-            <element signature="e#139852#156431#0" expanded="false" />
-            <element signature="e#156531#157272#0" expanded="false" />
-            <element signature="e#157431#162081#0" expanded="false" />
-            <element signature="e#162242#165384#0" expanded="false" />
-            <element signature="e#165540#168641#0" expanded="false" />
-            <element signature="e#168743#168815#0" expanded="false" />
-            <element signature="e#168961#171868#0" expanded="false" />
-            <marker date="1541728638876" expanded="true" signature="13929:13942" ph="..." />
+            <element signature="e#106130#116279#0" expanded="false" />
+            <element signature="e#106224#106853#0" expanded="false" />
+            <element signature="e#107055#108375#0" expanded="false" />
+            <element signature="e#108420#109342#0" expanded="false" />
+            <element signature="e#109389#109514#0" expanded="false" />
+            <element signature="e#109558#110478#0" expanded="false" />
+            <element signature="e#110525#110650#0" expanded="false" />
+            <element signature="e#110695#111617#0" expanded="false" />
+            <element signature="e#111664#111789#0" expanded="false" />
+            <element signature="e#111830#112078#0" expanded="false" />
+            <element signature="e#112159#114313#0" expanded="false" />
+            <element signature="e#114351#115974#0" expanded="false" />
+            <element signature="e#116015#116274#0" expanded="false" />
+            <element signature="e#116437#119052#0" expanded="false" />
+            <element signature="e#119113#127290#0" expanded="false" />
+            <element signature="e#127506#131110#0" expanded="false" />
+            <element signature="e#131234#133748#0" expanded="false" />
+            <element signature="e#133958#140081#0" expanded="false" />
+            <element signature="e#140242#156821#0" expanded="false" />
+            <element signature="e#156921#157662#0" expanded="false" />
+            <element signature="e#157821#162471#0" expanded="false" />
+            <element signature="e#162632#165774#0" expanded="false" />
+            <element signature="e#165930#169031#0" expanded="false" />
+            <element signature="e#169133#169205#0" expanded="false" />
+            <element signature="e#169351#172258#0" expanded="false" />
+            <marker date="1541747015269" expanded="true" signature="13929:13942" ph="..." />
           </folding>
         </state>
       </provider>
