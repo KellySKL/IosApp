@@ -425,7 +425,7 @@ angular.module('starter', ['ionic',
         userName: $rootScope.userName,
       };
       if($rootScope.dept=='业务员'||$rootScope.dept=='销售内勤'
-        ||$rootScope.dept=='销售文员'||$rootScope.dept=='行政文员') {
+        ||$rootScope.dept=='销售文员'||$rootScope.dept=='行政文员'||$rootScope.dept=='后台') {
         $http.post(userService(0).address+"MessageService.asmx/MsgGet", p).success(function (response, status, headers, config) {
           if (response.d != null) {
             cordova.plugins.notification.local.schedule({
@@ -434,22 +434,9 @@ angular.module('starter', ['ionic',
               text: response.d,
               foreground: true
             });
-//            cordova.plugins.notification.local.schedule({
-//              id: 1,
-//              title: '应用提醒',
-//              text: response.d,
-//              at: new Date(),
-//              badge: 1,//默认值为0  不显示
-//              autoClear: true,//默认值是false
-//              data: {url: ''}
-//              // sound:,
-//              // every:,
-//              // data:,
-//              // first,
-//            });
             //shedule事件在每次调用时触发
             cordova.plugins.notification.local.on('schedule', function (notification) {
-              // alert('scheduled:' + notification.id);
+              //alert('scheduled:' + notification.id);
             });
             //通知触发事件
             cordova.plugins.notification.local.on('trigger', function (notification) {
@@ -458,7 +445,7 @@ angular.module('starter', ['ionic',
             });
             //监听点击事件
             cordova.plugins.notification.local.on('click', function (notification) {
-              // alert(JSON.stringify(notification));
+              alert(JSON.stringify(notification));
               // document.getElementById('title').innerHTML = JSON.stringify(notification.data);
             });
           }
@@ -466,7 +453,7 @@ angular.module('starter', ['ionic',
           // alert('ERROR '+angular.toJson(response));
         });
       }
-      if($rootScope.dept=='维修员'||$rootScope.dept=='服务部经理') {
+      if($rootScope.dept=='维修员'||$rootScope.dept=='服务部经理'||$rootScope.dept=='后台') {
         $http.post(userService(0).address+"MessageService.asmx/WxGet", p).success(function (response, status, headers, config) {
           if (response.d != null) {
              cordova.plugins.notification.local.schedule({
@@ -475,22 +462,9 @@ angular.module('starter', ['ionic',
                   text: response.d,
                   foreground: true
              });
-//            cordova.plugins.notification.local.schedule({
-//              id: 2,
-//              title: '应用提醒',
-//              text: response.d,
-//              at: new Date(),
-//              badge: 1,//默认值为0  不显示
-//              autoClear: true,//默认值是false
-//              data: {url: ''}
-//              // sound:,
-//              // every:,
-//              // data:,
-//              // first,
-//            });
             //shedule事件在每次调用时触发
             cordova.plugins.notification.local.on('schedule', function (notification) {
-              // alert('scheduled:' + notification.id);
+                                                  //alert('scheduled:' + notification.id);
             });
             //通知触发事件
             cordova.plugins.notification.local.on('trigger', function (notification) {
@@ -499,7 +473,7 @@ angular.module('starter', ['ionic',
             });
             //监听点击事件
             cordova.plugins.notification.local.on('click', function (notification) {
-              // alert(JSON.stringify(notification));
+              //alert(JSON.stringify(notification));
               // document.getElementById('title').innerHTML = JSON.stringify(notification.data);
             });
           }
@@ -510,26 +484,7 @@ angular.module('starter', ['ionic',
     }
     $timeout($rootScope.LoadMsg(), 1000);//30秒后调用
   }
- // $ionicPlatform.on('resume',function () { console.log("app进入前台运行"); });
 
-  // // 设置物理硬件后退按钮,只有安卓有效
-  // var exitFlag = false;
-  // $ionicPlatform.registerBackButtonAction(function(e) {
-  //   e.preventDefault();
-  //   if (exitFlag) {
-  //     return ionic.Platform.exitApp();
-  //   }
-  //   /* your-tab-path 如 : /tab/home */
-  //   if ($location.path() == "your-tab-path1" || $location.path() == "your-tab-path2") {
-  //     exitFlag = true;
-  //     $cordovaToast.showShortBottom('再按一次退出!');
-  //     $timeout(function() {
-  //       exitFlag = false;
-  //     }, 2000);
-  //   } else {
-  //     $ionicNativeTransitions.goBack(); // 执行后退
-  //   }
-  // }, 110);
   //主页面显示退出提示框
   $ionicPlatform.registerBackButtonAction(function (e) {
     e.preventDefault();
