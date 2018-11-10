@@ -12,12 +12,12 @@ navigation history that also transitions its views in and out.
         <ion-nav-view name="tab-dash"></ion-nav-view>
       </ion-tab>
       <!--维修消息-->
-      <ion-tab title="我的消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/IWxMsg" ng-if="data.myWX">
+      <ion-tab title="维修消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/IWxMsg" ng-if="data.myWX">
         <ion-nav-view name="tab-IWxMsg"></ion-nav-view>
       </ion-tab>
-      <!-- 业务消息-->
-      <ion-tab title="业务消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/msg" ng-if="data.myBF" >
-        <ion-nav-view name="tab-msg"></ion-nav-view>
+      <!--维修消息-->
+      <ion-tab title="业务消息" icon-off="ion-ios-chatboxes-outline" icon-on="ion-ios-chatboxes" href="#/tab/IYWMsg" ng-if="data.myBF">
+        <ion-nav-view name="tab-IYWMsg"></ion-nav-view>
       </ion-tab>
       <!--Account Tab-->
       <ion-tab title="事务" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
