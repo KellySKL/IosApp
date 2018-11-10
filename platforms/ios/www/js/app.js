@@ -819,9 +819,9 @@ angular.module('starter', ['ionic',
 
     //业务  待办事项 detail
     .state('tab.msg-NearDetail', {
-      url: '/msg/detail/NearDetail',
+      url: '/IYWMsg/detail/NearDetail',
       views: {
-        'tab-msg': {
+        'tab-IYWMsg': {
           templateUrl: 'templates/dash-NearDetail.html',
           controller: 'NearBill_D_Ctrl',
         }
@@ -870,7 +870,27 @@ angular.module('starter', ['ionic',
       },
       params: {item:null,myVar:null,myBill:null,myComplete:null}
     })
-
+    //业务消息 for ios
+    .state('tab.IYWMsg', {
+      url: '/IYWMsg',
+      views: {
+        'tab-IYWMsg': {
+          templateUrl: 'templates/tab-IYWMsg.html',
+          controller: 'I_YW_Ctrl'
+        }
+      }
+    })
+    //业务消息详情 for ios
+    .state('tab.Imsg-detail', {
+      url: '/IYWMsg/detail',
+      views: {
+        'tab-IYWMsg': {
+          templateUrl: 'templates/msg-detail.html',
+          controller: 'MsgDetailCtrl'
+        }
+      },
+      params: {item:null,myVar:null,myBill:null,myComplete:null}
+    })
 //无需用
     .state('tab.chat-detail', {
       url: '/chats/:chatId',

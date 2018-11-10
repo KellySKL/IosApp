@@ -3144,7 +3144,7 @@ angular.module('starter.controllers', [])
 
     $ionicListDelegate.showReorder(true);
 
-    $scope.accpectBF =function (item) {
+    $scope.acceptYW =function (item) {
       var p ={
         id:item.id,
         userName:$rootScope.userName,

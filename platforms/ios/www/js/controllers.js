@@ -2925,7 +2925,288 @@ angular.module('starter.controllers', [])
       });
     };
   })
-// 维修消息
+  // 业务消息 for ios
+  .controller('I_YW_Ctrl', function($ionicLoading,$timeout,YWMesseges,$ionicListDelegate,$rootScope,$ionicPopup,$ionicSlideBoxDelegate,$state,userService,$stateParams,$http,$scope) {
+    $scope.names = ["未处理", "处理中", "处理完成"];
+    $scope.flag;
+    $scope.Change=function(type){
+      if(type=="未处理")
+      {
+        $scope.flag='A';
+        $scope.dataA = [];
+        YWMesseges.paramA.hasmore=true;
+        YWMesseges.paramB.hasmore=false;
+        YWMesseges.paramC.hasmore=false;
+      }else if(type=="处理中")
+      {
+        $scope.flag='B';
+        $scope.dataB = [];
+        YWMesseges.paramB.hasmore=true;
+        YWMesseges.paramA.hasmore=false;
+        YWMesseges.paramC.hasmore=false;
+      }
+      else
+      {
+        $scope.flag='C';
+        $scope.dataC = [];
+        YWMesseges.paramC.hasmore=true;
+        YWMesseges.paramB.hasmore=false;
+        YWMesseges.paramA.hasmore=false;
+      }
+      $scope.doRefresh();
+    };
+    //上拉刷新
+    $ionicLoading.show({
+      template: '正在加载数据...',duration: 30000
+    });
+    $scope.flag='A';
+    $scope.dataA = [];
+    YWMesseges.paramA.hasmore=true;
+
+    $scope.doRefresh = function() {
+      YWMesseges.paramA.curPage=0;
+      YWMesseges.paramB.curPage=0;
+      YWMesseges.paramC.curPage=0;
+      $scope.dataA = [];
+      $scope.dataB = [];
+      $scope.dataC = [];//每次重新清空
+      if($scope.flag=='A') {
+        YWMesseges.getList(0).then(function (response) {
+          $scope.dataA = response.d;
+          if (response.d != null && response.d.length == YWMesseges.paramA.pageSize) {
+            YWMesseges.paramA.hasmore = true;
+          }
+          else {
+            YWMesseges.paramA.hasmore = false;
+          }
+          YWMesseges.paramA.curPage++;
+        }).finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });
+      }
+      if($scope.flag=='B') {
+        YWMesseges.getList(1).then(function (response) {
+          $scope.dataB = response.d;
+          if (response.d != null && response.d.length == YWMesseges.paramB.pageSize) {
+            YWMesseges.paramB.hasmore = true;
+          }
+          else {
+            YWMesseges.paramB.hasmore = false;
+          }
+          YWMesseges.paramB.curPage++;
+        }).finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });
+      }
+      if($scope.flag=='C') {
+        YWMesseges.getList(2).then(function (response) {
+          $scope.dataC = response.d;
+          if (response.d != null && response.d.length == YWMesseges.paramC.pageSize) {
+            YWMesseges.paramC.hasmore = true;
+          }
+          else {
+            YWMesseges.paramC.hasmore = false;
+          }
+          YWMesseges.paramC.curPage++;
+        }).finally(function() {
+          // 停止广播ion-refresher
+          $scope.$broadcast('scroll.refreshComplete');
+        });
+      }
+    };
+    //更多
+    $scope.loadMoreA = function() {
+      //这里使用定时器是为了缓存一下加载过程，防止加载过快
+      $timeout(function() {
+        if(!YWMesseges.paramA.hasmore){
+          var timer= $timeout(function () {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, 1000);
+          $timeout.cancel(timer);
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //$scope.$broadcast('scroll.infiniteScrollComplete');
+          return;
+        }
+        YWMesseges.getList(0).then(function(response){
+          if(response.d==null){//没有数据
+            YWMesseges.paramA.hasmore=false;
+          }
+          else
+          {//有数据
+            if(response.d.length==YWMesseges.paramA.pageSize)//如果数据条数等于页面大小
+            {
+              YWMesseges.paramA.hasmore = true
+            }
+            for(var i=0;i<response.d.length;i++){
+              $scope.dataA.push(response.d[i]);
+            }
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          YWMesseges.paramA.curPage++;
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+        });
+      },2000);
+    };
+
+    $scope.moreDataCanBeLoadedA = function(){
+      return YWMesseges.paramA.hasmore;
+    }
+    //更多
+    $scope.loadMoreB = function() {
+      //这里使用定时器是为了缓存一下加载过程，防止加载过快
+      $timeout(function() {
+        if(!YWMesseges.paramB.hasmore){
+          var timer= $timeout(function () {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, 1000);
+          $timeout.cancel(timer);
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //$scope.$broadcast('scroll.infiniteScrollComplete');
+          return;
+        }
+        YWMesseges.getList(1).then(function(response){
+          if(response.d==null){//没有数据
+            YWMesseges.paramB.hasmore=false;
+          }
+          else
+          {//有数据
+            if(response.d.length==YWMesseges.paramB.pageSize)//如果数据条数等于页面大小
+            {
+              YWMesseges.paramB.hasmore = true
+            }
+            for(var i=0;i<response.d.length;i++){
+              $scope.dataB.push(response.d[i]);
+            }
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          YWMesseges.paramB.curPage++;
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          // alert('后c'+angular.toJson(wxBills.paramB));
+        });
+      },2000);
+    };
+
+    $scope.moreDataCanBeLoadedB = function(){
+      return YWMesseges.paramB.hasmore;
+    }
+
+    //更多
+    $scope.loadMoreC = function() {
+      //这里使用定时器是为了缓存一下加载过程，防止加载过快
+      $timeout(function() {
+        if(!YWMesseges.paramC.hasmore){
+          var timer= $timeout(function () {
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+          }, 1000);
+          $timeout.cancel(timer);
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          //$scope.$broadcast('scroll.infiniteScrollComplete');
+          return;
+        }
+        // alert('前c'+angular.toJson(wxBills.paramC));
+        YWMesseges.getList(2).then(function(response){
+          if(response.d==null){//没有数据
+            YWMesseges.paramC.hasmore=false;
+          }
+          else
+          {//有数据
+            if(response.d.length==YWMesseges.paramC.pageSize)//如果数据条数等于页面大小
+            {
+              YWMesseges.paramC.hasmore = true
+            }
+            for(var i=0;i<response.d.length;i++){
+              $scope.dataC.push(response.d[i]);
+            }
+          }
+          $scope.$broadcast('scroll.infiniteScrollComplete');
+          YWMesseges.paramC.curPage++;
+          $ionicLoading.hide(); // 2秒后关闭弹窗
+          // alert('后c'+angular.toJson(wxBills.paramC));
+        });
+      },2000);
+    };
+
+    $scope.moreDataCanBeLoadedC = function(){
+      return YWMesseges.paramC.hasmore;
+    }
+
+    $scope.$on("$destroy", function () {
+      //清除配置,不然scroll会重复请求,每次进来都是新页面
+      YWMesseges.paramA.hasmore=false;
+      YWMesseges.paramA.curPage=0;
+      YWMesseges.paramB.hasmore=false;
+      YWMesseges.paramB.curPage=0;
+      YWMesseges.paramC.hasmore=false;
+      YWMesseges.paramC.curPage=0;
+    });
+
+    $ionicListDelegate.showReorder(true);
+
+    $scope.acceptYW =function (item) {
+      var p ={
+        id:item.id,
+        userName:$rootScope.userName,
+      }
+      $http.post(userService(0).address+"MessageService.asmx/Accept_YWBill",p).success(function (response, status, headers, config) {
+        if(response.d)
+        {
+          $ionicLoading.show({
+            template: '接收成功!'
+          });
+          // YWMesseges.paramB.hasmore=true;
+          // YWMesseges.paramB.curPage=0;
+          // YWMesseges.getList(1).then(function(response){
+          //   $scope.dataB = response.d;
+          //   YWMesseges.paramB.hasmore = response.d.length==YWMesseges.paramB.pageSize;
+          //   YWMesseges.paramB.curPage++;
+          // });
+          // YWMesseges.("7","  order by VISITDATE  ").then(function(res){
+          //   $scope.dataB=res.d;
+          // });
+          //$scope.dataB.push(item);
+          $scope.dataA.splice($scope.dataA.indexOf(item), 1);
+          $timeout(function() {
+            $ionicLoading.hide(); // 2秒后关闭弹窗
+          }, 1000);
+        }
+        else
+        {
+          $ionicLoading.show({
+            template: '处理失败!'
+          });
+          $timeout(function() {
+            $ionicLoading.hide(); // 2秒后关闭弹窗
+          }, 2000);
+        }
+      }).error(function (response, status, headers, config) {
+        // alert(response);
+      });
+    }
+
+    $scope.goto=function (item,type) {
+      var myvar=true;
+      var mybill=true;
+      var mycomplete=true;
+      if(type=='A')
+      {
+        myvar=false;
+        $state.go('msg-detail',{item:item,myVar:myvar,myBill:mybill,myComplete:mycomplete});
+      }
+      if(type=='B')
+      {
+        mybill=false;
+        $state.go('tab.Imsg-detail',{item:item,myVar:myvar,myBill:mybill,myComplete:mycomplete});
+      }
+      if(type=='C')
+      {
+        mycomplete=false;
+        $state.go('tab.Imsg-detail',{item:item,myVar:myvar,myBill:mybill,myComplete:mycomplete});
+      }
+    }
+  })
+  // 维修消息
 .controller('ChatsCtrl', function(wxBills,$ionicListDelegate,$ionicLoading,$timeout,$rootScope,$ionicPopup,$ionicSlideBoxDelegate,$state,userService,$stateParams,$http,$scope) {
   $scope.tabNames=['未处理','处理中','处理完成'];
   $scope.slectIndex=0;

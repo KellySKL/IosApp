@@ -819,9 +819,9 @@ angular.module('starter', ['ionic',
 
     //业务  待办事项 detail
     .state('tab.msg-NearDetail', {
-      url: '/msg/detail/NearDetail',
+      url: '/IYWMsg/detail/NearDetail',
       views: {
-        'tab-msg': {
+        'tab-IYWMsg': {
           templateUrl: 'templates/dash-NearDetail.html',
           controller: 'NearBill_D_Ctrl',
         }
