@@ -243,6 +243,7 @@ angular.module('starter', ['ionic',
       StatusBar.styleDefault();
       ionic.Platform.isIOS() ? StatusBar.overlaysWebView(true) : StatusBar.overlaysWebView(false);
     }
+    //ionic.Platform.fullScreen(true,true);
     apiService.getLocalVersion().then(function (response) {
       var curVersion = response;
       return apiService.getServerVersion(curVersion);
@@ -445,7 +446,7 @@ angular.module('starter', ['ionic',
             });
             //监听点击事件
             cordova.plugins.notification.local.on('click', function (notification) {
-              alert(JSON.stringify(notification));
+              //alert(JSON.stringify(notification));
               // document.getElementById('title').innerHTML = JSON.stringify(notification.data);
             });
           }
