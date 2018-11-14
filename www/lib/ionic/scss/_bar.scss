@@ -65,18 +65,6 @@
       }
     }
   }
-  &.item-input-inset-ios {
-    .item-input-wrapper {
-      margin-top: -1px;
-
-      input {
-        padding-left: 8px;
-        width: 94%;
-        height: 94%;
-        background: transparent;
-      }
-    }
-  }
 
   &.bar-light {
     @include bar-style($bar-light-bg, $bar-light-border, $bar-light-text);

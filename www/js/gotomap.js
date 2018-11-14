@@ -16,14 +16,17 @@
   }
 }(this, function($rootScope) {
 
-  //开启ios百度地图
+  //开启ios百度地图 http://lbsyun.baidu.com/index.php?title=uri/api/ios
   function startIOSBD(lat,lng,kflat,kflng,name) { // Success callback
-    var sApp = startApp.set("baidumap://map/direction?destination="+kflat+","+kflng+"&mode=driving&src=ios.Scue.MyApp");
+     //原链接："baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&coord_type=bd09ll&mode=driving&src=ios.baidu.openAPIdemo"
+    //驾车导航模式 ： "baidumap://map/navi?location="+kflat+","+kflng+"&coord_type=bd09ll&type=BLK&src=ios.baidu.openAPIdemo"
+    var sApp = startApp.set("baidumap://map/direction?origin=我的位置&destination=name:"+name+"|latlng:"+kflat+","+kflng+"&coord_type=bd09ll&mode=driving&src=ios.Scue.App");
     sApp.start(function() { /* success */
       //alert("OK");
     }, function(error) { /* fail */
       alert("请先安装百度地图！");
     });
+
   }
 
   //开启android百度地图
@@ -66,10 +69,11 @@
       alert("请先安装高德地图！");
     });
   };
-  //开启IOS高德地图
+  //开启IOS高德地图 https://lbs.amap.com/api/amap-mobile/guide/ios/navi
   function startIosGeo(lat,lng,kflat,kflng,name) {
+    // 原链接 ："iosamap://path?sourceApplication=applicationName&sid=BGVIS1&did=BGVIS2&dlat="+kflat+"&dlon="+kflng+"&dname="+name+"&dev=0&t=0"
     // &slat="+lat+"&slon="+lng+"&sname=当前位置
-    var sApp = startApp.set("iosamap://path?sourceApplication=applicationName&sid=BGVIS1&did=BGVIS2&dlat="+kflat+"&dlon="+kflng+"&dname="+name+"&dev=0&t=0");
+    var sApp = startApp.set("iosamap://navi?sourceApplication=ScueApp&poiname="+name+"&poiid=BGVIS&lat="+kflat+"&lon="+kflng+"&dev=1&style=2");
     sApp.start(function () {
       //alert("OK");
     }, function (error) {
