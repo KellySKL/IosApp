@@ -10,9 +10,6 @@
     "com.lampa.startapp": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
-    "cordova-hot-code-push-plugin": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
-    },
     "cordova-plugin-app-version": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
