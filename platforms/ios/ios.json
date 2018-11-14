@@ -13,14 +13,6 @@
               "count": 1
             },
             {
-              "xml": "<preference name=\"loadUrlTimeoutValue\" value=\"60000\" />",
-              "count": 1
-            },
-            {
-              "xml": "<feature name=\"HotCodePush\"><param name=\"ios-package\" value=\"HCPPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
-              "count": 1
-            },
-            {
               "xml": "<feature name=\"AppVersion\"><param name=\"ios-package\" value=\"AppVersion\" /></feature>",
               "count": 1
             },
@@ -136,9 +128,6 @@
     "cordova-android-support-v4": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
-    "cordova-hot-code-push-plugin": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
-    },
     "cordova-plugin-app-version": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
@@ -205,14 +194,6 @@
       "pluginId": "com.lampa.startapp",
       "merges": [
         "startApp"
-      ]
-    },
-    {
-      "id": "cordova-hot-code-push-plugin.chcp",
-      "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
-      "pluginId": "cordova-hot-code-push-plugin",
-      "clobbers": [
-        "chcp"
       ]
     },
     {
@@ -555,7 +536,6 @@
   "plugin_metadata": {
     "com.lampa.startapp": "6.1.6",
     "cordova-android-support-v4": "4.0.0",
-    "cordova-hot-code-push-plugin": "1.5.3",
     "cordova-plugin-app-version": "0.1.9",
     "cordova-plugin-appavailability": "0.4.2",
     "cordova-plugin-device": "1.1.4",

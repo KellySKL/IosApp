@@ -9,14 +9,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-hot-code-push-plugin.chcp",
-    "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
-    "pluginId": "cordova-hot-code-push-plugin",
-    "clobbers": [
-      "chcp"
-    ]
-  },
-  {
     "id": "cordova-plugin-app-version.AppVersionPlugin",
     "file": "plugins/cordova-plugin-app-version/www/AppVersionPlugin.js",
     "pluginId": "cordova-plugin-app-version",
@@ -358,7 +350,6 @@ module.exports.metadata =
 {
   "com.lampa.startapp": "6.1.6",
   "cordova-android-support-v4": "4.0.0",
-  "cordova-hot-code-push-plugin": "1.5.3",
   "cordova-plugin-app-version": "0.1.9",
   "cordova-plugin-appavailability": "0.4.2",
   "cordova-plugin-device": "1.1.4",

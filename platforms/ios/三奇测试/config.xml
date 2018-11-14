@@ -22,10 +22,6 @@
     <feature name="startApp">
         <param name="ios-package" value="startApp" />
     </feature>
-    <feature name="HotCodePush">
-        <param name="ios-package" value="HCPPlugin" />
-        <param name="onload" value="true" />
-    </feature>
     <feature name="AppVersion">
         <param name="ios-package" value="AppVersion" />
     </feature>
@@ -137,7 +133,6 @@
     <preference name="PageLength" value="0" />
     <preference name="PaginationBreakingMode" value="page" />
     <preference name="PaginationMode" value="unpaginated" />
-    <preference name="loadUrlTimeoutValue" value="60000" />
     <preference name="CameraUsesGeolocation" value="false" />
     <preference name="StatusBarOverlaysWebView" value="true" />
     <preference name="StatusBarStyle" value="lightcontent" />
