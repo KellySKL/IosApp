@@ -68,6 +68,11 @@
     <string/>
     <key>NSPhotoLibraryUsageDescription</key>
     <string/>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>baidumap</string>
+      <string>iosamap</string>
+    </array>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>ScueLocation</string>
   </dict>

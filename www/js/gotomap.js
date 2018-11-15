@@ -20,7 +20,7 @@
   function startIOSBD(lat,lng,kflat,kflng,name) { // Success callback
      //原链接："baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&coord_type=bd09ll&mode=driving&src=ios.baidu.openAPIdemo"
     //驾车导航模式 ： "baidumap://map/navi?location="+kflat+","+kflng+"&coord_type=bd09ll&type=BLK&src=ios.baidu.openAPIdemo"
-    var sApp = startApp.set("baidumap://map/direction?origin=我的位置&destination=name:"+name+"|latlng:"+kflat+","+kflng+"&coord_type=bd09ll&mode=driving&src=ios.Scue.App");
+  var sApp = startApp.set("baidumap://map/direction?origin={{我的位置}}&destination=name:"+name+"|latlng:"+kflat+","+kflng+"&coord_type=bd09ll&mode=driving&src=ios.Scue.App");
     sApp.start(function() { /* success */
       //alert("OK");
     }, function(error) { /* fail */
