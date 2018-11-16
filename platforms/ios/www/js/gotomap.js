@@ -73,7 +73,7 @@
   function startIosGeo(lat,lng,kflat,kflng,name) {
     // 原链接 ："iosamap://path?sourceApplication=applicationName&sid=BGVIS1&did=BGVIS2&dlat="+kflat+"&dlon="+kflng+"&dname="+name+"&dev=0&t=0"
     // &slat="+lat+"&slon="+lng+"&sname=当前位置
-    var sApp = startApp.set("iosamap://navi?sourceApplication=ScueApp&poiname="+name+"&poiid=BGVIS&lat="+kflat+"&lon="+kflng+"&dev=1&style=2");
+    var sApp = startApp.set("iosamap://navi?sourceApplication=ScueApp&poiname="+name+"&poiid=BGVIS&lat="+kflat+"&lon="+kflng+"&dev=0&style=2");
     sApp.start(function () {
       //alert("OK");
     }, function (error) {
