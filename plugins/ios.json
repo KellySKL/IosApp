@@ -30,9 +30,6 @@
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
-    "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
-    },
     "cordova-plugin-file-opener2": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
@@ -56,6 +53,12 @@
       "PACKAGE_NAME": "com.ionicframework.example737401"
     },
     "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "com.ionicframework.example737401"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.ionicframework.example737401"
+    },
+    "cordova-plugin-file-transfer": {
       "PACKAGE_NAME": "com.ionicframework.example737401"
     }
   },

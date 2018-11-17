@@ -4617,6 +4617,9 @@ angular.module('starter.controllers', [])
             template: '第'+now_count+'张上传成功！'
           });
           if(now_count==$scope.imageList.length) {
+            $ionicLoading.show({
+                template: '全部上传！'
+            });
             $timeout(function () {
                 $ionicLoading.hide();
                 $state.go('weixiu2',{item:$scope.item,wx_note:$scope.wx_note})
@@ -4633,7 +4636,7 @@ angular.module('starter.controllers', [])
           $ionicLoading.hide();
         },2000);
       }
-
+              
       var options = new FileUploadOptions();
       options.fileKey = "file1";
       options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
@@ -4645,14 +4648,14 @@ angular.module('starter.controllers', [])
       options.params = params;
       var ft = new FileTransfer();
       //传输进度
-      ft.onprogress = function(progressEvent) {
-        if (progressEvent.lengthComputable) {
-          $ionicLoading.show({
-            //template:'正在上传第'++'张...'
-            //template: '当前进度：'+progressEvent.loaded / progressEvent.total
-          });
-        }
-      };
+//      ft.onprogress = function(progressEvent) {
+//        if (progressEvent.lengthComputable) {
+//          $ionicLoading.show({
+//            //template:'正在上传第'++'张...'
+//            template: '当前进度：'+progressEvent.loaded / progressEvent.total
+//          });
+//        }
+//      };
       //上传地址
       var SERVER = userService(0).address+"WeixiuService.asmx/Upload";
       ft.upload(fileURL, encodeURI(SERVER), success, fail, options);

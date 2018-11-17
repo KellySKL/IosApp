@@ -68,5 +68,7 @@
     <plugin name="cordova-plugin-splashscreen" spec="~4.0.1" />
     <plugin name="cordova-plugin-appavailability" spec="~0.4.2" />
     <icon src="resources/ios/icon/icon-small@3x.png" />
+    <plugin name="cordova-plugin-file" spec="^5.0.0" />
+    <plugin name="cordova-plugin-file-transfer" spec="^1.7.1" />
     <engine name="ios" spec="^4.5.5" />
 </widget>

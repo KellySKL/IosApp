@@ -105,14 +105,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-plugin-file": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-file@4.3.3"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-image-picker": {
     "source": {
       "type": "registry",
@@ -124,7 +116,7 @@
   "cordova-plugin-file-transfer": {
     "source": {
       "type": "registry",
-      "id": "cordova-plugin-file-transfer"
+      "id": "cordova-plugin-file-transfer@^1.7.1"
     },
     "is_top_level": true,
     "variables": {}
@@ -162,5 +154,13 @@
     "variables": {
       "GEOLOCATION_USAGE_DESCRIPTION": "ScueLocation"
     }
+  },
+  "cordova-plugin-file": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-file@5.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
