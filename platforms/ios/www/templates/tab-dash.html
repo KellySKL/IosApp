@@ -26,6 +26,20 @@
     /*border:1px solid #ccc;*/
     margin-bottom: auto;
   }
+#topbar{
+    min-height:40px;
+    background-color:transparent;
+    padding-left:5px;
+    padding-right:5px;
+    position:absolute;
+    font-size:12px;
+    left:5px;
+    top:5px;
+    border-radius:5px;
+    line-height:18px;
+    /*border:1px solid #ccc;*/
+    margin-bottom: auto;
+}
   #tip input[type='button']{
     margin-left: 10px;
     margin-right:10px;
@@ -53,14 +67,13 @@
     <!--</ion-nav-buttons>-->
   <!--</ion-nav-bar>-->
   <ion-content>
-    <div class="bar bar-header item-input-inset">
-      <label class="item-input-wrapper">
-        <i class="icon  ion-ios-search-strong placeholder-icon"></i>
-        <input id="gothereN" type="search" placeholder="搜索" ng-model="$parent.searchName" ng-change="searchCN()">
-      </label>
-      <i class="icon ion-arrow-up-a" style="font-size: 20px;padding-left: 8px" ng-click="GoThere(searchName)"></i>
-
-    </div>
+        <div class="bar item-input-inset">
+          <label class="item-input-wrapper">
+            <i class="icon  ion-ios-search-strong placeholder-icon"></i>
+            <input id="gothereN" type="search" placeholder="搜索" ng-model="$parent.searchName" ng-change="searchCN()">
+          </label>
+          <i class="icon ion-arrow-up-a" style="font-size: 20px;padding-left: 8px" ng-click="GoThere(searchName)"></i>
+        </div>
     <div style="border:1px solid #317ff2;overflow-y:auto;width:100%;max-height:180px;margin:0px auto;overflow-x:hidden;position:absolute;z-index:9999;" id="kflist">
       <ion-list>
         <ion-item class="item-small" ng-repeat="item in dataKF" rel="external nofollow" ng-click="it_click(item)">
