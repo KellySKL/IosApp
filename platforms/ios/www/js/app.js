@@ -244,56 +244,24 @@ angular.module('starter', ['ionic',
       ionic.Platform.isIOS() ? StatusBar.overlaysWebView(true) : StatusBar.overlaysWebView(false);
     }
     //ionic.Platform.fullScreen(true,true);
-//    apiService.getLocalVersion().then(function (response) {
-//      var curVersion = response;
-//      return apiService.getServerVersion(curVersion);
-//    })
-//      .then(function (response) {
-//      if(response.d)
-//      {
-//        // 一个提示对话框
-//          var alertPopup = $ionicPopup.alert({
+    apiService.getLocalVersion().then(function (response) {
+      var curVersion = response;
+      return apiService.getServerVersion(curVersion);
+    }).then(function (response) {
+      if(response.d)
+      {
+        $ionicLoading.show({template: '检查到版本更新，请前往AppStore获取更新'});
+        // 一个提示对话框
+//        var alertPopup = $ionicPopup.alert({
 //            title: '应用提醒',
 //            template: '检查到版本更新！'
-//          });
-//          alertPopup.then(function(res) {
-//            $ionicLoading.show({
-//              template: "已经下载：0%"
-//            });
-//            var url = encodeURI($rootScope.ConfigList[0].apk_url);
-//            var targetPath = cordova.file.externalRootDirectory + "/download/" + url.substr(url.lastIndexOf("/") + 1);
-//            var trustHosts = true
-//            var options = {};
-//            $cordovaFileTransfer.download(url, targetPath, options, trustHosts).then(function (result) {
-//              // 打开下载下来的APP
-//              $cordovaFileOpener2.open(targetPath, 'application/vnd.android.package-archive'
-//              ).then(function () {
-//                // 成功
-//              }, function (err) {
-//                // 错误
-//              });
-//              $ionicLoading.hide();
-//            }, function (err) {
-//              $ionicLoading.show({
-//                noBackdrop: true,
-//                template: "下载失败,请检查网络后，重新打开应用！"
-//              });
-//            }, function (progress) {
-//              //进度，这里使用文字显示下载百分比
-//              $timeout(function () {
-//                var downloadProgress = (progress.loaded / progress.total) * 100;
-//                $ionicLoading.show({
-//                  template: "已经下载：" + Math.floor(downloadProgress) + "%"
-//                });
-//                if (downloadProgress > 99) {
-//                  $ionicLoading.hide();
-//                }
-//              })
-//            });
-//          });
-//      }
-//      else {}
-//    });
+//        });
+//        alertPopup.then(function(res) {
+//            //window.open('itms-apps://itunes.apple.com/cn/app/jie-zou-da-shi/id493901993?mt=8');
+//        });
+      }
+      else {}
+    });
     // Run when the device is ready
     readyRun();
   });

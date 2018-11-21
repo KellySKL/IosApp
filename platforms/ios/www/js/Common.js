@@ -8,7 +8,7 @@ angular.module('ApiService', [])
       getServerVersion: function (curVersion) {
         var q = $q.defer();
         var p ={curVersion:curVersion};
-        $http.post(userService(0).address+"LoginService.asmx/AppVersion",p).success(function (response, status, headers, config) {
+        $http.post(userService(0).address+"LoginService.asmx/iOSAppVersion",p).success(function (response, status, headers, config) {
           q.resolve(response);
         }).error(function (response, status, headers, config) {
           q.reject(response);
