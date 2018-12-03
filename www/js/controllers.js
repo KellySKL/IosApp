@@ -805,6 +805,102 @@ angular.module('starter.controllers', [])
       list.push(Obj2);
       $state.go('poiDetail',{list:list,item:item})
     }
+
+    //========================================多选 、一键审核======================================
+    $scope.myValue={
+      showCheckBox:false,
+      btnname:'编辑',
+    }
+    $scope.origin_hasmore;//暂存编辑之前的加载状态  编辑中不允许加载
+    $scope.CheckStatus=function () {
+      if($scope.myValue.showCheckBox==true){
+        $scope.myValue.showCheckBox=false;
+        $scope.myValue.btnname='编辑';
+        poiBills.param.hasmore= $scope.origin_hasmore;
+      }
+      else
+      {
+        $scope.origin_hasmore = poiBills.param.hasmore;
+        poiBills.param.hasmore = false;
+        $scope.myValue.btnname='取消';
+        $scope.myValue.showCheckBox=true;
+      }
+    }
+    $scope.selectAll=false;
+
+    $scope.all= function (m) {
+      for(var i=0;i<$scope.data.length;i++){
+        if(m===true){
+          $scope.data[i].Checked=true;
+          if($scope.result.indexOf($scope.data[i].ID) == -1){//不存在就添加
+            $scope.result.push($scope.data[i].ID);
+          }
+        }else {
+          $scope.data[i].Checked=false;
+          var idx = $scope.result.indexOf($scope.data[i].ID);
+          if( idx != -1){//存在就删除
+            $scope.result.splice(idx,1);
+          }
+        }
+      }
+    };
+    //https://blog.csdn.net/u010874036/article/details/51711644
+    //存储已选
+    $scope.result = [];
+    //触发事件复选框
+    $scope.selectCBox = function(item){
+      var id = item.ID;
+      if(item.Checked){//选中，就添加
+        if($scope.result.indexOf(id) == -1){//不存在就添加
+          $scope.result.push(id);
+        }
+      }else{//去除就删除result里
+        var idx = $scope.result.indexOf(id);
+        if( idx != -1){//不存在就添加
+          $scope.result.splice(idx,1);
+        }
+      }
+    };
+
+    $scope.AuditAll=function (type) {
+      if($scope.result.length<=0)
+      {
+        $ionicLoading.show({
+          template: '请勾选要审核的记录！',duration: 2000
+        });
+      }
+      else{
+        var p = {
+          userName:$rootScope.userName,
+          type:type,
+          id_list:$scope.result
+        }
+        $ionicLoading.show({
+          template: '正在处理...',duration: 30000
+        });
+        $http.post(userService(0).address + "AuditService.asmx/PoiBillAudit_ALL", p)
+          .success(function (response, status, headers, config) {
+            if(response.d>0)
+            {
+              $ionicLoading.show({
+                template: '操作成功，正在刷新数据！',duration: 2000
+              });
+              $scope.CheckStatus();
+              $scope.doRefresh();
+            }
+            else
+            {
+              $ionicLoading.show({
+                template: '操作失败！错误代码：'+response.d,duration: 2000
+              });
+            }
+          })
+          .error(function (response, status, headers, config) {
+            alert(angular.toJson(response));
+          });
+      }
+    }
+    //========================================多选 、一键审核========END==============================
   })
   // 客户定位详情
   .controller('PoiAuditDetailCtrl', function($ionicListDelegate,poiBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
@@ -4636,7 +4732,7 @@ angular.module('starter.controllers', [])
           $ionicLoading.hide();
         },2000);
       }
-              
+
       var options = new FileUploadOptions();
       options.fileKey = "file1";
       options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
