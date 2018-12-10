@@ -1,4 +1,13 @@
  /*Empty. Add your own CSS if you like */
+.account_div1{
+    font-size:20px;
+    width: 100%;
+    height: 50px;
+    margin: 6px auto;
+    line-height: 50px; /*设置line-height与父级元素的height相等*/
+    text-align:left; /*设置文本水平居中*/
+    overflow: hidden; /*防止内容超出容器或者产生自动换行*/
+}
  .mycol{
    height:150px;
    background-color: #F9FAFB;

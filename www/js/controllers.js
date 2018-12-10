@@ -1488,9 +1488,9 @@ angular.module('starter.controllers', [])
               }
               else if(isiOS==true)
               {
-                platform="IOS";
-                schemeIntent = "iosamap://"//高德
-                scheme = 'baidu://';//百度
+                platform="iOS";
+                schemeIntent = 'iosamap://';//高德
+                scheme = 'baidumap://';//百度
               }
               else
               {
@@ -4410,6 +4410,16 @@ angular.module('starter.controllers', [])
             alertPopup.close(); // 2秒后关闭弹窗
           }, 2000);
         }
+        else if(response.d.status==9)
+        {
+        var alertPopup = $ionicPopup.alert({
+                                            title: '提示',
+                                            template: '设备UUID校验失败！'
+                                            });
+        $timeout(function() {
+                  alertPopup.close(); // 2秒后关闭弹窗
+                  }, 2000);
+        }
         else if(response.d.status==10)
         {
           $ionicLoading.show({
@@ -4636,9 +4646,10 @@ angular.module('starter.controllers', [])
         saveToPhotoAlbum: true                                   //保存进手机相册
       };
       $cordovaCamera.getPicture(options).then(function(imageData){
-          $scope.imageList.push(imageData);
-          // readerFile(imageData);
-          ReloadImg();
+                                             $scope.pickMore();
+          //$scope.imageList.push(imageData);
+          ////readerFile(imageData);
+          //ReloadImg();
       }, function(err) {
         // alert('相机启动失败！')
       });
@@ -4736,7 +4747,7 @@ angular.module('starter.controllers', [])
       var options = new FileUploadOptions();
       options.fileKey = "file1";
       options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
-      options.mimeType = "image/jpg";
+      options.mimeType = "image/jpeg";
       //上传参数
       var params = {};
       params.value1 = $rootScope.userName;

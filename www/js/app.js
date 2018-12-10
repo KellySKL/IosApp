@@ -205,6 +205,15 @@ angular.module('starter', ['ionic',
                 },2000)
               }
             }
+            else if(response.d.status == 9){
+                $ionicLoading.show({template: '设备UUID校验失败，请联系管理员！',duration: 2000});
+                $timeout(function () {
+                    $state.go('login', {}, {
+                    reload: true
+                    });
+                    event.preventDefault();
+                },2000)
+            }
             else {
               $ionicLoading.hide(); // 3秒后关闭弹窗
               $state.go('login', {}, {

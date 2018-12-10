@@ -127,70 +127,70 @@
   },
   "installed_plugins": {
     "com.lampa.startapp": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-android-support-v4": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-app-version": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-appavailability": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-device": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-background-mode": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-badge": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-compat": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-camera": {
       "CAMERA_USAGE_DESCRIPTION": " ",
       "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-file": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-file-opener2": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-file-transfer": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-geolocation": {
       "GEOLOCATION_USAGE_DESCRIPTION": "ScueLocation",
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-image-picker": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-local-notification": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-registerusernotificationsettings": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-statusbar": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     },
     "ionic-plugin-keyboard": {
-      "PACKAGE_NAME": "com.ionicframework.example737401"
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     }
   },
   "dependent_plugins": {},

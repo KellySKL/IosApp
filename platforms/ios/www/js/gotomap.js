@@ -20,11 +20,12 @@
   function startIOSBD(lat,lng,kflat,kflng,name) { // Success callback
      //原链接："baidumap://map/direction?origin=34.264642646862,108.95108518068&destination=40.007623,116.360582&coord_type=bd09ll&mode=driving&src=ios.baidu.openAPIdemo"
     //驾车导航模式 ： "baidumap://map/navi?location="+kflat+","+kflng+"&coord_type=bd09ll&type=BLK&src=ios.baidu.openAPIdemo"
-  var sApp = startApp.set("baidumap://map/direction?origin={{我的位置}}&destination=name:"+name+"|latlng:"+kflat+","+kflng+"&coord_type=bd09ll&mode=driving&src=ios.Scue.App");
+  var sApp = startApp.set("baidumap://map/direction?destination="+kflat+","+kflng+"&coord_type=gcj02&mode=driving&src=ios.baidu.openAPIdemo");
+                          //"baidumap://map/direction?origin={{我的位置}}&destination=name:"+name+"|latlng:"+kflat+","+kflng+"&coord_type=bd09ll&mode=driving&src=ios.Scue.App");
     sApp.start(function() { /* success */
-      //alert("OK");
+      alert("OK");
     }, function(error) { /* fail */
-      alert("请先安装百度地图！");
+      alert("请先安装iOS百度地图！");
     });
 
   }
@@ -73,11 +74,12 @@
   function startIosGeo(lat,lng,kflat,kflng,name) {
     // 原链接 ："iosamap://path?sourceApplication=applicationName&sid=BGVIS1&did=BGVIS2&dlat="+kflat+"&dlon="+kflng+"&dname="+name+"&dev=0&t=0"
     // &slat="+lat+"&slon="+lng+"&sname=当前位置
-    var sApp = startApp.set("iosamap://navi?sourceApplication=ScueApp&poiname="+name+"&poiid=BGVIS&lat="+kflat+"&lon="+kflng+"&dev=1&style=2");
+  var sApp = startApp.set("iosamap://path?sourceApplication=applicationName&sid=BGVIS1&did=BGVIS2&dlat="+kflat+"&dlon="+kflng+"&dname=END&dev=0&t=0");
+                            //"iosamap://navi?sourceApplication=ScueApp&poiname="+name+"&poiid=BGVIS&lat="+kflat+"&lon="+kflng+"&dev=1&style=2");
     sApp.start(function () {
-      //alert("OK");
+      alert("OK");
     }, function (error) {
-      alert("请先安装高德地图！");
+      alert("请先安装iOS高德地图！");
     });
   };
 
@@ -96,8 +98,8 @@
     var scheme;   // 地图APP Package Name
     var platform;
     if ($rootScope.platfrom=="IOS") {
-      schemeIntent = "iosamap://"//高德
-      scheme = 'baidu://';//百度
+      schemeIntent = 'iosamap://';//高德
+      scheme = 'baidumap://';//百度
       platform="IOS";
       CheckIOS(schemeIntent);
       CheckIOSBD(scheme);
@@ -152,7 +154,7 @@
   };
 
   var geo1 = function geo1 (app,lat,lng,kflat,kflng,name) {
-    if (app.plat == "IOS") {
+    if (app.plat == "iOS") {
       if (app.name == "高德地图") {
         startIosGeo(lat, lng, kflat, kflng, name);
       }
