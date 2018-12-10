@@ -1,0 +1,74 @@
+<style type="text/css">
+  body{
+    margin:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+  }
+  #container{
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    bottom:0;
+  }
+  #tip{
+    min-height:65px;
+    background-color:#fff;
+    padding-left:10px;
+    padding-right:10px;
+    position:absolute;
+    font-size:12px;
+    left:5px;
+    top:5px;
+    border-radius:5px;
+    line-height:18px;
+    border:1px solid #ccc;
+  }
+  #tip input[type='button']{
+    margin-left: 10px;
+    margin-right:10px;
+    margin-top:10px;
+    background-color: #0D9BF2;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    color:#fff;
+    font-size:12px;
+    border-radius:3px;
+    outline: none;
+    border:0;
+    float:right;
+  }
+</style>
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+    <!--<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>-->
+  </i>
+  <h1 class="title">手机定位</h1>
+</ion-header-bar>
+<ion-view view-title="手机定位">
+  <ion-content>
+    <div class="AMapArea" id="amap" hidden="true">
+      <div id="{{AMapId}}"></div>
+      {{initAMap()}}
+
+      <!--{{getLocation()}}-->
+      <!--{{addLine()}}-->
+      <!--{{addCircle()}}-->
+      <!--{{ListenClick()}}-->
+    </div>
+    <div id="tip">
+      <!--<div>-->
+      <!--&lt;!&ndash;<input type="button" value="watch" ng-click="watchPosition()"/>&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="button" value="current" ng-click="getCurrentPosition()"/>&ndash;&gt;-->
+      <!--</div>-->
+      <div id="r_title"><b>显示结果:</b></div>
+      <div id="result"></div>
+    </div>
+
+  </ion-content>
+
+</ion-view>
+

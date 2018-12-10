@@ -1,0 +1,31 @@
+<ion-view title="打卡申请">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="list" style="width:100%">
+      <div class="item item-input">
+        客户名称 *： <input type="text" id="kfname" ng-model="$parent.searchName" ng-change="searchCN()">
+      </div>
+      <div style="border:1px solid #317ff2;overflow-y:auto;width:100%;max-height:180px;margin:0px auto;overflow-x:hidden;position:absolute;z-index:9999;" id="listkf">
+        <ion-list>
+          <ion-item class="item-small" ng-repeat="item in data" rel="external nofollow" ng-click="it_click(item)">
+            <h2>{{item.NAME}}</h2>
+          </ion-item>
+        </ion-list>
+      </div>
+      <div class="item item-divider">
+        备注说明 *
+      </div>
+      <div class="item item-input">
+        <textarea style="height: 150px" ng-model="$parent.remark"></textarea>
+      </div>
+    </div>
+    <p style="color: #5B5B5C">【注意】打卡申请，每天只能申请一次，请务必确定信息填写无误。</p>
+    <div class="padding">
+      <button class="button button-block button-positive" id ="submit" ng-click="submitSign()">提交</button>
+    </div>
+  </ion-content>
+</ion-view>
+

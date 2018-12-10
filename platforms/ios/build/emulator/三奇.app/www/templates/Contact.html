@@ -1,0 +1,26 @@
+<ion-view view-title="选择联系人">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content>
+    <div>
+    <ion-list>
+      <ion-item ng-repeat="item in Person" type="item-text-wrap" style="margin:8px;border:1px solid #317ff2;border-radius: 10px;" ng-click="getDet(item)">
+        <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
+          职位：{{item.position}}
+        </div>
+        <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
+          姓名：{{item.name}}
+        </div>
+        <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
+          联系方式：{{item.phone}}
+        </div>
+      </ion-item>
+    </ion-list>
+    </div>
+    <div class="padding">
+      <button class="button button-block button-positive" id ="submit" ng-click="NewContact()">新建联系人</button>
+    </div>
+  </ion-content>
+</ion-view>

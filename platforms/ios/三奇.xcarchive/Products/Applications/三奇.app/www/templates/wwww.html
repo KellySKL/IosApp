@@ -1,0 +1,352 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>CSS配合JS实现带缓冲的自动播放幻灯片效果_网页代码站(www.webdm.cn)</title>
+  <style>
+    body,div,ul,li{margin:0;padding:0;}
+    ul{list-style-type:none;}
+    body{background:#000;text-align:center;font:12px/20px Arial;}
+    #box{position:relative;width:490px;height:490px;background:#fff;border-radius:5px;border:8px solid #fff;margin:10px auto;cursor:pointer;}
+    #box .list{position:relative;width:490px;height:490px;overflow:hidden;}
+    #box .list ul{position:absolute;top:0;left:0;}
+    #box .list li{width:490px;height:490px;overflow:hidden;}
+    #box .count{position:absolute;right:0;bottom:5px;}
+    #box .count li{color:#fff;float:left;width:20px;height:20px;cursor:pointer;margin-right:5px;overflow:hidden;background:#F90;opacity:0.7;filter:alpha(opacity=70);border-radius:20px;}
+    #box .count li.current{color:#fff;opacity:1;filter:alpha(opacity=100);font-weight:700;background:#f60;}
+    #tmp{width:100px;height:100px;background:red;position:absolute;}
+  </style>
+  <script type="text/javascript">
+    window.onload = function ()
+    {
+      var oBox = document.getElementById("box");
+      var oList = oBox.getElementsByTagName("ul")[0];
+      var aImg = oBox.getElementsByTagName("img");
+      var timer = playTimer = null;
+      var index = i = 0;
+      var bOrder = true;
+      var aTmp = [];
+
+      //生成数字按钮
+      for (i = 0; i < aImg.length; i++)
+      {
+        aTmp.push("<li>" + (i + 1) + "</li>")
+      }
+
+      //插入元素
+      var oCount = document.createElement("ul");
+      oCount.className = "count"
+      oCount.innerHTML = aTmp.join("");
+      oBox.appendChild(oCount);
+
+      //初始化状态
+      var aBtn = oBox.getElementsByTagName("ul")[1].getElementsByTagName("li");
+      aBtn[index].className = "current";
+
+      //按钮点击切换
+      for (i = 0; i < aBtn.length; i++)
+      {
+        aBtn[i].index = i;
+        aBtn[i].onclick = function ()
+        {
+          index = this.index;
+          for (i = 0; i < aBtn.length; i++) aBtn[i].className = "";
+          this.className = "current";
+          startMove(-(this.index * aImg[0].offsetHeight))
+        }
+      }
+
+      //鼠标移入展示区停止自动播放
+      oBox.onmouseover = function ()
+      {
+        clearInterval(playTimer)
+      };
+
+      //鼠标离开展示区开始自动播放
+      oBox.onmouseout = function ()
+      {
+        autoPlay()
+      };
+
+      //页面加载即调用自动播放
+      oBox.onmouseout();
+
+      //自动播放函数
+      function autoPlay()
+      {
+        playTimer = setInterval(function ()
+        {
+          bOrder ? index++ : index--;
+          index == aBtn.length - 1 && (bOrder = false);
+          index == 0 && (bOrder = true);
+          aBtn[index].onclick();
+          startMove(-(index * aImg[0].offsetHeight))
+        }, 3000)
+      }
+      function startMove(iTarget)
+      {
+        clearInterval(timer);
+        timer = setInterval(function ()
+        {
+          doMove(iTarget)
+        }, 30)
+      }
+      function doMove (iTarget)
+      {
+        var iSpeed = (iTarget - oList.offsetTop) / 10;
+        iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+        oList.offsetTop == iTarget ? clearInterval(timer) : oList.style.top = oList.offsetTop + iSpeed + "px"
+      }
+    };
+  </script>
+</head>
+<body>
+<div id="box">
+  <div class="list">
+    <ul>
+      <li><img src="http://www.webdm.cn/images/wall5.jpg" width="490" height="490" /></li>
+      <li><img src="http://www.webdm.cn/images/wall6.jpg" width="490" height="490" /></li>
+      <li><img src="http://www.webdm.cn/images/wall7.jpg" width="490" height="490" /></li>
+    </ul>
+  </div>
+</div>
+<br />
+<p><a href="http://www.webdm.cn">网页代码站</a> - 最专业的网页代码下载网站 - 致力为中国站长提供有质量的网页代码！</p>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+  <!--<meta charset="UTF-8">-->
+  <!--<title></title>-->
+  <!--<style>-->
+    <!--*{-->
+      <!--padding: 0px;-->
+      <!--margin: 0px;-->
+      <!--font-family: "微软雅黑", "宋体";-->
+    <!--}-->
+    <!--body{-->
+      <!--position: relative;-->
+    <!--}-->
+    <!--#box{-->
+      <!--overflow: hidden;-->
+      <!--position: relative;-->
+      <!--width: 600px;-->
+      <!--height: 400px;-->
+      <!--border-top:3px slateblue solid;-->
+      <!--border-bottom: 3px slateblue solid;-->
+      <!--top:100px;-->
+      <!--margin: auto;-->
+    <!--}-->
+    <!--#list{-->
+      <!--position: absolute;-->
+      <!--font-size: 0px;-->
+      <!--width:4200px;-->
+      <!--z-index: 1;-->
+      <!-- -webkit-transition: left .2s linear ;-->
+    <!--}-->
+    <!--#bottom{-->
+      <!--position: absolute;-->
+      <!--width: 100px;-->
+      <!--height:40px;-->
+      <!--text-align: center;-->
+      <!--line-height: 40px;-->
+      <!--/*border: 1px red solid;*/-->
+      <!--top: 350px;-->
+      <!--z-index: 2;-->
+    <!--}-->
+    <!--#bottom span{-->
+      <!--display:inline-block;-->
+      <!--width: 8px;-->
+      <!--height: 8px;-->
+      <!--border-radius: 8px;-->
+      <!--padding:1px;-->
+      <!--/*//  border: 1px #6F6F6F solid;*/-->
+      <!--background: #6F6F6F;-->
+      <!--cursor: pointer;-->
+    <!--}-->
+    <!--#bottom .on{-->
+      <!--background: #E6821B;!important;-->
+    <!--}-->
+    <!--#prev{-->
+      <!--display: block;-->
+      <!--width: 40px;-->
+      <!--height: 40px;-->
+      <!--text-align:center;-->
+      <!--line-height: 40px;-->
+      <!--/*border: 1px red solid;*/-->
+      <!--position: absolute;-->
+      <!--z-index: 2;-->
+      <!--text-decoration: none;-->
+      <!--font-size: 35px;-->
+      <!--top: 150px;-->
+      <!--color:white ;-->
+      <!--background:rgba(255,255,255,.2);-->
+      <!-- -webkit-transition: all .2s linear;-->
+      <!--opacity: 0;-->
+    <!--}-->
+    <!--#box:hover>#prev{-->
+      <!--opacity: 1;-->
+    <!--}-->
+    <!--#prev:hover{-->
+      <!--background: rgba(0,0,0,.3);-->
+    <!--}-->
+    <!--#next{-->
+      <!--display: block;-->
+      <!--width: 40px;-->
+      <!--height: 40px;-->
+      <!--text-align:center;-->
+      <!--line-height: 40px;-->
+      <!--/*border: 1px red solid;*/-->
+      <!--position: absolute;-->
+      <!--z-index: 2;-->
+      <!--text-decoration: none;-->
+      <!--font-size: 35px;-->
+      <!--top: 150px;-->
+      <!--left: 560px;-->
+      <!--color:white ;-->
+      <!--background:rgba(255,255,255,.2);-->
+      <!-- -webkit-transition: all .2s linear;-->
+      <!--opacity: 0;-->
+    <!--}-->
+    <!--#box:hover>#next{-->
+      <!--opacity: 1;-->
+    <!--}-->
+    <!--#next:hover{-->
+      <!--background: rgba(0,0,0,.3);-->
+    <!--}-->
+  <!--</style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<p id="box">-->
+<!--<p id="list" style="left: -600px;">-->
+  <!--<img src='img/ben.png' alt="1"/>-->
+  <!--<img src='img/ben.png' alt="1"/>-->
+  <!--<img src='img/ben.png' alt="2"/>-->
+  <!--<img src='img/ben.png' alt="3"/>-->
+  <!--<img src='img/ben.png' alt="4"/>-->
+  <!--<img src='img/ben.png' alt="5"/>-->
+  <!--<img src='img/ben.png' alt="5"/>-->
+<!--</p>-->
+<!--<p id="bottom">-->
+  <!--<span index="1" class="on"></span>-->
+  <!--<span index="2"></span>-->
+  <!--<span index="3"></span>-->
+  <!--<span index="4"></span>-->
+  <!--<span index="5"></span>-->
+<!--</p>-->
+<!--<a href="javascript：;" id="prev" class="arrow"><</a>-->
+<!--<a href="javascript：;" id="next" class="arrow">></a>-->
+<!--</p>-->
+
+<!--<script>-->
+  <!--window.onload=function(){-->
+    <!--var box=document.getElementById("box");-->
+    <!--var list=document.getElementById("list");-->
+    <!--var bottom=document.getElementById("bottom").getElementsByTagName("span");-->
+    <!--console.log(bottom);-->
+    <!--var prev=document.getElementById("prev");-->
+    <!--var next=document.getElementById("next");-->
+
+    <!--/**-->
+     <!--* 封装函数，点击时左右移动，判断是否为最后和最前一张图的位置，调用函数触发-->
+     <!--* @param n-->
+     <!--*/-->
+    <!--function animate(n){-->
+      <!--var left=parseInt(list.style.left)+n;-->
+      <!--list.style.left=left+"px";-->
+      <!--if(left<-3000){-->
+        <!--list.style.left=-600+"px";-->
+      <!--}-->
+      <!--if(left>-600){-->
+        <!--list.style.left=-3000+"px";-->
+      <!--}-->
+    <!--}-->
+    <!--var index=1;-->
+    <!--//点击左键-->
+    <!--prev.onclick=function(){-->
+      <!--//如果为第一个圆点时，点击后切换到第二个圆点-->
+      <!--if(index==1){-->
+        <!--index=5;-->
+      <!--}else{-->
+        <!--index-=1;-->
+      <!--}-->
+
+      <!--for(var i=0;i<bottom.length;i++){-->
+        <!--if(bottom[i].className="on"){-->
+          <!--bottom[i].className="";-->
+        <!--}-->
+      <!--}-->
+      <!--bottom[index-1].className="on";-->
+      <!--console.log(bottom);-->
+      <!--animate(600);-->
+    <!--}-->
+
+
+
+    <!--//点击右键-->
+    <!--next.onclick=function() {-->
+      <!--animate(-600);-->
+      <!--//如果为第一个圆点时，点击后切换到最后一个圆点。-->
+      <!--if (index ==5) {-->
+        <!--index = 1;-->
+      <!--} else {-->
+        <!--index += 1;-->
+      <!--}-->
+      <!--//循环每个圆点，如果点击之前为色圆点，改变为无色圆点。-->
+      <!--for (var i = 0; i < bottom.length; i++) {-->
+        <!--if (bottom[i].className = "on") {-->
+          <!--bottom[i].className = "";-->
+        <!--}-->
+      <!--}-->
+      <!--//下一个圆点颜色添加。-->
+      <!--bottom[index - 1].className = "on";-->
+      <!--//console.log(bottom);-->
+    <!--}-->
+    <!--//函数封装-->
+    <!--function buttom(){-->
+      <!--//循环每个圆点，如果点击之前为色圆点，改变为无色圆点。-->
+      <!--for(var i=0;i<bottom.length;i++){-->
+        <!--if(bottom[i].className="on"){-->
+          <!--bottom[i].className="";-->
+        <!--}-->
+      <!--}-->
+      <!--//下一个圆点颜色添加。-->
+      <!--bottom[index-1].className="on";-->
+      <!--//console.log(bottom);-->
+    <!--}-->
+    <!--//点击小圆点图片切换-->
+    <!--var index=1;-->
+    <!--for(var i=0;i<bottom.length;i++){-->
+      <!--bottom[i].onclick=function(){-->
+        <!--if(this.className=="on"){-->
+          <!--return;-->
+        <!--}-->
+        <!--var mydex=parseInt(this.getAttribute("index"));-->
+        <!--console.log(mydex);-->
+        <!--var  dex=-600*(mydex-index);-->
+        <!--animate(dex);-->
+        <!--index=mydex;-->
+        <!--//点击小圆点颜色改变，调用buttom，改变颜色-->
+        <!--buttom();-->
+        <!--console.log(dex+"dd");-->
+      <!--}-->
+    <!--}-->
+    <!--//实现轮播自动播放-->
+    <!--var time;-->
+    <!--function play(){-->
+      <!--time=setInterval(function(){-->
+        <!--next.onclick();-->
+      <!--},5000)-->
+      <!--function clear(){-->
+        <!--time=clearInterval(time);-->
+      <!--}-->
+    <!--}-->
+    <!--box.onmouseover=play();-->
+    <!--box.onmouseout=clear();-->
+
+  <!--}-->
+
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

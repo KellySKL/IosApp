@@ -1,0 +1,61 @@
+
+<ion-view view-title="{{item.billcode}}{{item.state_desc}}">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="item item-input">
+      申请人：<input type="text" ng-model="item.billman">
+    </div>
+    <div class="item item-input">
+      客户名称：<input type="text" ng-model="item.client">
+    </div>
+    <div ng-hide="Sign">
+      <div class="item item-divider">
+        招待费用
+      </div>
+      <div class="item item-input">
+        餐费(元)： <input id="txt1" type="text" ng-model="item.eating" >
+      </div>
+      <div class="item item-input">
+        其他(元)： <input type="text"  id="txt2" ng-model="item.other">
+      </div>
+      <div class="item item-input">
+        预计招待人员： <input type="text" id="txt3" style="height: 50px" ng-model="item.person">
+      </div>
+      <div class="item item-divider">
+        过路费申请
+      </div>
+      <div class="item item-input">
+        过路费： <input type="text" id="txt4" style="height: 50px" ng-model="item.traffic">
+      </div>
+      <div class="item item-divider">
+        佣金申请报备
+      </div>
+      <div class="item item-input">
+        佣金申请： <input type="text" id="txt5" style="height: 50px" ng-model="item.commission">
+      </div>
+    </div>
+    <div class="item item-divider">
+      备注说明
+    </div>
+    <div class="item item-input">
+      <textarea id="txt6" style="height: 80px" ng-model="item.remark"></textarea>
+    </div>
+    <div class="item item-divider">
+      审核意见
+    </div>
+    <div class="item item-input" style="margin-bottom: 10px">
+      <textarea id="txt7" style="height: 50px" ng-model="item.opinion"></textarea>
+    </div>
+    <div class="padding" ng-hide="myVar">
+      <div style="width: 30%;float: left;margin:5px;">
+        <button class="button button-block button-positive" ng-click="audit('NO')">否决</button>
+      </div>
+      <div style="width: 30%;float: right;margin:5px;">
+        <button class="button button-block button-positive" ng-click="audit('YES')">同意</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,20 @@
+<ion-view view-title="上传照片">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button ng-click="backWX()">
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content >
+    <div class="list">
+      <div class="buttons" style="margin-top: 8px;margin-left: 5px;">
+        <button class="button button-small button-balanced"  ng-click="addPhoto();">添加</button>
+        <button class="button button-small button-balanced"  ng-click="uploadPhoto();">上传</button>
+      </div>
+      <p style="margin:5px;" >长按删除图片</p>
+      <div class="row" ng-repeat=" row1 in ImgRow " >
+        <div class="mycol col-34"  style="height:150px;" ng-repeat=" img1 in row1 " on-hold="ImgHold(img1)" >
+          <img class="full-image" style="max-height:138px;vertical-align:middle;" ng-src="{{img1}}" />
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

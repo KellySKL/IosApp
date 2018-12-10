@@ -1,0 +1,40 @@
+<ion-view view-title="查看回复">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content ng-controller="ReplyCtrl" class="padding">
+    <ion-refresher
+      pulling-text="下拉刷新..."
+      pulling-icon='ion-arrow-down-c'
+      on-refresh="doRefresh()">
+    </ion-refresher>
+    <div class="list">
+      <div class="item" ng-repeat="item in Replies"
+           style="min-height:60px;margin-bottom:5px;border:1px solid #9faaac;border-radius: 5px;" >
+        <div>
+          {{item.createtime}}
+        </div>
+        <div class="item-input item-text-wrap " style="border:none">
+          <div style="width: 20%;">{{item.inserter}}</div>
+          <div style="width: 80%;">
+            <p>{{item.content}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-hide="myVar">
+      <div class="item item-divider">
+        我的回复
+      </div>
+      <div class="item item-input">
+        <textarea id="txt7" style="height: 80px" ng-model="item.reply"></textarea>
+      </div>
+      <div class="padding">
+      <button class="button button-block button-positive" id ="submit" ng-click="submitR()">提交回复</button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>
+

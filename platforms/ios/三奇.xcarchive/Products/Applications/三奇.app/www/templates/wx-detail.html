@@ -1,0 +1,42 @@
+<ion-view view-title="{{item.CODE}}">
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-content class="padding">
+    <div class="item item-input">
+      客户：<input type="text" ng-model="item.CLIENT" readonly="readonly">
+    </div>
+    <div class="item item-input">
+      联系人：<input type="text" ng-model="item.CONTACT" readonly="readonly">
+    </div>
+    <div class="item item-input">
+      联系电话：<input type="text" ng-model="item.PHONE" readonly="readonly">
+    </div>
+    <div class="item item-input">
+      维修类型： <input id="txt1" type="text" ng-model="item.BILLTYPE" readonly="readonly">
+    </div>
+    <div class="item item-input">
+      机床编号： <input type="text"  id="txt2" ng-model="item.ZF1" readonly="readonly">
+    </div>
+    <div class="item item-input">
+      内容描述： <textarea style="height:50px" ng-model="item.NOTEPRE" readonly="readonly"></textarea>
+    </div>
+    <div class="item item-input">
+      分析描述：  <textarea style="height:50px" ng-model="item.ZF3" readonly="readonly"></textarea>
+    </div>
+    <div class="item item-input" ng-hide="myComplete" >
+      本次维修总结：  <textarea  style="height:150px" ng-model="item.ZF5" readonly="readonly"></textarea>
+    </div>
+
+    <div class="padding" ng-hide="myComplete">
+      <center>
+        <p style="color: #222222">存在业务需求，关联填写拜访单;无需求不填</p>
+      </center>
+      <button class="button button-block button-positive" ng-click="writeBF(item)">填写拜访单</button>
+    </div>
+    <div class="padding" ng-hide="myVar">
+      <button class="button button-block button-positive" ng-click="writeWX(item)">填写维修总结</button>
+    </div>
+  </ion-content>
+</ion-view>

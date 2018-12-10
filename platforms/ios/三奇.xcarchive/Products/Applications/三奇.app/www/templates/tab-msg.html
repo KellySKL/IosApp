@@ -1,0 +1,185 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <button menu-toggle="left" class="button button-icon icon ion-navicon" style="width: auto"></button>
+  <h1 class="title">业务消息</h1>
+</ion-header-bar>
+<ion-view view-title="业务消息"  cache-view="false" >
+  <!--但是，在iOS上你会发现，它完全不会滚动起来。在经过了大量的搜索之后，才发现少了最关键的一步 :-->
+  <!--<ion-content overflow-scroll="true">-->
+  <ion-content ng-controller="YW_ChatsCtrl">
+    <div class="Sheader">
+      <div style="display:flex;width:100%;">
+        <div style="flex:1;text-align: center; font-size: 18px;height: 38px" class="tab_default" ng-repeat="d in tabNames" ng-click="activeSlide($index)" ng-class="slectIndex==$index ? 'tab_select' : '' ">
+          {{d}}
+          <div class="arrow-top" style="left:{{15+$index*33}}%" ng-show="slectIndex==$index"></div>
+        </div>
+      </div>
+    </div>
+    <div class="Scontent">
+      <ion-slide-box style="height: 100%" on-slide-changed="slideChanged(index)" active-slide="slideIndex" does-continue="false" show-pager="false">
+        <ion-slide>
+          <ion-scroll class="imc-scroll" zooming="true" direction="y" style="width: 100%;" scroll-height>
+            <!--<div style="width: 100%; height: 5000px; background: url('http://www.runoob.com/try/demo_source/Europe_geological_map-en.jpg') repeat"></div>-->
+            <ion-refresher
+              pulling-text="下拉刷新..."
+              pulling-icon='ion-arrow-down-c'
+              on-refresh="doRefresh()">
+            </ion-refresher>
+              <ion-list>
+                <!--ng-click="accpectBF(item)" -->
+                <ion-item ng-repeat="item in dataA" type="item-text-wrap" style="margin:7px;border:1px solid #317ff2;border-radius: 10px;" ng-click="goto(item,'A')" >
+                  <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+                  <div style="float:left;width: 95%">
+                    <div style="margin-bottom:8px;height:auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+                      拜访时间：{{item.date}}
+                    </div>
+                    <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+                      <div style="float: left;height:100%;width:auto;text-align:center">
+                        {{item.client}}
+                      </div>
+                      <div style="float: right;height:100%;width:auto;text-align:center">
+                        <p style="color: #8e979a">{{item.visittype}}</p>
+                      </div>
+                    </div>
+                    <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                     font-size: 14px;color:#8e979a;word-wrap: break-word;
+                     overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                      上次拜访内容：{{item.content}}
+                    </div>
+                  </div>
+                  <div style="font-size:20px;float:right;width:5%;height:auto; line-height:80px;">
+                    <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;" ></a>
+                  </div>
+                  <!--<div style="font-size:20px;float:right;width:10%;height:100%; line-height:80px;">-->
+                    <!--&lt;!&ndash;href="#/tab/msg/{{item.code}}"&ndash;&gt;-->
+                    <!--&lt;!&ndash;<i class="icon ion-android-checkbox-outline" style="float:right;color: #262626;"></i>&ndash;&gt;-->
+                    <!--<a class="icon ion-chevron-right icon-accessory" style="color: #262626;" ></a>-->
+                  <!--</div>-->
+                </ion-item>
+              </ion-list>
+              <center>
+                <p style="color:#8e979a;" ng-if="moreDataCanBeLoadedA()"> 上拉加载更多...</p>
+              </center>
+              <ion-infinite-scroll
+                icon="ion-loading-c"
+                ng-if="moreDataCanBeLoadedA()"
+                on-infinite="loadMoreA()"
+                distance="10%"
+                loadingSpinner="bubbles"
+                loadingText="加载更多...">
+              </ion-infinite-scroll>
+          </ion-scroll>
+        </ion-slide>
+        <ion-slide>
+          <ion-scroll class="imc-scroll" zooming="true" direction="y" style="width: 100%;" scroll-height>
+            <!--<div style="width: 100%; height: 5000px; background: url('http://www.runoob.com/try/demo_source/Europe_geological_map-en.jpg') repeat"></div>-->
+            <ion-refresher
+              pulling-text="下拉刷新..."
+              pulling-icon='ion-arrow-down-c'
+              on-refresh="doRefresh()">
+            </ion-refresher>
+            <!--<div id="div2" style="width: 100%; height: 1000px;">-->
+              <ion-list>
+                <ion-item ng-repeat="item in dataB" type="item-text-wrap" style="margin:7px;border:1px solid #317ff2;border-radius: 10px;" ng-click="goto(item,'B')" >
+                  <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+                  <div style="float:left;width: 95%">
+                    <div style="margin-bottom:8px;height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+                      拜访时间：{{item.date}}
+                    </div>
+                    <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+                      <div style="float: left;height:100%;width:auto;text-align:center">
+                        {{item.client}}
+                      </div>
+                      <div style="float: right;height:100%;width:auto;text-align:center">
+                        <p style="color: #8e979a">{{item.visittype}}</p>
+                      </div>
+                    </div>
+                    <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                   font-size: 14px;color:#8e979a;word-wrap: break-word;
+                   overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                      上次拜访内容：{{item.content}}
+                    </div>
+                  </div>
+                  <div style="font-size:20px;float:right;width:5%;height:auto; line-height:80px;">
+                    <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;" ></a>
+                  </div>
+                </ion-item>
+              </ion-list>
+            <center>
+              <p style="color:#8e979a;" ng-if="moreDataCanBeLoadedB()"> 上拉加载更多...</p>
+            </center>
+            <ion-infinite-scroll
+              icon="ion-loading-c"
+              ng-if="moreDataCanBeLoadedB()"
+              on-infinite="loadMoreB()"
+              distance="10%"
+              loadingSpinner="bubbles"
+              loadingText="加载更多...">
+            </ion-infinite-scroll>
+            <!--</div>-->
+
+          </ion-scroll>
+        </ion-slide>
+        <ion-slide>
+          <ion-scroll class="imc-scroll" zooming="true" direction="y" style="width: 100%;" scroll-height>
+            <!--<div style="width: 100%; height: 5000px; background: url('http://www.runoob.com/try/demo_source/Europe_geological_map-en.jpg') repeat"></div>-->
+            <ion-refresher
+              pulling-text="下拉刷新..."
+              pulling-icon='ion-arrow-down-c'
+              on-refresh="doRefresh()">
+            </ion-refresher>
+              <ion-list>
+                <ion-item ng-repeat="item in dataC" type="item-text-wrap" style="margin:7px;border:1px solid #317ff2;border-radius: 10px;" ng-click="goto(item,'C')" >
+                  <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+                  <div style="float:left;width: 95%">
+                    <div style="margin-bottom:8px;height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;font-size: 14px;color:#4d4d4d;word-wrap: break-word;">
+                      拜访时间：{{item.date}}
+                    </div>
+                    <div style="height: auto;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+                      <div style="float: left;height:100%;width:auto;text-align:center">
+                        {{item.client}}
+                      </div>
+                      <div style="float: right;height:100%;width:auto;text-align:center">
+                        <p style="color: #8e979a">{{item.visittype}}</p>
+                      </div>
+                    </div>
+                    <div style="float:left;height: auto;width: 100%;border-radius: 10px;margin-top: 5px;
+                   font-size: 14px;color:#8e979a;word-wrap: break-word;
+                   overflow: hidden;white-space: nowrap;text-overflow: ellipsis;">
+                      上次拜访内容：{{item.content}}
+                    </div>
+                  </div>
+                  <div style="font-size:20px;float:right;width:5%;height:auto; line-height:80px;">
+                    <a class="icon ion-chevron-right icon-accessory" style="float:right;color: #262626;"></a>
+                  </div>
+                </ion-item>
+              </ion-list>
+            <center>
+              <p style="color:#8e979a;" ng-if="moreDataCanBeLoadedC()"> 上拉加载更多...</p>
+            </center>
+            <ion-infinite-scroll
+              icon="ion-loading-c"
+              ng-if="moreDataCanBeLoadedC()"
+              on-infinite="loadMoreC()"
+              distance="10%"
+              loadingSpinner="bubbles"
+              loadingText="加载更多...">
+            </ion-infinite-scroll>
+          </ion-scroll>
+        </ion-slide>
+
+        <!--<ion-slide ng-repeat="p in pages">-->
+        <!--<div ng-include="p">-->
+        <!--dwedwdwedxwxwxdsddsdsdddwxx-->
+        <!--</div>-->
+        <!--</ion-slide>-->
+      </ion-slide-box>
+    </div>
+  </ion-content>
+  <!--<ion-content class="padding">-->
+  <!--&lt;!&ndash;style="margin-top: 45px"&ndash;&gt;-->
+  <!---->
+  <!--&lt;!&ndash;<div id="div2">&ndash;&gt;-->
+  <!--&lt;!&ndash;<p> 第二个DIV！</p>&ndash;&gt;-->
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--</ion-content>-->
+</ion-view>

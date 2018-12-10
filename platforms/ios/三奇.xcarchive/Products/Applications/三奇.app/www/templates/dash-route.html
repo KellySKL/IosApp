@@ -1,0 +1,75 @@
+<ion-header-bar class="bar-positive" align-title="center">
+  <i class="button" ng-click="goBack()">
+    <span class="icon ion-ios-arrow-left"> Back </span>
+  </i>
+  <h1 class="title">路线查询</h1>
+</ion-header-bar>
+<ion-view>
+  <ion-content class="padding">
+    <div class="list" style="margin-bottom: 5px;">
+      <div class="item item-input" style="margin-bottom: 5px;background-color: #f0f1f2;border-radius: 5px;">
+        <div ng-bind="datetime | date:'yyyy-MM-dd'" ng-click="openDatePicker()" style="width:85%;"></div>
+        <div style="width:15%;" ng-click="SearchL()">
+          <i class="icon  ion-ios-search-strong placeholder-icon" style="font-size: 30px;float: right;color: #0f0f0f"></i>
+        </div>
+      </div>
+      <div class="item item-input" style="margin-bottom: 5px;background-color: #f0f1f2;border-radius: 5px;"  ng-click="chosePerson()" >
+        选择人员：<input type="text" ng-model="$parent.findName" readonly="readonly">
+        <i class="icon ion-plus" style="float: right;font-size: 26px;margin: auto 5px ;"></i>
+      </div>
+      <div class="item item-input item-select" style="margin-bottom: 5px;background-color: #f0f1f2;border-radius: 5px;width:50%;float:right;">
+        <div class="input-label">
+          结束
+        </div>
+        <select ng-model="$parent.end">
+          <option>07</option>
+          <option>08</option>
+          <option>09</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+        </select>
+      </div>
+      <div class="item item-input item-select" style="margin-bottom: 5px;background-color: #f0f1f2;border-radius: 5px;width:50%;float:left;">
+        <div class="input-label">
+          开始
+        </div>
+        <select ng-model="$parent.start">
+          <option>07</option>
+          <option>08</option>
+          <option>09</option>
+          <option>10</option>
+          <option>11</option>
+          <option>12</option>
+          <option>13</option>
+          <option>14</option>
+          <option>15</option>
+          <option>16</option>
+          <option>17</option>
+        </select>
+      </div>
+    </div>
+    <div ng-hide="haveNote" style="margin-top: 100px;">
+      <center>
+        <p>没有查到【{{datetime}}】{{start}}:00至{{end}}:00的路径信息！</p>
+      </center>
+    </div>
+    <div class="item item-input item-text-wrap" ng-repeat="poi in PointSort" style="min-height:45px;margin-bottom:5px;border:1px solid #9faaac;border-radius: 5px;" >
+      <!--PointSort-->
+      <div style="width: 15%;">{{poi.time}}</div>
+      <div style="width: 85%;">
+        <p>{{poi.address}}</p>
+      </div>
+    </div>
+    <div ng-hide="haveLine">
+      <center>
+        <button class="button button-stable" style="width: 50%" ng-click="ShowLine()">显示轨迹</button>
+      </center>
+    </div>
+  </ion-content>
+</ion-view>
