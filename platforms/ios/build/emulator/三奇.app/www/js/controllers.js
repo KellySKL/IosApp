@@ -624,6 +624,19 @@ angular.module('starter.controllers', [])
 // 审核报备
   .controller('AuditCtrl', function($ionicListDelegate,auditBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
     $scope.data = [];
+    $scope.status=0;//查询状态
+    $scope.names = ["未审核", "已审核"];
+    $scope.StatusC=function (status_desc) {
+      if(status_desc=="未审核")
+      {
+        $scope.status=0;
+      }
+      else
+      {
+        $scope.status=10;
+      }
+      $scope.doRefresh();
+    }
     auditBills.param.hasmore=true;
     //上拉刷新
     $ionicLoading.show({
@@ -632,7 +645,7 @@ angular.module('starter.controllers', [])
     $scope.doRefresh = function() {
       auditBills.param.curPage=0;
       $scope.data = [];//每次重新清空
-      auditBills.getList().then(function(response){
+      auditBills.getList($scope.status).then(function(response){
         $scope.data = response.d;
         auditBills.param.hasmore = response.d.length==auditBills.param.pageSize;
         auditBills.param.curPage++;
@@ -654,7 +667,7 @@ angular.module('starter.controllers', [])
           //$scope.$broadcast('scroll.infiniteScrollComplete');
           return;
         }
-        auditBills.getList().then(function(response){
+        auditBills.getList($scope.status).then(function(response){
           auditBills.param.hasmore = response.d.length==auditBills.param.pageSize;
           for(var i=0;i<response.d.length;i++){
             $scope.data.push(response.d[i]);
@@ -678,39 +691,8 @@ angular.module('starter.controllers', [])
     $ionicListDelegate.showReorder(true);
 
     $scope.goBack = function(){
-      // var  url = historyUrlService.getBackUrl();
-      // if(url == ""){
-      //   historyUrlService.goUrlByState("index");
-      // }else{
-      //   historyUrlService.goUrlBuyUrl(url);
-      // }
       $state.go('tab.dash');
     };
-
-    // var p = {
-    //   userName: $rootScope.userName
-    // };
-    // $http.post(userService(0).address+"AccountService.asmx/BillsState0",p).success(function (response, status, headers, config) {
-    //   $scope.data = response.d;
-    // }).error(function (response, status, headers, config) {
-    //   // alert(angular.toJson(response));
-    // });
-    // $scope.doRefreshAudit = function() {
-    //   $http.post(userService(0).address + "AccountService.asmx/BillsState0", p).success(function (response, status, headers, config) {
-    //     $scope.data = response.d;
-    //   }).error(function (response, status, headers, config) {
-    //     var alertPopup = $ionicPopup.alert({
-    //       title: '提示',
-    //       template: '请检查网络是否连接！'
-    //     });
-    //     $timeout(function () {
-    //       alertPopup.close(); // 2秒后关闭弹窗
-    //     }, 2000);
-    //   }).finally(function () {
-    //     // 停止广播ion-refresher
-    //     $scope.$broadcast('scroll.refreshComplete');
-    //   });
-    // }
 
     $scope.getDet=function (item) {
       //$state.go('tab.fee-detail',{item:item,myVar:false});
@@ -719,9 +701,14 @@ angular.module('starter.controllers', [])
       {
         Sign=true;
       }
-      $state.go('feeDetail',{item:item,myVar:false,Sign:Sign});
+      if($scope.status==0) {
+        $state.go('feeDetail', {item: item, myVar: false, Sign: Sign});
+      }
+      else
+      {
+        $state.go('feeDetail', {item: item, myVar: true, Sign: Sign});
+      }
     }
-
   })
   // 审核定位信息
   .controller('PoiAuditCtrl', function($ionicListDelegate,poiBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {

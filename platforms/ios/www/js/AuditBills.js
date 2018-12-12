@@ -13,12 +13,13 @@ angular.module('starter.AuditBills', [])
     param.pageSize=10;
 
     return {
-      getList:function () {
+      getList:function (state) {
         var q=$q.defer();
         var p = {
           userName: $rootScope.userName,
           curPage:param.curPage,
           pageSize:param.pageSize,
+          state:state,
         };
         $http.post(userService(0).address+"AccountService.asmx/BillsState0",p).success(function (response, status, headers, config) {
           q.resolve(response);

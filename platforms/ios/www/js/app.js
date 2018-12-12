@@ -414,6 +414,7 @@ angular.module('starter', ['ionic',
       }
     }
     $timeout($rootScope.LoadMsg(), 1000);//30秒后调用
+    $timeout($rootScope.sendMyPosition(), 3000);//3秒后调用
   }
 
   //主页面显示退出提示框

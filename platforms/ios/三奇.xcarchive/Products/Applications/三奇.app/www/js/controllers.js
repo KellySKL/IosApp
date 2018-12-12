@@ -624,6 +624,19 @@ angular.module('starter.controllers', [])
 // 审核报备
   .controller('AuditCtrl', function($ionicListDelegate,auditBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
     $scope.data = [];
+    $scope.status=0;//查询状态
+    $scope.names = ["未审核", "已审核"];
+    $scope.StatusC=function (status_desc) {
+      if(status_desc=="未审核")
+      {
+        $scope.status=0;
+      }
+      else
+      {
+        $scope.status=10;
+      }
+      $scope.doRefresh();
+    }
     auditBills.param.hasmore=true;
     //上拉刷新
     $ionicLoading.show({
@@ -632,7 +645,7 @@ angular.module('starter.controllers', [])
     $scope.doRefresh = function() {
       auditBills.param.curPage=0;
       $scope.data = [];//每次重新清空
-      auditBills.getList().then(function(response){
+      auditBills.getList($scope.status).then(function(response){
         $scope.data = response.d;
         auditBills.param.hasmore = response.d.length==auditBills.param.pageSize;
         auditBills.param.curPage++;
@@ -654,7 +667,7 @@ angular.module('starter.controllers', [])
           //$scope.$broadcast('scroll.infiniteScrollComplete');
           return;
         }
-        auditBills.getList().then(function(response){
+        auditBills.getList($scope.status).then(function(response){
           auditBills.param.hasmore = response.d.length==auditBills.param.pageSize;
           for(var i=0;i<response.d.length;i++){
             $scope.data.push(response.d[i]);
@@ -678,39 +691,8 @@ angular.module('starter.controllers', [])
     $ionicListDelegate.showReorder(true);
 
     $scope.goBack = function(){
-      // var  url = historyUrlService.getBackUrl();
-      // if(url == ""){
-      //   historyUrlService.goUrlByState("index");
-      // }else{
-      //   historyUrlService.goUrlBuyUrl(url);
-      // }
       $state.go('tab.dash');
     };
-
-    // var p = {
-    //   userName: $rootScope.userName
-    // };
-    // $http.post(userService(0).address+"AccountService.asmx/BillsState0",p).success(function (response, status, headers, config) {
-    //   $scope.data = response.d;
-    // }).error(function (response, status, headers, config) {
-    //   // alert(angular.toJson(response));
-    // });
-    // $scope.doRefreshAudit = function() {
-    //   $http.post(userService(0).address + "AccountService.asmx/BillsState0", p).success(function (response, status, headers, config) {
-    //     $scope.data = response.d;
-    //   }).error(function (response, status, headers, config) {
-    //     var alertPopup = $ionicPopup.alert({
-    //       title: '提示',
-    //       template: '请检查网络是否连接！'
-    //     });
-    //     $timeout(function () {
-    //       alertPopup.close(); // 2秒后关闭弹窗
-    //     }, 2000);
-    //   }).finally(function () {
-    //     // 停止广播ion-refresher
-    //     $scope.$broadcast('scroll.refreshComplete');
-    //   });
-    // }
 
     $scope.getDet=function (item) {
       //$state.go('tab.fee-detail',{item:item,myVar:false});
@@ -719,191 +701,198 @@ angular.module('starter.controllers', [])
       {
         Sign=true;
       }
-      $state.go('feeDetail',{item:item,myVar:false,Sign:Sign});
-    }
-
-  })
-  // 审核定位信息
-  .controller('PoiAuditCtrl', function($ionicListDelegate,poiBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
-    $scope.data = [];
-    poiBills.param.hasmore=true;
-    //上拉刷新
-    $ionicLoading.show({
-      template: '正在加载数据...',duration: 30000
-    });
-    $scope.doRefresh = function() {
-      poiBills.param.curPage=0;
-      $scope.data = [];//每次重新清空
-      poiBills.getList().then(function(response){
-        $scope.data = response.d;
-        poiBills.param.hasmore = response.d.length==poiBills.param.pageSize;
-        poiBills.param.curPage++;
-      }).finally(function() {
-        // 停止广播ion-refresher
-        $scope.$broadcast('scroll.refreshComplete');
-      });
-    };
-    //更多
-    $scope.loadMore = function() {
-      //这里使用定时器是为了缓存一下加载过程，防止加载过快
-      $timeout(function() {
-        if(!poiBills.param.hasmore){
-          var timer= $timeout(function () {
-            $scope.$broadcast('scroll.infiniteScrollComplete');
-          }, 1000);
-          $timeout.cancel(timer);
-          $ionicLoading.hide(); // 2秒后关闭弹窗
-          //$scope.$broadcast('scroll.infiniteScrollComplete');
-          return;
-        }
-        poiBills.getList().then(function(response){
-          poiBills.param.hasmore = response.d.length==poiBills.param.pageSize;
-          for(var i=0;i<response.d.length;i++){
-            $scope.data.push(response.d[i]);
-          }
-          $scope.$broadcast('scroll.infiniteScrollComplete');
-          poiBills.param.curPage++;
-          $ionicLoading.hide(); // 2秒后关闭弹窗
-        });
-      },1000);
-    };
-    $scope.moreDataCanBeLoaded = function(){
-      return poiBills.param.hasmore;
-    }
-
-    $scope.$on("$destroy", function () {
-      //清除配置,不然scroll会重复请求,每次进来都是新页面
-      poiBills.param.hasmore=true;
-      poiBills.param.curPage=0;
-    });
-
-    $ionicListDelegate.showReorder(true);
-
-    $scope.goBack = function(){
-      // var  url = historyUrlService.getBackUrl();
-      // if(url == ""){
-      //   historyUrlService.goUrlByState("index");
-      // }else{
-      //   historyUrlService.goUrlBuyUrl(url);
-      // }
-      $state.go('tab.dash');
-    };
-
-    $scope.getDetail=function (item) {
-      var list = new Array();
-      var Obj1 = {
-        lng:item.BEFORE_LNG,
-        lat:item.BEFORE_LAT,
-        type:'原始定位'
-      }
-      var Obj2 = {
-        lng:item.AFTER_LNG,
-        lat:item.AFTER_LAT,
-        type:'申请定位'
-      }
-      list.push(Obj1);
-      list.push(Obj2);
-      $state.go('poiDetail',{list:list,item:item})
-    }
-
-    //========================================多选 、一键审核======================================
-    $scope.myValue={
-      showCheckBox:false,
-      btnname:'编辑',
-    }
-    $scope.origin_hasmore;//暂存编辑之前的加载状态  编辑中不允许加载
-    $scope.CheckStatus=function () {
-      if($scope.myValue.showCheckBox==true){
-        $scope.myValue.showCheckBox=false;
-        $scope.myValue.btnname='编辑';
-        poiBills.param.hasmore= $scope.origin_hasmore;
+      if($scope.status==0) {
+        $state.go('feeDetail', {item: item, myVar: false, Sign: Sign});
       }
       else
       {
-        $scope.origin_hasmore = poiBills.param.hasmore;
-        poiBills.param.hasmore = false;
-        $scope.myValue.btnname='取消';
-        $scope.myValue.showCheckBox=true;
+        $state.go('feeDetail', {item: item, myVar: true, Sign: Sign});
       }
     }
-    $scope.selectAll=false;
-
-    $scope.all= function (m) {
-      for(var i=0;i<$scope.data.length;i++){
-        if(m===true){
-          $scope.data[i].Checked=true;
-          if($scope.result.indexOf($scope.data[i].ID) == -1){//不存在就添加
-            $scope.result.push($scope.data[i].ID);
-          }
-        }else {
-          $scope.data[i].Checked=false;
-          var idx = $scope.result.indexOf($scope.data[i].ID);
-          if( idx != -1){//存在就删除
-            $scope.result.splice(idx,1);
-          }
-        }
-      }
-    };
-    //https://blog.csdn.net/u010874036/article/details/51711644
-    //存储已选
-    $scope.result = [];
-    //触发事件复选框
-    $scope.selectCBox = function(item){
-      var id = item.ID;
-      if(item.Checked){//选中，就添加
-        if($scope.result.indexOf(id) == -1){//不存在就添加
-          $scope.result.push(id);
-        }
-      }else{//去除就删除result里
-        var idx = $scope.result.indexOf(id);
-        if( idx != -1){//不存在就添加
-          $scope.result.splice(idx,1);
-        }
-      }
-    };
-
-    $scope.AuditAll=function (type) {
-      if($scope.result.length<=0)
-      {
-        $ionicLoading.show({
-          template: '请勾选要审核的记录！',duration: 2000
-        });
-      }
-      else{
-        var p = {
-          userName:$rootScope.userName,
-          type:type,
-          id_list:$scope.result
-        }
-        $ionicLoading.show({
-          template: '正在处理...',duration: 30000
-        });
-        $http.post(userService(0).address + "AuditService.asmx/PoiBillAudit_ALL", p)
-          .success(function (response, status, headers, config) {
-            if(response.d>0)
-            {
-              $ionicLoading.show({
-                template: '操作成功，正在刷新数据！',duration: 2000
-              });
-              $scope.CheckStatus();
-              $scope.doRefresh();
-            }
-            else
-            {
-              $ionicLoading.show({
-                template: '操作失败！错误代码：'+response.d,duration: 2000
-              });
-            }
-          })
-          .error(function (response, status, headers, config) {
-            alert(angular.toJson(response));
-          });
-      }
-    }
-    //========================================多选 、一键审核========END==============================
   })
-  // 客户定位详情
-  .controller('PoiAuditDetailCtrl', function($ionicListDelegate,poiBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
+  // 审核定位信息
+  .controller('PoiAuditCtrl', function($ionicListDelegate,poiBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
+              $scope.data = [];
+              
+              poiBills.param.hasmore=true;
+              //上拉刷新
+              $ionicLoading.show({
+                                 template: '正在加载数据...',duration: 30000
+                                 });
+              $scope.doRefresh = function() {
+              poiBills.param.curPage=0;
+              $scope.data = [];//每次重新清空
+              poiBills.getList().then(function(response){
+                                      $scope.data = response.d;
+                                      poiBills.param.hasmore = response.d.length==poiBills.param.pageSize;
+                                      poiBills.param.curPage++;
+                                      }).finally(function() {
+                                                 // 停止广播ion-refresher
+                                                 $scope.$broadcast('scroll.refreshComplete');
+                                                 });
+              };
+              //更多
+              $scope.loadMore = function() {
+              //这里使用定时器是为了缓存一下加载过程，防止加载过快
+              $timeout(function() {
+                       if(!poiBills.param.hasmore){
+                       var timer= $timeout(function () {
+                                           $scope.$broadcast('scroll.infiniteScrollComplete');
+                                           }, 1000);
+                       $timeout.cancel(timer);
+                       $ionicLoading.hide(); // 2秒后关闭弹窗
+                       //$scope.$broadcast('scroll.infiniteScrollComplete');
+                       return;
+                       }
+                       poiBills.getList().then(function(response){
+                                               poiBills.param.hasmore = response.d.length==poiBills.param.pageSize;
+                                               for(var i=0;i<response.d.length;i++){
+                                               $scope.data.push(response.d[i]);
+                                               }
+                                               $scope.$broadcast('scroll.infiniteScrollComplete');
+                                               poiBills.param.curPage++;
+                                               $ionicLoading.hide(); // 2秒后关闭弹窗
+                                               });
+                       },1000);
+              };
+              $scope.moreDataCanBeLoaded = function(){
+              return poiBills.param.hasmore;
+              }
+              
+              $scope.$on("$destroy", function () {
+                         //清除配置,不然scroll会重复请求,每次进来都是新页面
+                         poiBills.param.hasmore=true;
+                         poiBills.param.curPage=0;
+                         });
+              
+              $ionicListDelegate.showReorder(true);
+              
+              $scope.goBack = function(){
+              // var  url = historyUrlService.getBackUrl();
+              // if(url == ""){
+              //   historyUrlService.goUrlByState("index");
+              // }else{
+              //   historyUrlService.goUrlBuyUrl(url);
+              // }
+              $state.go('tab.dash');
+              };
+              
+              //========================================多选 、一键审核======================================
+              $scope.myValue={
+              showCheckBox:false,
+              btnname:'编辑',
+              }
+              $scope.origin_hasmore;//暂存编辑之前的加载状态  编辑中不允许加载
+              $scope.CheckStatus=function () {
+              if($scope.myValue.showCheckBox==true){
+              $scope.myValue.showCheckBox=false;
+              $scope.myValue.btnname='编辑';
+              poiBills.param.hasmore= $scope.origin_hasmore;
+              }
+              else
+              {
+              $scope.origin_hasmore = poiBills.param.hasmore;
+              poiBills.param.hasmore = false;
+              $scope.myValue.btnname='取消';
+              $scope.myValue.showCheckBox=true;
+              }
+              }
+              $scope.selectAll=false;
+              
+              $scope.all= function (m) {
+              for(var i=0;i<$scope.data.length;i++){
+              if(m===true){
+              $scope.data[i].Checked=true;
+              if($scope.result.indexOf($scope.data[i].ID) == -1){//不存在就添加
+              $scope.result.push($scope.data[i].ID);
+              }
+              }else {
+              $scope.data[i].Checked=false;
+              var idx = $scope.result.indexOf($scope.data[i].ID);
+              if( idx != -1){//存在就删除
+              $scope.result.splice(idx,1);
+              }
+              }
+              }
+              };
+              //https://blog.csdn.net/u010874036/article/details/51711644
+              //存储已选
+              $scope.result = [];
+              //触发事件复选框
+              $scope.selectCBox = function(item){
+              var id = item.ID;
+              if(item.Checked){//选中，就添加
+              if($scope.result.indexOf(id) == -1){//不存在就添加
+              $scope.result.push(id);
+              }
+              }else{//去除就删除result里
+              var idx = $scope.result.indexOf(id);
+              if( idx != -1){//不存在就添加
+              $scope.result.splice(idx,1);
+              }
+              }
+              };
+              
+              $scope.AuditAll=function (type) {
+              if($scope.result.length<=0)
+              {
+              $ionicLoading.show({
+                                 template: '请勾选要审核的记录！',duration: 2000
+                                 });
+              }
+              else{
+              var p = {
+              userName:$rootScope.userName,
+              type:type,
+              id_list:$scope.result
+              }
+              $ionicLoading.show({
+                                 template: '正在处理...',duration: 30000
+                                 });
+              $http.post(userService(0).address + "AuditService.asmx/PoiBillAudit_ALL", p)
+              .success(function (response, status, headers, config) {
+                       if(response.d>0)
+                       {
+                       $ionicLoading.show({
+                                          template: '操作成功，正在刷新数据！',duration: 2000
+                                          });
+                       $scope.CheckStatus();
+                       $scope.doRefresh();
+                       }
+                       else
+                       {
+                       $ionicLoading.show({
+                                          template: '操作失败！错误代码：'+response.d,duration: 2000
+                                          });
+                       }
+                       })
+              .error(function (response, status, headers, config) {
+                     alert(angular.toJson(response));
+                     });
+              }
+              }
+              //========================================多选 、一键审核========END==============================
+              $scope.getDetail=function (item) {
+              if(!$scope.myValue.showCheckBox){
+              var list = new Array();
+              var Obj1 = {
+              lng: item.BEFORE_LNG,
+              lat: item.BEFORE_LAT,
+              type: '原始定位'
+              }
+              var Obj2 = {
+              lng: item.AFTER_LNG,
+              lat: item.AFTER_LAT,
+              type: '申请定位'
+              }
+              list.push(Obj1);
+              list.push(Obj2);
+              $state.go('poiDetail', {list: list, item: item})
+              }
+              }
+              })
+// 客户定位详情
+.controller('PoiAuditDetailCtrl', function($ionicListDelegate,poiBills,$ionicLoading,$timeout,$ionicPopup,$http,$rootScope,$scope,$state,$stateParams,userService) {
     var AMapArea = document.getElementById('amap');
     $scope.navg0;//巡航器
     var list_lineArr = new Array();//创建数组，存取
@@ -2090,6 +2079,7 @@ angular.module('starter.controllers', [])
     $scope.next_visitMethod='上门拜访';
     $scope.visitMethod='上门拜访';
     $scope.visitType='正常回访';
+    $scope.IfWX='无需求';
     $scope.db_list = $stateParams.db_item;
     //$scope.item=$stateParams.item;
     if($stateParams.item!=null)
@@ -2105,9 +2095,9 @@ angular.module('starter.controllers', [])
     {
         $scope.searchName=$stateParams.wx_item.CLIENT,
         $scope.bfid=-1,
-        $scope.hisName=$stateParams.wx_item.CONTACT,
-        $scope.hisPosition='默认',
-        $scope.hisPhone=$stateParams.wx_item.PHONE,
+//        $scope.hisName=$stateParams.wx_item.CONTACT,
+//        $scope.hisPosition='默认',
+//        $scope.hisPhone=$stateParams.wx_item.PHONE,
         $scope.visitType='售后回访';
         document.getElementById("kfname").disabled=true;
         var p = {
@@ -2384,9 +2374,24 @@ angular.module('starter.controllers', [])
         template: ' <div class="item item-input">'+
         '姓名： <input type="text" ng-model="$parent.hisName">'+
         '</div>'+
-        '<div class="item item-input">'+
-        '职位： <input type="text" ng-model="$parent.hisPosition">'+
-        '</div>'+
+             '<div class="item item-input item-select">'+
+             '<div class="input-label">'+
+             '职位：'+
+             '</div>'+
+             '<select ng-model="$parent.hisPosition">'+
+             '<option selected="selected">法人/老板</option>'+
+             '<option>财务部</option>'+
+             '<option>采购部</option>'+
+             '<option>生产/模具/车间部</option>'+
+             '<option>操作老师</option>'+
+             // '<option>上门拜访</option>'+
+             // '<option>电话拜访</option>'+
+             // '<option>上门拜访</option>'+
+             '</select>'+
+             '</div>'+
+//        '<div class="item item-input">'+
+//        '职位： <input type="text" ng-model="$parent.hisPosition">'+
+//        '</div>'+
         '<div class="item item-input">'+
         '联系方式： <input type="text" ng-model="$parent.hisPhone">'+
         '</div>',
@@ -4409,6 +4414,16 @@ angular.module('starter.controllers', [])
           $timeout(function() {
             alertPopup.close(); // 2秒后关闭弹窗
           }, 2000);
+        }
+        else if(response.d.status==9)
+        {
+        var alertPopup = $ionicPopup.alert({
+                                            title: '提示',
+                                            template: '设备UUID校验失败！'
+                                            });
+        $timeout(function() {
+                  alertPopup.close(); // 2秒后关闭弹窗
+                  }, 2000);
         }
         else if(response.d.status==10)
         {

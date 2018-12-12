@@ -5,9 +5,11 @@
   <h1 class="title">审核报备</h1>
 </ion-header-bar>
 <ion-view view-title="审核报备">
+  <!--<i class="button" ng-click="StatusC()" ng-bind-html="status_desc">-->
+  <!--</i>-->
   <!--<ion-nav-bar class="bar-positive">-->
-    <!--<ion-nav-back-button>-->
-    <!--</ion-nav-back-button>-->
+  <!--<ion-nav-back-button>-->
+  <!--</ion-nav-back-button>-->
   <!--</ion-nav-bar>-->
   <ion-content ng-controller="AuditCtrl">
     <ion-refresher
@@ -15,6 +17,13 @@
       pulling-icon='ion-arrow-down-c'
       on-refresh="doRefresh()">
     </ion-refresher>
+    <div class="item item-input item-select" style="margin-bottom: 5px;background-color: #f0f1f2;border-radius: 5px;width:100%;float:left;">
+      <div class="input-label">
+        查询状态
+      </div>
+      <select ng-change="StatusC(selectedName)" ng-init="selectedName = names[0]" ng-model="selectedName" ng-options="x for x in names">
+      </select>
+    </div>
     <ion-list>
       <ion-item ng-repeat="item in data" type="item-text-wrap" style="margin:8px;border:1px solid #317ff2;border-radius: 10px;" ng-click="getDet(item)">
         <div style="height: 30px;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
