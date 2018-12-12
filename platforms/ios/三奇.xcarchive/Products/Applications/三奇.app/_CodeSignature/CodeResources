@@ -98,7 +98,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		G0IvYUBc404pYmsfUYwrKI4RFQk=
+		RSODhtJIx5lulOFAWwUYbOATuM4=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -106,19 +106,19 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Z8xkUDtlnw4tofxOAI2VaH17w3A=
+		gRc/Sjqk0o8hVchKUPGI1s1xv1U=
 		</data>
 		<key>ELCAlbumPickerController.nib</key>
 		<data>
-		4tykEUmRG+Fv6Y9lf1RutXkUMdA=
+		ilPY+LEQtP5KznScHkmc2CwdTXo=
 		</data>
 		<key>ELCAssetPicker.nib</key>
 		<data>
-		/TWsB9fTXV9Ugw2PLnPjFcER2hg=
+		JSiIcr4yNZy+EjQaD+1WwqPOsII=
 		</data>
 		<key>ELCAssetTablePicker.nib</key>
 		<data>
-		4fKDMezl1OQz22s6H4rGKoQQYbU=
+		x3nKwNsuiW+ue7Jugmvkc7CC/NM=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		6MhwyXE26ApsTLwA2xMGWc/Axjs=
+		hppXdBvNTlDZujJbIZj+oJMALWQ=
 		</data>
 		<key>Overlay.png</key>
 		<data>
@@ -354,7 +354,7 @@
 		</data>
 		<key>www/js/app.js</key>
 		<data>
-		BLKA2+XhpUtI0KT1TPbBM8rIO1U=
+		bCWszNBtlGRfr9CQmSB87C01tpE=
 		</data>
 		<key>www/js/comlocation.js</key>
 		<data>
@@ -362,7 +362,7 @@
 		</data>
 		<key>www/js/controllers.js</key>
 		<data>
-		p8/DH3mzp3BviCxuLGoqOrMoNpk=
+		b1yDUMOBryeqUAQsQJysJ28ec7E=
 		</data>
 		<key>www/js/coordtransform.js</key>
 		<data>
@@ -1138,7 +1138,7 @@
 		</data>
 		<key>www/templates/poi-audit.html</key>
 		<data>
-		IAFki4JZ+8iwNYZlOAYsZlswhbs=
+		xYkd/874OT/0L1xaXgKQdYaGT/Q=
 		</data>
 		<key>www/templates/poiAudit-detail.html</key>
 		<data>
@@ -1476,11 +1476,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G0IvYUBc404pYmsfUYwrKI4RFQk=
+			RSODhtJIx5lulOFAWwUYbOATuM4=
 			</data>
 			<key>hash2</key>
 			<data>
-			OHG6+uvtE7wCwZFfknXM8PXbHhLpykcQeXWWPYL/pXw=
+			kffnOE/3TXTOQAFgkXho15JRBV5AMboNNrUvrpyyGWI=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1498,44 +1498,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Z8xkUDtlnw4tofxOAI2VaH17w3A=
+			gRc/Sjqk0o8hVchKUPGI1s1xv1U=
 			</data>
 			<key>hash2</key>
 			<data>
-			V31a/Zt24cY1yqs8HlTZcBUhOBySfdJcd3XGrikB3yw=
+			hQeWf+zzQX7Allr1Pgq85AARi16moS6xleKkgNk5Tv0=
 			</data>
 		</dict>
 		<key>ELCAlbumPickerController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4tykEUmRG+Fv6Y9lf1RutXkUMdA=
+			ilPY+LEQtP5KznScHkmc2CwdTXo=
 			</data>
 			<key>hash2</key>
 			<data>
-			d21OC9OHJOCYhRKAsaPnvk9YdFKl1pcze+eoCnUrqsA=
+			DDBf2zUalDIJN2ix47HVqq71yts7fx9sBMijf5iF1i4=
 			</data>
 		</dict>
 		<key>ELCAssetPicker.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			/TWsB9fTXV9Ugw2PLnPjFcER2hg=
+			JSiIcr4yNZy+EjQaD+1WwqPOsII=
 			</data>
 			<key>hash2</key>
 			<data>
-			7qsRWkR5s9OJcYEh81L0lCpihots7sEcannVPaCLBvI=
+			lZh+E8qRtfirzltVSE0BbopUoC6Q/2ZTpuJ1yQk6/JA=
 			</data>
 		</dict>
 		<key>ELCAssetTablePicker.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			4fKDMezl1OQz22s6H4rGKoQQYbU=
+			x3nKwNsuiW+ue7Jugmvkc7CC/NM=
 			</data>
 			<key>hash2</key>
 			<data>
-			jxTXBUSDaepMeGrOVnpDUqCsms47rjRH8pg+DHI4QDc=
+			nVHF6Aby/UXGOfRWp0fGz6LMsRZOc5BlrGbpbbWO314=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -1718,11 +1718,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6MhwyXE26ApsTLwA2xMGWc/Axjs=
+			hppXdBvNTlDZujJbIZj+oJMALWQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			BwQLgb49uzX2z6E4o3ojwaTsD48EmdofMS/2Mo7ZQF0=
+			j89aQcwxpmmsBchhy2snp87or6gUhArpe7ZBDu3iVso=
 			</data>
 		</dict>
 		<key>Overlay.png</key>
@@ -2158,11 +2158,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BLKA2+XhpUtI0KT1TPbBM8rIO1U=
+			bCWszNBtlGRfr9CQmSB87C01tpE=
 			</data>
 			<key>hash2</key>
 			<data>
-			Dd6zJbpyQC3mfHgkB+US7vYIFWWnxXn5wFghLwLX6uc=
+			qhwleCk3rNIDaWnWwXEDHW6mGDFZqzCLd5ZDqqBuPzI=
 			</data>
 		</dict>
 		<key>www/js/comlocation.js</key>
@@ -2180,11 +2180,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p8/DH3mzp3BviCxuLGoqOrMoNpk=
+			b1yDUMOBryeqUAQsQJysJ28ec7E=
 			</data>
 			<key>hash2</key>
 			<data>
-			1ZAsweBShv+3ZXit+PNN+OrKbxq0evEwU6vj6y+XmAU=
+			cLGcNJw4itJ4wAUCI7qy4v1GPlx+aBpmFU2/fzn9hDU=
 			</data>
 		</dict>
 		<key>www/js/coordtransform.js</key>
@@ -4314,11 +4314,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IAFki4JZ+8iwNYZlOAYsZlswhbs=
+			xYkd/874OT/0L1xaXgKQdYaGT/Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			ReL8wiDSEWle/2Z7qzFvdSNG64nKwSS0Wt1LPLPeH5A=
+			AFz4LBiqPMq+jxF9+dBv90a4SaI/6mEPFz3YuZ3l47c=
 			</data>
 		</dict>
 		<key>www/templates/poiAudit-detail.html</key>

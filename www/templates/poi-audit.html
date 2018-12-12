@@ -6,7 +6,6 @@
 </ion-header-bar>
 <ion-view view-title="审核客户定位">
   <ion-content ng-controller="PoiAuditCtrl">
-    <div class="Sheader">
       <div class="bar item-input-inset">
         <!--<div class="buttons">-->
         <div>
@@ -20,8 +19,7 @@
           <label class="checkbox" ng-hide="!myValue.showCheckBox"><input type="checkbox" ng-model="selectAll" ng-click="all(selectAll)"></label>
         </div>
       </div>
-    </div>
-    <div class="Scontent">
+
       <!--<ion-refresher-->
       <!--pulling-text="下拉刷新..."-->
       <!--pulling-icon='ion-arrow-down-c'-->
@@ -63,6 +61,5 @@
         loadingSpinner="bubbles"
         loadingText="加载更多...">
       </ion-infinite-scroll>
-    </div>
   </ion-content>
 </ion-view>
