@@ -253,24 +253,24 @@ angular.module('starter', ['ionic',
       ionic.Platform.isIOS() ? StatusBar.overlaysWebView(true) : StatusBar.overlaysWebView(false);
     }
     //ionic.Platform.fullScreen(true,true);
-//    apiService.getLocalVersion().then(function (response) {
-//      var curVersion = response;
-//      return apiService.getServerVersion(curVersion);
-//    }).then(function (response) {
-//      if(response.d)
-//      {
-//        $ionicLoading.show({template: '检查到版本更新，请前往AppStore获取更新'});
-//        // 一个提示对话框
-////        var alertPopup = $ionicPopup.alert({
-////            title: '应用提醒',
-////            template: '检查到版本更新！'
-////        });
-////        alertPopup.then(function(res) {
-////            //window.open('itms-apps://itunes.apple.com/cn/app/jie-zou-da-shi/id493901993?mt=8');
-////        });
-//      }
-//      else {}
-//    });
+    apiService.getLocalVersion().then(function (response) {
+      var curVersion = response;
+      return apiService.getServerVersion(curVersion);
+    }).then(function (response) {
+      if(response.d)
+      {
+        $ionicLoading.show({template: '检查到版本更新，请前往AppStore获取更新'});
+        // 一个提示对话框
+//        var alertPopup = $ionicPopup.alert({
+//            title: '应用提醒',
+//            template: '检查到版本更新！'
+//        });
+//        alertPopup.then(function(res) {
+//            //window.open('itms-apps://itunes.apple.com/cn/app/jie-zou-da-shi/id493901993?mt=8');
+//        });
+      }
+      else {}
+    });
     // Run when the device is ready
     readyRun();
   });
@@ -414,7 +414,6 @@ angular.module('starter', ['ionic',
       }
     }
     $timeout($rootScope.LoadMsg(), 1000);//30秒后调用
-    $timeout($rootScope.sendMyPosition(), 3000);//3秒后调用
   }
 
   //主页面显示退出提示框

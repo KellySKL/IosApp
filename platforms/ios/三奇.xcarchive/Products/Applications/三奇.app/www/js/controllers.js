@@ -856,6 +856,8 @@ angular.module('starter.controllers', [])
             $ionicLoading.show({
               template: '操作成功，正在刷新数据！',duration: 2000
             });
+                 
+            $scope.result=[];
             $scope.CheckStatus();
             $scope.doRefresh();
           }

@@ -6,7 +6,7 @@
   <h1 class="title">客户拜访单</h1>
 </ion-header-bar>
 <ion-view>
-  <ion-content class="padding">
+  <ion-content class="padding" overflow-scroll="true">
     <div class="list" id="box" style="width: 98%; height: auto">
       <div class="item item-divider">
         本次回访事项
@@ -63,8 +63,7 @@
           是否有其他需求：
         </div>
         <select ng-model="$parent.IfWX">
-          <option>无需求</option>
-          <option>有售后需求</option>
+          <option  selected="selected">无需求</option>
           <option>有业务需求</option>
         </select>
       </div>
@@ -104,7 +103,7 @@
         </select>
       </div>
       <div class="item item-input">
-        下次注意事项： <textarea style="height: 150px" ng-model="$parent.next_notice"></textarea>
+        下次注意事项： <textarea  id="next_notice" placeholder="有事项必填"  style="height: 150px" ng-model="$parent.next_notice"></textarea>
       </div>
   </div>
     <div class="padding">

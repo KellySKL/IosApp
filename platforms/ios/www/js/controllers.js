@@ -856,6 +856,8 @@ angular.module('starter.controllers', [])
             $ionicLoading.show({
               template: '操作成功，正在刷新数据！',duration: 2000
             });
+                 
+            $scope.result=[];
             $scope.CheckStatus();
             $scope.doRefresh();
           }
@@ -1071,16 +1073,30 @@ angular.module('starter.controllers', [])
                       });
                       confirmPopup.then(function (res) {
                         if (res) {
-                          $http.post(userService(0).address + "YewuService.asmx/PoiApply", p)
-                            .success(function (response, status, headers, config) {
-                              $ionicLoading.show({
-                                template: response.d,duration: 2000
-                              });
-                            })
-                            .error(function (response, status, headers, config) {
-                              $ionicLoading.show({
-                                template: '申请出错!',duration: 2000
-                              });
+                        $ionicLoading.show({
+                           template: '正在定位...',duration: 30000
+                           });
+                        comlocation.exec().then(function (success) {
+                            var obj ={
+                            userName:$rootScope.userName,
+                            name: $scope.searchName,
+                            position:$rootScope.lng+','+$rootScope.lat,
+                            };
+                              $http.post(userService(0).address + "YewuService.asmx/PoiApply", obj)
+                                .success(function (response, status, headers, config) {
+                                  $ionicLoading.show({
+                                    template: response.d,duration: 2000
+                                  });
+                                })
+                                .error(function (response, status, headers, config) {
+                                  $ionicLoading.show({
+                                    template: '申请出错!',duration: 2000
+                                  });
+                                });
+                            },function (error) {
+                            $ionicLoading.show({
+                               template: '获取当前位置失败!', duration: 2000
+                               });
                             });
                         }
                       });
@@ -2219,7 +2235,7 @@ angular.module('starter.controllers', [])
               lat1: success.y,
               nextTime:$scope.validedTime,
               nextMethod:$scope.next_visitMethod,
-              nextNotice:$scope.next_notice,
+              nextNotice:document.getElementById("next_notice").value,
               IfWX:$scope.IfWX,
               saleContent:document.getElementById("salecontent").value,
               list_id:list_id,
