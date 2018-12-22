@@ -98,7 +98,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		J9E3mOiF70yIDGcRYCgzZxpXs1U=
+		9IhGCj8pd/eZZnmAmFH3WoN4tvU=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -106,19 +106,19 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		FBSxhPAu+9XXaWW3C8n5ITfqUWk=
+		zX97GnZZ4xlLArV1th1uXpG3XuQ=
 		</data>
 		<key>ELCAlbumPickerController.nib</key>
 		<data>
-		iGy2WUx7WqN9B+agy2scEJzh1ZE=
+		Ii1h+mTMkOz2Dvxd0nQ5phnIHP4=
 		</data>
 		<key>ELCAssetPicker.nib</key>
 		<data>
-		nJMi+yraAWmtDnmTm1buyfSWgno=
+		SYZfwRZIORkVjMJIpxW3AD4w/Fw=
 		</data>
 		<key>ELCAssetTablePicker.nib</key>
 		<data>
-		8YPsdWM76mthe2rjqzkwYNkO2gQ=
+		gxlmkGXC/yMiGcTrf4bjVDqlI9Q=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		qSLGEdcvB1AfBqnn+e5biJtflEA=
+		bYmsPbP/aQOw6ORf550WdhtD2OM=
 		</data>
 		<key>Overlay.png</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		KwCT9L69fZ0okmqTMVGSIxRG7hc=
+		+BNq5FXMO+jtjGPr41UVL9KWmBo=
 		</data>
 		<key>www/AppConfig.xml</key>
 		<data>
@@ -354,7 +354,7 @@
 		</data>
 		<key>www/js/app.js</key>
 		<data>
-		BIOYP/fefxEtV4z8aPCNfyWO8p0=
+		xGDlaD8MD19JMAh18MR7zUlPVLk=
 		</data>
 		<key>www/js/comlocation.js</key>
 		<data>
@@ -362,7 +362,7 @@
 		</data>
 		<key>www/js/controllers.js</key>
 		<data>
-		Ncyiy10TGX3d7mPNa7Q7E7qbCwc=
+		RYyk6mWuBhL1Tw2tdHuAR057QLw=
 		</data>
 		<key>www/js/coordtransform.js</key>
 		<data>
@@ -1036,17 +1036,13 @@
 		<data>
 		13TdM4G5r86V/NaEkgj5F2KqWeE=
 		</data>
-		<key>www/templates/DQ.html</key>
-		<data>
-		lq9tjDJnlNw7JePLElnO2WP6CK0=
-		</data>
 		<key>www/templates/account-conference.html</key>
 		<data>
-		hJ9iiw/I3b6qHBsKRnOeuoeu2wE=
+		EaFKMYCDVA6O70N5bSA37Myq108=
 		</data>
 		<key>www/templates/account-signBill.html</key>
 		<data>
-		omnYo/poPKoaY3FHR460KyWKFyI=
+		cfzoAOynLbDiS1Wq9iCxHWuOYVk=
 		</data>
 		<key>www/templates/chat-detail.html</key>
 		<data>
@@ -1074,7 +1070,7 @@
 		</data>
 		<key>www/templates/dash-kf.html</key>
 		<data>
-		mhSCSss0nj4b/eJ0i2CgxRvI6WU=
+		TxQp+xU3a3Z49ryFCcJjE8AoRbI=
 		</data>
 		<key>www/templates/dash-location.html</key>
 		<data>
@@ -1098,7 +1094,7 @@
 		</data>
 		<key>www/templates/dash-yewu1.html</key>
 		<data>
-		DuJHyCVqqcnEn3ggo+1VqaogvCU=
+		myCQ1Uv2WeNXImfcLjHhdf11wu0=
 		</data>
 		<key>www/templates/dash-yewu2.html</key>
 		<data>
@@ -1186,7 +1182,7 @@
 		</data>
 		<key>www/templates/tab-dash.html</key>
 		<data>
-		zwlfiPTiXMDRvR0Xc22GQYuTeKM=
+		FIQNyL0SblV/TI512EGC1r6IJIc=
 		</data>
 		<key>www/templates/tab-msg.html</key>
 		<data>
@@ -1194,7 +1190,7 @@
 		</data>
 		<key>www/templates/tabs.html</key>
 		<data>
-		PlT9++kygRJBBagPgPZ5gDdkfdU=
+		8/hXcDVA2RnkOwbZ/VJDYvZNC3M=
 		</data>
 		<key>www/templates/test-file.html</key>
 		<data>
@@ -1476,11 +1472,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			J9E3mOiF70yIDGcRYCgzZxpXs1U=
+			9IhGCj8pd/eZZnmAmFH3WoN4tvU=
 			</data>
 			<key>hash2</key>
 			<data>
-			dgxJwubBDfbT4wCAQ9aKFoDUaMjw6daIeZ1AXDbU/+M=
+			CiPxevuJ9T1PvuiS76ohDNwn7mHE9qNGN7fe2IS05FI=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -1498,44 +1494,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			FBSxhPAu+9XXaWW3C8n5ITfqUWk=
+			zX97GnZZ4xlLArV1th1uXpG3XuQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			OwQ6c38+Af/IM1hFnaJ8mmo+1bqXXCn744ix4acw+XA=
+			TMUWBAFzjydeNH0juntmOvDqD1snOMCMMicE+woE8Ok=
 			</data>
 		</dict>
 		<key>ELCAlbumPickerController.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iGy2WUx7WqN9B+agy2scEJzh1ZE=
+			Ii1h+mTMkOz2Dvxd0nQ5phnIHP4=
 			</data>
 			<key>hash2</key>
 			<data>
-			J+qfJe7beKSpkOOoofhh8nyNmCr+1Kv+6S2Vt5AGK5s=
+			CmhWSWVaxpTViFY38eG7raH9EiYX4RA5z3iq9f6/ZcE=
 			</data>
 		</dict>
 		<key>ELCAssetPicker.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			nJMi+yraAWmtDnmTm1buyfSWgno=
+			SYZfwRZIORkVjMJIpxW3AD4w/Fw=
 			</data>
 			<key>hash2</key>
 			<data>
-			+mjzk9YR7UFIwH+Rhy4ES4Dg+3LYD7cQWPpupW50AAs=
+			9epg+msvOdTchiVxI2potKRU1U7sgHr18fjvloMza5w=
 			</data>
 		</dict>
 		<key>ELCAssetTablePicker.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8YPsdWM76mthe2rjqzkwYNkO2gQ=
+			gxlmkGXC/yMiGcTrf4bjVDqlI9Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			F0103PRKdlb910B0Uqy8sPjVb1bnUtdjHYAXoGIagbw=
+			/DH9frDIVy0iUltDRHLtLXthjVAeKfzFi23829ZSG5o=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -1718,11 +1714,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qSLGEdcvB1AfBqnn+e5biJtflEA=
+			bYmsPbP/aQOw6ORf550WdhtD2OM=
 			</data>
 			<key>hash2</key>
 			<data>
-			nLvW02Xnl7i0Y5wuMUc9MMpmd7JIehVfteQk3JC8tFs=
+			5PoeyTmHFl7/X3MPiS7A+wR891hc368frBzRXfvq+Ho=
 			</data>
 		</dict>
 		<key>Overlay.png</key>
@@ -1784,11 +1780,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KwCT9L69fZ0okmqTMVGSIxRG7hc=
+			+BNq5FXMO+jtjGPr41UVL9KWmBo=
 			</data>
 			<key>hash2</key>
 			<data>
-			GoOFG14Il3OY1+ZACQkV5NtSpAAEXO/Y7bvXRjoa4Vc=
+			I7u8V+LE1vBDrUBeUlTDLLB6WD5AcAvzAodtkZkernY=
 			</data>
 		</dict>
 		<key>www/AppConfig.xml</key>
@@ -2158,11 +2154,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BIOYP/fefxEtV4z8aPCNfyWO8p0=
+			xGDlaD8MD19JMAh18MR7zUlPVLk=
 			</data>
 			<key>hash2</key>
 			<data>
-			PkbPyBG4FMrt7HSxX34fwsRGtBnjFB0rgPNwIgZ3/us=
+			QzuBJKdVJv9aFkk+QXYxOvGq+F26D7ccHQgO1rEQMiI=
 			</data>
 		</dict>
 		<key>www/js/comlocation.js</key>
@@ -2180,11 +2176,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ncyiy10TGX3d7mPNa7Q7E7qbCwc=
+			RYyk6mWuBhL1Tw2tdHuAR057QLw=
 			</data>
 			<key>hash2</key>
 			<data>
-			s+T9uUJCQ1BZ1ic8srrutAQPAp0G15zjeZhONX+nTME=
+			srgWzDHyOX+F8bBBBTF4jMkQsa4C1KDYcWaYkR9ko6U=
 			</data>
 		</dict>
 		<key>www/js/coordtransform.js</key>
@@ -4035,37 +4031,26 @@
 			L7u3sckEPoqWF3nqZEhHuD6QEc20SVJ7xamyK78IkT0=
 			</data>
 		</dict>
-		<key>www/templates/DQ.html</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			lq9tjDJnlNw7JePLElnO2WP6CK0=
-			</data>
-			<key>hash2</key>
-			<data>
-			lBpLuMc22oGXymno5he2XQtTXLCRKOS3F5a1aIWL/Hg=
-			</data>
-		</dict>
 		<key>www/templates/account-conference.html</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			hJ9iiw/I3b6qHBsKRnOeuoeu2wE=
+			EaFKMYCDVA6O70N5bSA37Myq108=
 			</data>
 			<key>hash2</key>
 			<data>
-			bKTEY60lJ2pCmKdh7PE/tFFok1Z/NAB9LOrm56Rtatk=
+			USpCZlKdMRO7drwmwEhBz6KEZld4z0polcC94JkECnY=
 			</data>
 		</dict>
 		<key>www/templates/account-signBill.html</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			omnYo/poPKoaY3FHR460KyWKFyI=
+			cfzoAOynLbDiS1Wq9iCxHWuOYVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			QXlXUNU2R6PJ2GLVt0HX2mSeXnInpDmbZiHaNr700XM=
+			FX4CnRzbAtrkqPiL0mGt+suZ00X8ZEt7qPXRD4TjcTM=
 			</data>
 		</dict>
 		<key>www/templates/chat-detail.html</key>
@@ -4138,11 +4123,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mhSCSss0nj4b/eJ0i2CgxRvI6WU=
+			TxQp+xU3a3Z49ryFCcJjE8AoRbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			4WOM9Dg73qQpBsmVMyHrLDo+gjzjWLa0oqTqOO8wLzM=
+			c1urBQGG7MpdqsDIlLObAf2yRmt4osyf2mJ4KWXVpSc=
 			</data>
 		</dict>
 		<key>www/templates/dash-location.html</key>
@@ -4204,11 +4189,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			DuJHyCVqqcnEn3ggo+1VqaogvCU=
+			myCQ1Uv2WeNXImfcLjHhdf11wu0=
 			</data>
 			<key>hash2</key>
 			<data>
-			z5OwiZj+G2KyChjCaQp+7Iyx4lOQ8fzL5tScs0iTmKk=
+			mrvjKqLPzSWqHlQM3HikalLfz9Nt022WdEWj1zvQV1w=
 			</data>
 		</dict>
 		<key>www/templates/dash-yewu2.html</key>
@@ -4446,11 +4431,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zwlfiPTiXMDRvR0Xc22GQYuTeKM=
+			FIQNyL0SblV/TI512EGC1r6IJIc=
 			</data>
 			<key>hash2</key>
 			<data>
-			M2VGQXAz1MUh1pAdt0FCMXObMMiQp6IaipkSDySmEAo=
+			id2HahnU98CKEBJcyG38Iab8i+dN1WDfMcEPlTyB2ZM=
 			</data>
 		</dict>
 		<key>www/templates/tab-msg.html</key>
@@ -4468,11 +4453,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			PlT9++kygRJBBagPgPZ5gDdkfdU=
+			8/hXcDVA2RnkOwbZ/VJDYvZNC3M=
 			</data>
 			<key>hash2</key>
 			<data>
-			rs4o80MaBaqF9DfgM9VGyh2165vjGWzRaGX1eUDoo7Q=
+			DtoeP+7vLRSXACvKTAuYh+t+jYn4vnmcnG8yQ5Tc+UE=
 			</data>
 		</dict>
 		<key>www/templates/test-file.html</key>

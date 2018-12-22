@@ -490,7 +490,7 @@ angular.module('starter', ['ionic',
   // Each state's controller can be found in controllers.js
   $httpProvider.defaults.withCredentials = true;
   $httpProvider.interceptors.push('myInterceptor');
-
+ // $ionicConfigProvider.views.swipeBackEnabled(false)
   var datePickerObj = {
     inputDate: new Date(),
     titleLabel: '选择日期',

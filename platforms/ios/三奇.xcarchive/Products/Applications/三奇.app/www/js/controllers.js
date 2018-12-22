@@ -1,9 +1,28 @@
 angular.module('starter.controllers', [])
 // 新建客户
   .controller('KFCtrl', function(comlocation,$ionicLoading,$timeout,$rootScope,$http,$scope,$state,$stateParams,userService) {
-
+    //====================================获取管辖区域====================================
+      $scope.areaList;
+      $scope.names = ["Emil", "Tobias", "Linus"];
+      var p = {
+      username:$rootScope.userName,
+      dept:$rootScope.dept,
+      }
+      $http.post(userService(0).address + "LocationService.asmx/AreaKu", p)
+      .success(function (response, status, headers, config) {
+               // $scope.$apply(function(){
+               $scope.areaList=response.d;
+               // alert(angular.toJson($scope.areaList));
+               // });
+               })
+      .error(function (response, status, headers, config) {
+             $ionicLoading.show({
+                                template: '获取区域权限失败!',
+                                duration: 2000
+                                });
+             });
 //===============================新建客户  kf========================================
-    $scope.kf_type='新建客户';
+    $scope.kf_type='潜在客户';
     $scope.kf_lev="1级  150天";
     $scope.kf_name="";
     $scope.setKFLocation=function () {
@@ -20,16 +39,19 @@ angular.module('starter.controllers', [])
           duration: 30000
         });
         comlocation.exec().then(function (success) {
+          //callBackFn($rootScope.lng,$rootScope.lat);
           var p = {
             userName: $rootScope.userName,
             client: $scope.kf_name,
             type: $scope.kf_type,
             lev: $scope.kf_lev,
             lng: $rootScope.lng,
-            lat: $rootScope.lat
+            lat: $rootScope.lat,
+            area:$scope.areaSelected,
+            //address:$scope.address,
           }
           //alert(angular.toJson(p));
-          $http.post(userService(0).address + "LocationService.asmx/KFNew", p)
+          $http.post(userService(0).address + "LocationService.asmx/KFNewP", p)
             .success(function (response, status, headers, config) {
               if (response.d == 0) {
                 $ionicLoading.show({
@@ -1040,6 +1062,38 @@ angular.module('starter.controllers', [])
   })
 // 主页
   .controller('DashCtrl', function($interval,platformService,$ionicLoading,$ionicPopup,aMapServ,comlocation,$rootScope,$scope,$state,$stateParams,userService,$timeout,$http) {
+  //==============================检测范围================================
+  $scope.checkMap=function () {
+  if($scope.searchName!=null){
+  $ionicLoading.show({
+                     template: '正在定位...', duration: 30000
+                     });
+  comlocation.exec().then(function (success) {
+                          var p = {
+                          userName: $rootScope.userName,
+                          name: $scope.searchName,
+                          position: $rootScope.lng + ',' + $rootScope.lat,
+                          };
+                          $http.post(userService(0).address + "YewuService.asmx/CheckPoi", p)
+                          .success(function (response, status, headers, config) {
+                                   $ionicLoading.show({
+                                                      template: response.d.msg, duration: 2000
+                                                      });
+                                   })
+                          .error(function (response, status, headers, config) {
+                                 $ionicLoading.show({
+                                                    template: '检查网络是否连接!', duration: 2000
+                                                    });
+                                 });
+                          }, function (error) {
+                          $ionicLoading.show({
+                                             template: '获取当前位置失败!', duration: 2000
+                                             });
+                          }
+                          );
+  }
+  }
+  //=========================================客户定位======================================
     $scope.KFLocation=function () {
       if($scope.searchName!=null)
       {
@@ -1073,16 +1127,30 @@ angular.module('starter.controllers', [])
                       });
                       confirmPopup.then(function (res) {
                         if (res) {
-                          $http.post(userService(0).address + "YewuService.asmx/PoiApply", p)
-                            .success(function (response, status, headers, config) {
-                              $ionicLoading.show({
-                                template: response.d,duration: 2000
-                              });
-                            })
-                            .error(function (response, status, headers, config) {
-                              $ionicLoading.show({
-                                template: '申请出错!',duration: 2000
-                              });
+                        $ionicLoading.show({
+                           template: '正在定位...',duration: 30000
+                           });
+                        comlocation.exec().then(function (success) {
+                            var obj ={
+                            userName:$rootScope.userName,
+                            name: $scope.searchName,
+                            position:$rootScope.lng+','+$rootScope.lat,
+                            };
+                              $http.post(userService(0).address + "YewuService.asmx/PoiApply", obj)
+                                .success(function (response, status, headers, config) {
+                                  $ionicLoading.show({
+                                    template: response.d,duration: 2000
+                                  });
+                                })
+                                .error(function (response, status, headers, config) {
+                                  $ionicLoading.show({
+                                    template: '申请出错!',duration: 2000
+                                  });
+                                });
+                            },function (error) {
+                            $ionicLoading.show({
+                               template: '获取当前位置失败!', duration: 2000
+                               });
                             });
                         }
                       });
@@ -1099,6 +1167,11 @@ angular.module('starter.controllers', [])
                       $ionicLoading.show({
                         template: '定位成功!',duration: 2000
                       });
+                    }
+                    else if(response.d==1) {
+                           $ionicLoading.show({
+                                template: '客户已定位，且当前位置在可录单范围内!',duration: 2000
+                        });
                     }
                     else {
                       $ionicLoading.show({
@@ -2221,7 +2294,7 @@ angular.module('starter.controllers', [])
               lat1: success.y,
               nextTime:$scope.validedTime,
               nextMethod:$scope.next_visitMethod,
-              nextNotice:$scope.next_notice,
+              nextNotice:document.getElementById("next_notice").value,
               IfWX:$scope.IfWX,
               saleContent:document.getElementById("salecontent").value,
               list_id:list_id,
@@ -2359,9 +2432,17 @@ angular.module('starter.controllers', [])
     }
     bfBills.getContact($scope.client).then(function(response){
       // alert(angular.toJson(response.d));
-      $scope.Person=response.d.list;
-      $scope.kfcode=response.d.kfcode;
-      $scope.tablename=response.d.tablename;
+      if(response.d==null)
+      {
+       $ionicLoading.show({
+            template: '该客户不存在，请先新建客户！',duration: 2000
+        });
+      }
+      else{
+          $scope.Person=response.d.list;
+          $scope.kfcode=response.d.kfcode;
+          $scope.tablename=response.d.tablename;
+      }
     },function () {
 
     });

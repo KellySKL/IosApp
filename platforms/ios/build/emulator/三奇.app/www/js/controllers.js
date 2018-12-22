@@ -1,9 +1,48 @@
 angular.module('starter.controllers', [])
 // 新建客户
   .controller('KFCtrl', function(comlocation,$ionicLoading,$timeout,$rootScope,$http,$scope,$state,$stateParams,userService) {
-
+      $scope.address="";
+      AMap.service('AMap.Geocoder',function(){//回调函数
+                   //实例化Geocoder
+                   geocoder = new AMap.Geocoder({
+                                                city: "全国",//城市，默认：“全国”
+                                                radius: 1000
+                                                });
+                   //TODO: 使用geocoder 对象完成相关功能
+                   });
+      
+      var callBackFn = function (lng, lat) {
+          var lnglatXY=new AMap.LngLat(lng,lat);
+          geocoder.getAddress(lnglatXY, function (status, result) {
+              if (status === 'complete' && result.info === 'OK') {
+                //var town = result.regeocode.addressComponent.township;
+                 $scope.address = result.regeocode.formattedAddress;
+                              alert($scope.address)
+              }
+          });
+      }
+//====================================获取管辖区域====================================
+      $scope.areaList;
+      $scope.names = ["Emil", "Tobias", "Linus"];
+      var p = {
+      username:$rootScope.userName,
+      dept:$rootScope.dept,
+      }
+      $http.post(userService(0).address + "LocationService.asmx/AreaKu", p)
+      .success(function (response, status, headers, config) {
+               // $scope.$apply(function(){
+               $scope.areaList=response.d;
+               // alert(angular.toJson($scope.areaList));
+               // });
+               })
+      .error(function (response, status, headers, config) {
+             $ionicLoading.show({
+                                template: '获取区域权限失败!',
+                                duration: 2000
+                                });
+             });
 //===============================新建客户  kf========================================
-    $scope.kf_type='新建客户';
+    $scope.kf_type='潜在客户';
     $scope.kf_lev="1级  150天";
     $scope.kf_name="";
     $scope.setKFLocation=function () {
@@ -20,16 +59,19 @@ angular.module('starter.controllers', [])
           duration: 30000
         });
         comlocation.exec().then(function (success) {
+          callBackFn($rootScope.lng,$rootScope.lat);
           var p = {
             userName: $rootScope.userName,
             client: $scope.kf_name,
             type: $scope.kf_type,
             lev: $scope.kf_lev,
             lng: $rootScope.lng,
-            lat: $rootScope.lat
+            lat: $rootScope.lat,
+            area:$scope.areaSelected,
+            address:$scope.address,
           }
-          //alert(angular.toJson(p));
-          $http.post(userService(0).address + "LocationService.asmx/KFNew", p)
+          alert(angular.toJson(p));
+          $http.post(userService(0).address + "LocationService.asmx/KFNewP", p)
             .success(function (response, status, headers, config) {
               if (response.d == 0) {
                 $ionicLoading.show({
@@ -1113,6 +1155,11 @@ angular.module('starter.controllers', [])
                       $ionicLoading.show({
                         template: '定位成功!',duration: 2000
                       });
+                    }
+                    else if(response.d==1) {
+                           $ionicLoading.show({
+                                template: '客户已定位，且当前位置在可录单范围内!',duration: 2000
+                        });
                     }
                     else {
                       $ionicLoading.show({

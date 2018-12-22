@@ -110,15 +110,15 @@
 		</data>
 		<key>ELCAlbumPickerController.nib</key>
 		<data>
-		byhV+8eIC/QRe8yc3DmSUD86JZE=
+		YOWU/G/VTrZsa12u9xGmd6ojKPU=
 		</data>
 		<key>ELCAssetPicker.nib</key>
 		<data>
-		wexNN93T7ImSNiTR+jCwUK7WCFI=
+		Bc8msHw7Uj+qHYLdQA9CfyT4peI=
 		</data>
 		<key>ELCAssetTablePicker.nib</key>
 		<data>
-		OFltKjKn6dd0WY9LmOesuu8AwFU=
+		60KCbYSmO76WjETkGcCeEBDjEzc=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -190,7 +190,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		k5UFWaxciVoIMszVG+9xHDrPxuc=
+		E+vIHsIcPm2pHGP1zrC4rOkLnng=
 		</data>
 		<key>Overlay.png</key>
 		<data>
@@ -354,7 +354,7 @@
 		</data>
 		<key>www/js/controllers.js</key>
 		<data>
-		Y7aZ6YUy2R5yy5B9YMcOtdIhWSo=
+		g50LEj8rCc2oSSh8CXdQQoU/rhc=
 		</data>
 		<key>www/js/coordtransform.js</key>
 		<data>
@@ -1062,7 +1062,7 @@
 		</data>
 		<key>www/templates/dash-kf.html</key>
 		<data>
-		P9GxjC0yriXNq5gz5oIJDGJ5Qgk=
+		TxQp+xU3a3Z49ryFCcJjE8AoRbI=
 		</data>
 		<key>www/templates/dash-location.html</key>
 		<data>
@@ -1497,33 +1497,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			byhV+8eIC/QRe8yc3DmSUD86JZE=
+			YOWU/G/VTrZsa12u9xGmd6ojKPU=
 			</data>
 			<key>hash2</key>
 			<data>
-			9Y3IVX/3fQQJK/6N7w6PsrwYvtii9AlKNy1TSFzUkyA=
+			SiHDcCKmwzJKNxff1zTE/+I03+STVPsmkm1cUm9bpMc=
 			</data>
 		</dict>
 		<key>ELCAssetPicker.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wexNN93T7ImSNiTR+jCwUK7WCFI=
+			Bc8msHw7Uj+qHYLdQA9CfyT4peI=
 			</data>
 			<key>hash2</key>
 			<data>
-			/JyBgy6VbEJ936wpeZ/wI0oaN3t+A2o2S8o1NNjm0BU=
+			9sprZI1LKeoHKqOyeQay98DfOXbXsboDeU69AO2XFwo=
 			</data>
 		</dict>
 		<key>ELCAssetTablePicker.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			OFltKjKn6dd0WY9LmOesuu8AwFU=
+			60KCbYSmO76WjETkGcCeEBDjEzc=
 			</data>
 			<key>hash2</key>
 			<data>
-			18lGUYGQoU2QsN8+smbEh9icRpgaNsMNI1DbFNGCC6Q=
+			OkA3prfBL9EY8a0H+za7nvrEGDFZ0L9x0ubSFyYT6jw=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -1706,11 +1706,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			k5UFWaxciVoIMszVG+9xHDrPxuc=
+			E+vIHsIcPm2pHGP1zrC4rOkLnng=
 			</data>
 			<key>hash2</key>
 			<data>
-			f+Kp7QMAtLFcdgdoANV2qf9+x3H3kpQfYQUF7yg5/gk=
+			zGid1rN2rB8B6HUof6yhYyytnNn4D1kFFwCRDWUFYsM=
 			</data>
 		</dict>
 		<key>Overlay.png</key>
@@ -2146,11 +2146,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y7aZ6YUy2R5yy5B9YMcOtdIhWSo=
+			g50LEj8rCc2oSSh8CXdQQoU/rhc=
 			</data>
 			<key>hash2</key>
 			<data>
-			fOJgkKmHCQi3a8awimbI5ylh/vV5lM1UaVBv1y1MWX8=
+			RldaKBTYKI2ZEN/+u3e5IKw71sKxfby+h4Gdi0XHyqk=
 			</data>
 		</dict>
 		<key>www/js/coordtransform.js</key>
@@ -4093,11 +4093,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P9GxjC0yriXNq5gz5oIJDGJ5Qgk=
+			TxQp+xU3a3Z49ryFCcJjE8AoRbI=
 			</data>
 			<key>hash2</key>
 			<data>
-			+taLmDW8f5Tn0u9uX8KtHaETaIQXGWlJ1omOev0Pt20=
+			c1urBQGG7MpdqsDIlLObAf2yRmt4osyf2mJ4KWXVpSc=
 			</data>
 		</dict>
 		<key>www/templates/dash-location.html</key>

@@ -9,6 +9,12 @@
         客户名称： <input type="text" ng-model="$parent.kf_name">
       </label>
       <div class="item item-input item-select">
+          <div class="input-label">
+              所属区域：
+          </div>
+          <select ng-model="$parent.areaSelected" ng-options="item for item in areaList"></select>
+      </div>
+      <div class="item item-input item-select">
         <div class="input-label">
           回访等级：
         </div>
@@ -26,7 +32,7 @@
         </div>
         <select ng-model="$parent.kf_type">
           <!--<option>潜在客户</option>-->
-          <option selected="selected">新建客户</option>
+          <option selected="selected">潜在客户</option>
         </select>
       </div>
       <!--<label class="item item-input">-->
