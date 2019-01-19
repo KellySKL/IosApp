@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.sqsk.ScueApp" version="0.0.4" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>三奇</name>
+<widget id="com.sqsk.ScueApp" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>三奇数控</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
     <content src="index.html" />
@@ -81,5 +81,6 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="ScueLocation" />
     </plugin>
     <plugin name="cordova-plugin-file" spec="~5.0.0" />
+    <plugin name="cordova-plugin-contacts" spec="^3.0.1" />
     <engine name="ios" spec="^4.5.5" />
 </widget>

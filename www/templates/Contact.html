@@ -1,26 +1,68 @@
 <ion-view view-title="选择联系人">
-  <ion-nav-bar class="bar-positive">
-    <ion-nav-back-button>
-    </ion-nav-back-button>
-  </ion-nav-bar>
-  <ion-content>
-    <div>
-    <ion-list>
-      <ion-item ng-repeat="item in Person" type="item-text-wrap" style="margin:8px;border:1px solid #317ff2;border-radius: 10px;" ng-click="getDet(item)">
-        <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
-          职位：{{item.position}}
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button>
+        </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content ng-controller="Contact_Ctrl">
+        <div id = "div1">
+                <div class="bar item-input-inset">
+                    <div class="row">
+                        <div class="col" ng-click="doRefresh()">
+                            <i class="icon ion-android-refresh" style="margin-left: 10px;font-size: 18px;"> 刷新</i>
+                        </div>
+                        <div class="col" ng-click="NewContact()" style="margin-left: 10px;font-size: 18px;">
+                            <i class="icon ion-android-add">  新建</i>
+                        </div>
+                        <div class="col" ng-click="goto()" style="margin-left: 10px;font-size: 18px;">
+                            <i class="icon ion-android-person">  通讯录</i>
+                        </div>
+                    </div>
+                </div>
+
+            <ion-list>
+                <ion-item ng-repeat="item in Person" type="item-text-wrap" style="margin:8px;border:1px solid #317ff2;border-radius: 10px;" ng-click="getDet(item)">
+                    <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
+                        职位：{{item.position}}
+                    </div>
+                    <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
+                        姓名：{{item.name}}
+                    </div>
+                    <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
+                        联系方式：{{item.phone}}
+                    </div>
+                </ion-item>
+            </ion-list>
         </div>
-        <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
-          姓名：{{item.name}}
+        <div id="div2" hidden="true" style="padding: 8px;">
+            <!--<div class="item item-input" style="background-color: #f0f1f2;border-radius: 5px;">-->
+            <!--<div style="width:50%;">-->
+            <div class="item item-input">
+                姓名：<input type="text" ng-model="$parent.searchContact"  style="width:50%;"  ng-change="findContactsBySearchTerm()">
+                    <button class="button button-block button-positive" style="width:auto;margin-right: 5px;"  ng-click="BackContact()">返回列表</button>
+                    </div>
+            <!--</div>-->
+            <!--<div style="width:50%;">-->
+            <!--<button class="button button-block button-positive"  ng-click="BackContact()">返回列表</button>-->
+            <!--&lt;!&ndash;<i class="icon  ion-ios-search-strong placeholder-icon" style="font-size: 35px;float: right;"></i>&ndash;&gt;-->
+            <!--</div>-->
+            <!--</div>-->
+            <ion-list>
+                <ion-item ng-repeat="item in result" type="item-text-wrap"  ng-click="ChoosePer(item)"
+                    style="margin-top:5px;border:1px solid #317ff2;border-radius: 10px;">
+                    <!--<div style="border:1px solid #317ff2;border-radius: 10px;">-->
+                    <div style="height: 30px;width: 100%;border-top-left-radius: 10px;border-top-right-radius: 10px;text-align: center;margin: 0px;">
+                        <div style="float: left;height:100%;width:auto;text-align:center">
+                            {{item.name}}
+                        </div>
+                        <div style="float: right;height:100%;width:auto;text-align:center">
+                            <p style="color: #8e979a">{{item.phoneNumber}}</p>
+                        </div>
+                    </div>
+                </ion-item>
+            </ion-list>
+            <!--<div class="padding">-->
+            <!--<button class="button button-block button-positive"  ng-click="BackContact()">返回联系人列表</button>-->
+            <!--</div>-->
         </div>
-        <div style="width: 100%;border-radius: 10px;margin-top: 5px; font-size: 16px;color:#4d4d4d;word-wrap: break-word;">
-          联系方式：{{item.phone}}
-        </div>
-      </ion-item>
-    </ion-list>
-    </div>
-    <div class="padding">
-      <button class="button button-block button-positive" id ="submit" ng-click="NewContact()">新建联系人</button>
-    </div>
-  </ion-content>
+    </ion-content>
 </ion-view>

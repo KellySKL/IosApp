@@ -60,6 +60,9 @@
     },
     "ionic-plugin-keyboard": {
       "PACKAGE_NAME": "com.sqsk.ScueApp"
+    },
+    "cordova-plugin-contacts": {
+      "PACKAGE_NAME": "com.sqsk.ScueApp"
     }
   },
   "dependent_plugins": {

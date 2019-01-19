@@ -1,1 +1,0 @@
-/Users/steve/Library/Developer/Xcode/DerivedData/三奇-eizufldfpirjchciqbacohhlpkbp/Build/Intermediates/ArchiveIntermediates/三奇/InstallationBuildProductsLocation/Applications/三奇.app

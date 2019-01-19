@@ -7,7 +7,7 @@ angular.module('starter.comlocation', [])
     return{
       exec:function () {
         var q=$q.defer();
-        var posOptions = {timeout: 10000, enableHighAccuracy: false};
+        var posOptions = {timeout: 10000, enableHighAccuracy: true};
         $cordovaGeolocation
           .getCurrentPosition(posOptions)
           .then(function (position) {

@@ -2,5 +2,7 @@
     "ImageIO.framework": 1,
     "CoreLocation.framework": 3,
     "AVFoundation.framework": 1,
-    "UserNotifications.framework": 1
+    "UserNotifications.framework": 1,
+    "AddressBook.framework": 1,
+    "AddressBookUI.framework": 1
 }

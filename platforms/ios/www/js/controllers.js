@@ -1062,6 +1062,10 @@ angular.module('starter.controllers', [])
   })
 // 主页
   .controller('DashCtrl', function($interval,platformService,$ionicLoading,$ionicPopup,aMapServ,comlocation,$rootScope,$scope,$state,$stateParams,userService,$timeout,$http) {
+  $scope.menuShow = false;
+              $scope.Menu = function () {
+              $scope.menuShow = !$scope.menuShow;
+  }
   //==============================检测范围================================
   $scope.checkMap=function () {
   if($scope.searchName!=null){
@@ -1413,17 +1417,87 @@ angular.module('starter.controllers', [])
     });     //创建信息窗口对象  ps.高德目前不支持多信息窗口，即使创建多个窗口对象，也只会显示一个 10/26/2016
     var addMarkers=[];
     var kflist;
-    function clear() {
+      function clear() {
       $scope.mapObj.remove(addMarkers);
       addMarkers = [];
       infoWindow.close();
-    }
+      $scope.mapObj.clearMap();
+      }
+      
+      $scope.getcircle = function (chose) {
+              if(userService(0).if_map)//需定位人员
+              {
+              if($scope.mapObj==null)
+              {
+              $scope.mapObj = aMapServ.all();
+              }
+              AMap.plugin('AMap.Geolocation', function () {
+                          if($scope.geolocation==null)
+                          {
+                          $scope.geolocation = aMapServ.geo();
+                          $scope.mapObj.addControl($scope.geolocation);
+                          }
+                          // list_lineArr.push(new AMap.LngLat($scope.lngX, $scope.latY)); // 放置第一个点
+                          $scope.geolocation.getCurrentPosition();//进入后直接调用
+                          // $scope.geolocation.watchPosition();//监控当前位置
+                          AMap.event.addListener($scope.geolocation, 'complete', onComplete); // 返回定位信息
+                          AMap.event.addListener($scope.geolocation, 'error', onError);       // 返回定位出错信息
+                          });
+              
+              }
+              $ionicLoading.show({
+                                 template: '正在获取数据...',duration: 30000
+                                 });
+              clear();
+              var pwww = {
+              userName: $rootScope.userName,
+              };
+              $http.post(userService(0).address + "LocationService.asmx/GetCircle", pwww)
+              .success(function (response, status, headers, config) {
+                       if (response.d.status != 200) {
+                       $ionicLoading.show({
+                                          template: response.d.msg ,duration: 2000
+                                          });
+                       }
+                       else {
+                       var circle = new AMap.Circle({
+                                                    center: new AMap.LngLat(response.d.lng, response.d.lat), // 圆心位置
+                                                    radius: parseFloat(response.d.dis)*1000, //半径
+                                                    strokeColor: "#F33", //线颜色
+                                                    strokeOpacity: 0.2, //线透明度
+                                                    strokeWeight: 3, //线宽
+                                                    fillColor: "#1791fc", //填充色
+                                                    fillOpacity: 0.05//填充透明度
+                                                    });
+                       kflist=response.d.list;
+                       $ionicLoading.show({
+                                          template: '正在导入...'
+                                          });
+                       for (var i = 0; i < kflist.length; i++) {
+                       var POI = new AMap.LngLat(kflist[i].lng, kflist[i].lat);
+                       if(circle.contains(POI)||kflist[i].FindType=="0"){
+                       addKFmarker(POI, kflist[i]);
+                       }
+                       }
+                       if(i== kflist.length) {
+                       circle.setMap($scope.mapObj);//显示圆圈
+                       $scope.mapObj.setFitView();//根据地图上添加的覆盖物分布情况，自动缩放地图到合适的视野级别
+                       $ionicLoading.hide();
+                       }
+                       }
+                       })
+              .error(function (response, status, headers, config) {
+                     alert(angular.toJson(response));
+                     });
+     
+      }
 
     $scope.getMap = function (chose) {
       $scope.initAMap();
       $ionicLoading.show({
         template: '正在获取当前位置...',duration: 30000
       });
+      clear();//清除原来的信息
       comlocation.exec().then(function (success) {
           var p ={
             userName: $rootScope.userName,
@@ -1434,7 +1508,7 @@ angular.module('starter.controllers', [])
           $http.post(userService(0).address + "LocationService.asmx/Neighbour", p)
             .success(function (response, status, headers, config) {
               kflist=response.d;
-              clear();//清除原来的信息
+              
               for (var i = 0; i < kflist.length; i++) {
                 var POI = new AMap.LngLat(kflist[i].lng, kflist[i].lat);
                 addKFmarker(POI, kflist[i]);
@@ -2325,7 +2399,27 @@ angular.module('starter.controllers', [])
                   $state.go('tab.dash');
                 }, 2000);
               }
-              else {
+             else if (response.d == -200) {
+             $ionicLoading.show({
+                                template: '存在未处理单据，请先完成任务！',duration: 2000
+                                });
+             }
+             else if (response.d == -201) {
+             $ionicLoading.show({
+                                template: '请先接收任务！',duration: 2000
+                                });
+             }
+             else if (response.d == -301) {
+             $ionicLoading.show({
+                                template: '不在自主回访范围内，请在主页查看拜访范围！',duration: 2000
+                                });
+             }
+             else if (response.d == -302) {
+             $ionicLoading.show({
+                                template: '未设置回访范围，请致电业务经理！',duration: 2000
+                                });
+             }
+             else {
                 alert(angular.toJson(response));
               }
             }).error(function (response, status, headers, config) {
@@ -2421,31 +2515,84 @@ angular.module('starter.controllers', [])
     };
   })
   // 联系人
-  .controller('Contact_Ctrl', function($ionicPopup,$ionicLoading,$timeout,bfBills,$interval,$rootScope,$http,$scope,$state,$stateParams,$http,userService) {
+  .controller('Contact_Ctrl', function($cordovaContacts,$ionicPopup,$ionicLoading,$timeout,bfBills,$interval,$rootScope,$http,$scope,$state,$stateParams,$http,userService) {
     $scope.kfcode;
     $scope.tablename;
-    if($stateParams.res!=null)
-    {
-      // alert(angular.toJson($stateParams.res));
-      $scope.client=$stateParams.res.client;
-      $scope.id=$stateParams.res.id;//拜访任务单id
-    }
-    bfBills.getContact($scope.client).then(function(response){
-      // alert(angular.toJson(response.d));
-      if(response.d==null)
+      if($stateParams.res!=null)
       {
-       $ionicLoading.show({
-            template: '该客户不存在，请先新建客户！',duration: 2000
-        });
+          // alert(angular.toJson($stateParams.res));
+          $scope.client=$stateParams.res.client;
+          $scope.id=$stateParams.res.id;//拜访任务单id
+          var p = {
+          client: $stateParams.res.client
+          };
+          $http.post(userService(0).address + "YewuService.asmx/GetContact", p).success(function (response, status, headers, config) {
+                if (response.d == null) {
+                $ionicLoading.show({
+                                   template: '该客户不存在，请先新建客户！', duration: 2000
+                                   });
+                }
+                else {
+                $scope.Person = response.d.list;
+                $scope.kfcode = response.d.kfcode;
+                $scope.tablename = response.d.tablename;
+                }
+                }).error(function (response, status, headers, config) {
+                         alert(angular.toJson(response));
+                         $ionicLoading.show({
+                                            template: '获取联系人失败！', duration: 2000
+                                            });
+                         });
       }
-      else{
-          $scope.Person=response.d.list;
-          $scope.kfcode=response.d.kfcode;
-          $scope.tablename=response.d.tablename;
+      // bfBills.getContact($scope.client).then(function(response){
+      //   if(response.d==null)
+      //   {
+      //     $ionicLoading.show({
+      //       template: '该客户不存在，请先新建客户！',duration: 2000
+      //     });
+      //   }
+      //   else {
+      //     $scope.Person = response.d.list;
+      //     $scope.kfcode = response.d.kfcode;
+      //     $scope.tablename = response.d.tablename;
+      //   }
+      // },function (error) {
+      //   $ionicLoading.show({
+      //     template: '获取联系人失败！',duration: 2000
+      //   });
+      // });
+      
+      $scope.doRefresh=function () {
+              $ionicLoading.show({
+                                 template: '正在刷新...',duration: 30000
+                                 });
+        var peeee = {
+        client: $scope.client
+        };
+        $http.post(userService(0).address+"YewuService.asmx/GetContact",peeee).success(function (response, status, headers, config) {
+             if(response.d==null) {
+             $ionicLoading.show({
+                                template: '该客户不存在，请先新建客户！', duration: 2000
+                                });
+             }
+             else {
+             $scope.Person = response.d.list;
+             $scope.kfcode = response.d.kfcode;
+             $scope.tablename = response.d.tablename;
+             $ionicLoading.show({
+                                template: '刷新成功！',duration: 1500
+                                });
+             }
+             }).error(function (response, status, headers, config) {
+                      $ionicLoading.show({
+                                         template: '刷新联系人失败！',duration: 2000
+                                         });
+                      });
+      //   .finally(function() {
+      //   // 停止广播ion-refresher
+      //   $scope.$broadcast('scroll.refreshComplete');
+      // });
       }
-    },function () {
-
-    });
     $scope.getDet=function (item) {
       item.id=$scope.id;
       item.client=$scope.client;
@@ -2540,7 +2687,167 @@ angular.module('starter.controllers', [])
         console.log('Tapped!', res);
       });
     }
-  })
+    //===========================================通讯录导入===========================================
+    $scope.result=[];
+    $scope.goto=function () {
+     $("#div1").hide();
+     $("#div2").show();
+     $scope.result=[];
+    }
+    $scope.ChoosePer=function (item) {
+    $scope.hisName = item.name;
+    $scope.hisPhone = item.phoneNumber;
+    $scope.hisPosition = "";
+    var Popup = $ionicPopup.show({
+       template: ' <div class="item item-input">'+
+       '姓名： <input type="text" ng-model="$parent.hisName">'+
+       '</div>'+
+       '<div class="item item-input item-select">'+
+       '<div class="input-label">'+
+       '职位：'+
+       '</div>'+
+       '<select ng-model="$parent.hisPosition">'+
+       '<option selected="selected">法人/老板</option>'+
+       '<option>财务部</option>'+
+       '<option>采购部</option>'+
+       '<option>生产/模具/车间部</option>'+
+       '<option>操作老师</option>'+
+       // '<option>上门拜访</option>'+
+       // '<option>电话拜访</option>'+
+       // '<option>上门拜访</option>'+
+       '</select>'+
+       '</div>'+
+       // '<div class="item item-input">'+
+       // '职位： <input type="text" ng-model="$parent.hisPosition">'+
+       // '</div>'+
+       '<div class="item item-input">'+
+       '联系方式： <input type="text" ng-model="$parent.hisPhone">'+
+       '</div>',
+       title: '编辑内容',
+       subTitle: '手机导入',
+       scope: $scope,
+       buttons: [
+                 { text: '取消' },
+                 {
+                 text: '<b>保存</b>',
+                 type: 'button-positive',
+                 onTap: function(e) {
+                 var p={
+                 kfcode:$scope.kfcode,
+                 tablename:$scope.tablename,
+                 name:$scope.hisName,
+                 position:$scope.hisPosition,
+                 phone:$scope.hisPhone,
+                 };
+                 if (!p.name||!p.position||!p.phone) {
+                 //不允许用户关闭，除非他键入wifi密码
+                 e.preventDefault();
+                 } else {
+                 $ionicLoading.show({
+                                    template: '正在操作...',duration: 30000
+                                    });
+                 $http.post(userService(0).address+"YewuService.asmx/NewContact",p).success(function (response, status, headers, config) {
+                            if(response.d)
+                            {
+                            var contact = {
+                            name:p.name,
+                            position:p.position,
+                            phone:p.phone,
+                            }
+                            $ionicLoading.hide(); // 2秒后关闭弹窗
+                            $scope.Person.push(contact);
+                            $("#div1").show();
+                            $("#div2").hide();
+                            }
+                            else
+                            {
+                            $ionicLoading.show({
+                                               template: '新建失败！'
+                                               });
+                            $timeout(function () {
+                                     $ionicLoading.hide(); // 2秒后关闭弹窗
+                                     }, 2000);
+                            }
+                            myPopup.close();
+                            }).error(function (error) {
+                                     $ionicLoading.show({
+                                                        template: '网络连接失败！'
+                                                        });
+                                     $timeout(function () {
+                                              $ionicLoading.hide(); // 2秒后关闭弹窗
+                                              }, 2000);
+                                     //NewContact('请检查网络是否连接!');
+                                     });
+                 }
+                 }
+                 },
+                 ]
+       });
+    Popup.then(function(res) {
+    console.log('Tapped!', res);
+    });
+    }
+    $scope.BackContact=function () {
+    $("#div1").show();
+    $("#div2").hide();
+    }
+              $scope.findContactsBySearchTerm = function () {
+              $scope.result = [];
+              if($scope.searchContact!="") {
+              // $ionicLoading.show({
+              //   template: '正在导入通讯录...',
+              //   duration: 30000
+              // });
+              // alert("姓名："+$scope.searchName);
+              var options = new ContactFindOptions();
+              options.filter = $scope.searchContact;
+              options.multiple = true;
+              fields = ["displayName","name", "phoneNumbers"];
+              navigator.contacts.find(fields, contactfindSuccess, contactfindError, options);
+              }
+              }
+              
+              function contactfindSuccess(contacts) {
+      
+              for (var i = 0; i < contacts.length; i++) {
+
+                  // display phone numbers
+                  for (var j = 0; j < contacts[i].phoneNumbers.length; j++) {
+                  if (j > 0) {
+                  if (contacts[i].phoneNumbers[j].value!=contacts[i].phoneNumbers[j-1].value)
+                  {
+                  var a={
+                  name:contacts[i].name.formatted,
+                  phoneNumber:contacts[i].phoneNumbers[j].value,
+                  };
+                  $scope.result.push(a);
+                }
+                  }
+                  else
+                  {
+                  var a={
+                  name:contacts[i].name.formatted,
+                  phoneNumber:contacts[i].phoneNumbers[j].value,
+                  };
+                  $scope.result.push(a);
+                }
+                  // string = "Name: " + contacts[i].displayName + "\n" +
+                  //   "Type: " + contacts[i].phoneNumbers[j].type + "\n" +
+                  //   "Value: " + contacts[i].phoneNumbers[j].value + "\n" +
+                  //   "Preferred: " + contacts[i].phoneNumbers[j].pref;
+                  // alert(string);
+                  }
+                  if(i==contacts.length-1)
+                  {
+                  $ionicLoading.hide();
+                  }
+                  }
+             }
+              
+              function contactfindError(message) {
+              alert('Failed because: ' + message);
+              }
+    })
 
   .controller('WX_1_Ctrl', function($rootScope,$scope,$state,$stateParams,userService,Houses,$http) {
     var p = {
